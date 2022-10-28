@@ -1,9 +1,8 @@
 import {headerContent} from './header-content.js'
+import { compactSidebarContent } from './sidebar-content.js';
 
 const content = document.getElementById('content');
-// content.textContent = "'TEST'";
 
-document.body.appendChild(content);
-
-const headerDiv = document.querySelector('.header');
 headerContent();
+compactSidebarContent();
+
