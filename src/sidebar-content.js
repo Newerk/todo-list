@@ -3,13 +3,22 @@
 //Retrieve the compact sidebar div to manipulate content
 const compactSidebarContentDiv = document.querySelector('.compact-sidebar')
 
-//the dot notation 'textContent' are placeholder values for the content that will be assigned to the page header
+//the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
 export const compactSidebarContent = () => {
+    const expandBtn = (() => {
+        const expand = document.createElement('div');
+        expand.id = 'expand-btn';
+        expand.textContent = 'EXPAND';
+        expand.setAttribute('style', 'grid-row: 1 / 2; color: white');
+        compactSidebarContentDiv.appendChild(expand);
+    })();
+
+
     const homeBtn = (() => {
         const home = document.createElement('div');
         home.id = 'home-btn';
         home.textContent = 'HOME';
-        home.setAttribute('style', 'grid-row: 1 / 2; color: white');
+        home.setAttribute('style', 'grid-row: 2 / 3; color: white');
         compactSidebarContentDiv.appendChild(home);
     })();
 
@@ -17,7 +26,7 @@ export const compactSidebarContent = () => {
         const today = document.createElement('div');
         today.id = 'today-btn';
         today.textContent = 'TODAY';
-        today.setAttribute('style', 'grid-row: 2 / 3; color: white');
+        today.setAttribute('style', 'grid-row: 3 / 4; color: white');
         compactSidebarContentDiv.appendChild(today);
     })();
 
@@ -25,7 +34,7 @@ export const compactSidebarContent = () => {
         const upcoming = document.createElement('div');
         upcoming.id = 'upcoming-btn';
         upcoming.textContent = 'UPCOMING';
-        upcoming.setAttribute('style', 'grid-row: 3 / 4; color: white');
+        upcoming.setAttribute('style', 'grid-row: 4 / 5; color: white');
         compactSidebarContentDiv.appendChild(upcoming);
     })();
 
@@ -33,7 +42,7 @@ export const compactSidebarContent = () => {
         const pastDue = document.createElement('div');
         pastDue.id = 'pastdue-btn';
         pastDue.textContent = 'PAST DUE';
-        pastDue.setAttribute('style', 'grid-row: 4 / 5; color: white');
+        pastDue.setAttribute('style', 'grid-row: 5 / 6; color: white');
         compactSidebarContentDiv.appendChild(pastDue);
     })();
 
@@ -41,7 +50,7 @@ export const compactSidebarContent = () => {
         const projects = document.createElement('div');
         projects.id = 'projects-btn';
         projects.textContent = 'PROJECTS';
-        projects.setAttribute('style', 'grid-row: 5 / 6; color: white');
+        projects.setAttribute('style', 'grid-row: 6 / 7; color: white');
         compactSidebarContentDiv.appendChild(projects);
     })();
 
@@ -49,7 +58,7 @@ export const compactSidebarContent = () => {
         const account = document.createElement('div');
         account.id = 'account-btn';
         account.textContent = 'ACCOUNT';
-        account.setAttribute('style', 'grid-row: 7 / 8; color: white');
+        account.setAttribute('style', 'grid-row: 8 / 9; color: white');
         compactSidebarContentDiv.appendChild(account);
     })();
 
@@ -57,7 +66,7 @@ export const compactSidebarContent = () => {
         const settings = document.createElement('div');
         settings.id = 'settings-btn';
         settings.textContent = 'SETTINGS';
-        settings.setAttribute('style', 'grid-row: 8 / 9; color: white');
+        settings.setAttribute('style', 'grid-row: 9 / 10; color: white');
         compactSidebarContentDiv.appendChild(settings);
     })();
 }
