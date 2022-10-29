@@ -5,27 +5,21 @@ const headerDiv = document.querySelector('.header')
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page header
 export const headerContent = () => {
-    const headerLogo = (() => {
         const logo = document.createElement('div');
         logo.id = 'header-logo';
         logo.textContent = 'LOGO';
         logo.setAttribute('style', 'grid-column: 1 / 2; color: white');
         headerDiv.appendChild(logo);
-    })();
 
-    const headerUserName = (() => {
         const userName = document.createElement('div');
         userName.id = 'header-username';
         userName.textContent = 'USERNAME---';
         userName.setAttribute('style', 'grid-column: 3 / 4; color: white');
         headerDiv.appendChild(userName);
-    })();
 
-    const headerProfileImg = (() => {
         const pfp = document.createElement('div');
         pfp.id = 'header-pfp';
         pfp.textContent = 'PFP';
         pfp.setAttribute('style', 'grid-column: 4 / 5; color: white');
         headerDiv.appendChild(pfp);
-    })();
 }
