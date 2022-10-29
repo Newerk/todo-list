@@ -1,18 +1,27 @@
 //will appropriately place header content in the grid of the sidebar
+import { expandLogic } from "../expanded_sidebar/expand-logic";
+
+
+
+export let sidebarIsExpended = false;
+export const content = document.querySelector('#content');
+
 
 //Retrieve the compact sidebar div to manipulate content
-const compactSidebarContentDiv = document.querySelector('.compact-sidebar')
+export const compactSidebarContentDiv = document.querySelector('.compact-sidebar');
+
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
-export const compactSidebarContent = () => {
+export const compactSidebarContent = (() => {
     const expandBtn = (() => {
         const expand = document.createElement('div');
         expand.id = 'expand-btn';
         expand.textContent = 'EXPAND';
         expand.setAttribute('style', 'grid-row: 1 / 2; color: white');
         compactSidebarContentDiv.appendChild(expand);
+        expand.addEventListener('click', expandLogic);
+    
     })();
-
 
     const homeBtn = (() => {
         const home = document.createElement('div');
@@ -69,4 +78,5 @@ export const compactSidebarContent = () => {
         settings.setAttribute('style', 'grid-row: 9 / 10; color: white');
         compactSidebarContentDiv.appendChild(settings);
     })();
-}
+    
+})();
