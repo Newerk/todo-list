@@ -1,10 +1,12 @@
 //Module will appropriately place header content into the display grid layout
 
-//Retrieve the header div to manipulate content
-const headerDiv = document.querySelector('.header')
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page header
 export const headerContent = () => {
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'header';
+        document.body.appendChild(headerDiv);
+
         const logo = document.createElement('div');
         logo.id = 'header-logo';
         logo.textContent = 'LOGO';

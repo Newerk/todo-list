@@ -3,12 +3,13 @@
 const content = document.querySelector('#content');
 
 
-//Retrieve the compact sidebar div to manipulate content
-const compactSidebarContentDiv = document.querySelector('.compact-sidebar');
-
-
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
  export const compactSidebarContent = () => {
+        const compactSidebarContentDiv = document.createElement('div');
+        compactSidebarContentDiv.className = 'compact-sidebar';
+        document.body.appendChild(compactSidebarContentDiv);
+
+
         const expand = document.createElement('div');
         expand.id = 'expand-btn';
         expand.textContent = 'EXPAND';
