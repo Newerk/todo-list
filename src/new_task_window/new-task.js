@@ -19,13 +19,20 @@ export const buildNewTaskWindow = () => {
 
 
     const titleInput = document.createElement('div');
+    titleInput.id = 'title-input';
+    titleInput.textContent = 'USER ENTERED TITLE';
 
     const priorityBtn = document.createElement('button');
+    priorityBtn.id = 'priority-btn';
+    priorityBtn.textContent = 'PRIORITY';
 
     const dueDateBtn = document.createElement('button');
+    dueDateBtn.id = 'due-date-btn';
+    dueDateBtn.textContent = 'DUE DATE';
 
     const exitBtn = document.createElement('button');
     exitBtn.id = 'exit-btn';
+    exitBtn.textContent = 'X'
 
     topContainer.appendChild(titleInput);
     topContainer.appendChild(priorityBtn);
@@ -34,6 +41,7 @@ export const buildNewTaskWindow = () => {
 
 
     const descriptionTopText = document.createElement('p');
+    descriptionTopText.id = 'description-text';
     descriptionTopText.textContent = 'Description';
 
     const descriptionInput = document.createElement('textarea');
@@ -44,6 +52,8 @@ export const buildNewTaskWindow = () => {
 
 
     const addTaskBtn = document.createElement('button');
+    addTaskBtn.id = 'add-task-btn';
+    addTaskBtn.textContent = '+ADD TASK';
     bottomContainer.appendChild(addTaskBtn);
 
 
@@ -53,6 +63,6 @@ export const buildNewTaskWindow = () => {
     newTaskContainer.appendChild(middleContainer)
     newTaskContainer.appendChild(bottomContainer)
 
-    content.appendChild(newTaskContainer);
+    // content.appendChild(newTaskContainer);
 
 }
