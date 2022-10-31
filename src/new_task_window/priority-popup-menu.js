@@ -22,6 +22,7 @@ const buildPopUpMenu = () => {
     priorityPopUpMenu.appendChild(normalPriority);
     priorityPopUpMenu.appendChild(highPriority);
     priorityPopUpMenu.appendChild(urgentPriority);
+    
     // content.appendChild(priorityPopUpMenu);
 }
 

@@ -1,0 +1,1 @@
+//may use DOM Manipulation, or import a css if I can find a way to apply the colors w/o writing a bunch of code

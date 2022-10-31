@@ -14,7 +14,7 @@
 
 }
 
-[class $= '-container'] {
+[class $='-container'] {
     /* border: 1px solid #454545; */
 }
 
@@ -79,14 +79,28 @@ textarea {
     display: flex;
     flex-direction: column;
 
-    width: 5rem;
-    height: min-content;
+    width: 6vw;
+    height: auto;
+
+    border-radius: var(--menu_radius);
+
+    background-color: aqua;
+
+    justify-content: space-between;
+
+    padding-right: .6rem;
+
+
 
 }
 
 [id *='priority-btn'] {
     width: 100%;
     height: 2rem;
+    border-radius: var(--menu_radius);
+    border: 1px solid black;
+    margin: .3rem;
+
 }
 
 #normal-priority-btn {
