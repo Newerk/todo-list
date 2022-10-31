@@ -1,6 +1,16 @@
 import { content } from "..";
+import './new-task.css';
 
-const buildNewTaskWindow = () => {
+export const buildNewTaskWindow = () => {
+    const newTaskContainer = document.createElement('div');
+    newTaskContainer.className = 'new-task-container';
+
+
+    const topContainer = document.createElement('div');
+    const middleContainer = document.createElement('div');
+    const bottomContainer = document.createElement('div');
+
+
     const titleInput = document.createElement('div');
 
     const priorityBtn = document.createElement('button');
@@ -9,5 +19,30 @@ const buildNewTaskWindow = () => {
 
     const exitBtn = document.createElement('button');
 
+    topContainer.appendChild(titleInput);
+    topContainer.appendChild(priorityBtn);
+    topContainer.appendChild(dueDateBtn);
+    topContainer.appendChild(exitBtn);
+
+
+    const descriptionTopText = document.createElement('p');
+    descriptionTopText.textContent = 'Description';
     const descriptionInput = document.createElement('div');
+
+    middleContainer.appendChild(descriptionTopText);
+    middleContainer.appendChild(descriptionInput);
+
+
+    const addTaskBtn = document.createElement('button');
+    bottomContainer.appendChild(addTaskBtn);
+
+
+
+
+    newTaskContainer.appendChild(topContainer)
+    newTaskContainer.appendChild(middleContainer)
+    newTaskContainer.appendChild(bottomContainer)
+
+    content.appendChild(newTaskContainer);
+
 }
