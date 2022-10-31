@@ -7,8 +7,15 @@ export const buildNewTaskWindow = () => {
 
 
     const topContainer = document.createElement('div');
+    topContainer.className = 'top-container';
+
     const middleContainer = document.createElement('div');
+    middleContainer.className = 'middle-container';
+
+
     const bottomContainer = document.createElement('div');
+    bottomContainer.className = 'bottom-container';
+
 
 
     const titleInput = document.createElement('div');
@@ -18,6 +25,7 @@ export const buildNewTaskWindow = () => {
     const dueDateBtn = document.createElement('button');
 
     const exitBtn = document.createElement('button');
+    exitBtn.id = 'exit-btn';
 
     topContainer.appendChild(titleInput);
     topContainer.appendChild(priorityBtn);
@@ -27,7 +35,9 @@ export const buildNewTaskWindow = () => {
 
     const descriptionTopText = document.createElement('p');
     descriptionTopText.textContent = 'Description';
+
     const descriptionInput = document.createElement('div');
+    descriptionInput.id = 'description-input';
 
     middleContainer.appendChild(descriptionTopText);
     middleContainer.appendChild(descriptionInput);

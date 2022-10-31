@@ -2,12 +2,33 @@
 
 /*NEW TASK WINDOW*/
 .new-task-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: aquamarine;
     width: 100%;
     height: 100%;
 
     border-radius: var(--menu_radius);
+    padding: 1rem;
 
+}
+
+[class $= '-container'] {
+    border: 1px solid black;
+}
+
+#description-input {
+    width: 100%;
+    height: 50vh;
+    background-color: white;
+}
+
+#exit-btn {
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
 }
 
 
