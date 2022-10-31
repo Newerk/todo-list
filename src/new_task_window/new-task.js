@@ -36,7 +36,7 @@ export const buildNewTaskWindow = () => {
     const descriptionTopText = document.createElement('p');
     descriptionTopText.textContent = 'Description';
 
-    const descriptionInput = document.createElement('div');
+    const descriptionInput = document.createElement('textarea');
     descriptionInput.id = 'description-input';
 
     middleContainer.appendChild(descriptionTopText);

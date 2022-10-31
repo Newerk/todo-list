@@ -24,6 +24,10 @@
     background-color: white;
 }
 
+textarea {
+    resize: none;
+}
+
 #exit-btn {
     border-radius: 50%;
     width: 1.5rem;
