@@ -1,0 +1,27 @@
+.priority-popup {
+    display: flex;
+    flex-direction: column;
+
+    width: 5rem;
+    height: min-content;
+
+}
+
+[id *= 'priority-btn'] {
+    width: 100%;
+    height: 2rem;
+}
+
+#normal-priority-btn {
+background-color: skyblue;/*placeholder color*/
+}
+
+#high-priority-btn {
+    background-color: yellow;/*placeholder color*/
+    
+}
+
+#urgent-priority-btn {
+    background-color: red;/*placeholder color*/
+
+}
