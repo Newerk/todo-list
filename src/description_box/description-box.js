@@ -41,23 +41,39 @@ export const buildDescriptionBox = () => {
 
 
     const middleContainer = document.createElement('div');
+    middleContainer.className = 'middle-container';
+
     const descriptionTitle = document.createElement('p');
     descriptionTitle.textContent = 'Description';
 
     const descriptionText = document.createElement('p');
-    descriptionText.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    descriptionText.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+
+    //placeholder read more. Will instead work dynamically in implementation
+    const readMore = document.createElement('a');
+    readMore.textContent =  'Read More';
+    readMore.id = 'read-more';
 
     middleContainer.appendChild(descriptionTitle);
     middleContainer.appendChild(descriptionText);
+    middleContainer.appendChild(readMore);
 
 
 
     const bottomContainer = document.createElement('div');
+    bottomContainer.className = 'bottom-container';
+    const editBtn = document.createElement('button');
+    editBtn.id = 'edit-btn';
+    editBtn.textContent = 'EDIT';
+
+    bottomContainer.appendChild(editBtn);
 
     
 
     descriptionContainer.appendChild(topContainer);
     descriptionContainer.appendChild(middleContainer)
+    descriptionContainer.appendChild(bottomContainer)
+
 
 
     content.appendChild(descriptionContainer);
