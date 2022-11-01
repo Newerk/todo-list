@@ -47,6 +47,7 @@ export const buildDescriptionBox = () => {
     descriptionTitle.textContent = 'Description';
 
     const descriptionText = document.createElement('p');
+    descriptionText.id = 'description-text';
     descriptionText.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 
     //placeholder read more. Will instead work dynamically in implementation
