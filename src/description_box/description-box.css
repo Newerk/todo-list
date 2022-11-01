@@ -5,6 +5,9 @@
     width: 20rem;
     height: 20rem;
 
+    display: flex;
+    flex-direction: column;
+
 }
 
 .top-container {
@@ -25,7 +28,6 @@
 #status {
     grid-column: 2;
     grid-row: 1;
-    /* place-self: center; */
     padding-left: var(--menu_padding);
 
 }
