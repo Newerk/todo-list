@@ -77,6 +77,6 @@ export const buildDescriptionBox = () => {
 
 
 
-    content.appendChild(descriptionContainer);
+    // content.appendChild(descriptionContainer);
 
 }
