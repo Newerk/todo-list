@@ -1,0 +1,43 @@
+@import url(../custom-variables.css);
+
+.description-box-container {
+    background-color: white;
+    width: 20rem;
+    height: 20rem;
+
+}
+
+.top-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: var(--menu_padding);
+}
+
+#priority {
+    grid-column: 1;
+    grid-row: 1;
+    place-self: start;
+
+
+}
+
+#status {
+    grid-column: 2;
+    grid-row: 1;
+    /* place-self: center; */
+    padding-left: var(--menu_padding);
+
+}
+
+#date-creation {
+    grid-column: 3;
+    grid-row: 1;
+    place-self: top end;
+
+
+}
+
+.middle-container {}
+
+.bottom-container {}
