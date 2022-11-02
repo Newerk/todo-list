@@ -1,6 +1,7 @@
-//will appropriately place header content in the grid of the sidebar
 import './compact-sidebar.css'
+import { expandSidebar } from '../expanded_sidebar/expand-sidebar';
 const content = document.querySelector('#content');
+
 
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
@@ -13,6 +14,7 @@ const content = document.querySelector('#content');
         const expand = document.createElement('div');
         expand.id = 'expand-btn';
         expand.textContent = '>';
+        expand.addEventListener('click', expandSidebar)
         compactSidebarContentDiv.appendChild(expand);
     
 
