@@ -3,6 +3,9 @@ import { compactSidebarContent } from './sidebar/compact_sidebar/compact-sidebar
 import './style.css'
 
 
+import { expandSidebar } from './sidebar/expanded_sidebar/expand-sidebar.js';
+
+
 
 export const content = document.createElement('div');
 content.id = 'content';
@@ -10,4 +13,4 @@ document.body.appendChild(content);
 
 headerContent();
 compactSidebarContent();
-
+expandSidebar();

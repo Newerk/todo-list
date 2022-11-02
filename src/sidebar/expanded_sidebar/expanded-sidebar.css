@@ -1,0 +1,62 @@
+#content {
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+
+    background-color: antiquewhite;
+}
+
+.expanded-container {
+    grid-column: 1;
+    background-color: red;
+
+    display: grid;
+    grid-template-rows: repeat(6, auto) 1fr repeat(2, auto);
+
+}
+
+[id $= '-btn-ex'] {
+    text-align: center;
+    background-color: red;
+
+    height: 2rem;
+}
+
+#expand-btn-ex {
+    grid-row: 1 / 2;
+
+}
+
+#home-btn-ex {
+    grid-row: 2 / 3;
+
+}
+
+#today-btn-ex {
+    grid-row: 3 / 4;
+
+}
+
+#upcoming-btn-ex {
+    grid-row: 4 / 5;
+
+}
+
+#pastdue-btn-ex {
+    grid-row: 5 / 6;
+
+}
+
+#projects-btn-ex {
+    grid-row: 6 / 7;
+
+}
+
+#account-btn-ex {
+    grid-row: 8 / 9;
+
+}
+
+#settings-btn-ex {
+    grid-row: 9 / 10;
+
+}

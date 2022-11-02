@@ -1,0 +1,54 @@
+.compact-sidebar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: #323233;
+    width: 4rem;
+
+    display: grid;
+    grid-template-rows: repeat(6, auto) 1fr repeat(2, auto);
+}
+
+[id $='-btn'] {
+    height: 2rem;
+    color: white;
+}
+
+#expand-btn {
+    grid-row: 1 / 2;
+
+}
+
+#home-btn {
+    grid-row: 2 / 3;
+
+}
+
+#today-btn {
+    grid-row: 3 / 4;
+
+}
+
+#upcoming-btn {
+    grid-row: 4 / 5;
+
+}
+
+#pastdue-btn {
+    grid-row: 5 / 6;
+
+}
+
+#projects-btn {
+    grid-row: 6 / 7;
+
+}
+
+#account-btn {
+    grid-row: 8 / 9;
+
+}
+
+#settings-btn {
+    grid-row: 9 / 10;
+
+}

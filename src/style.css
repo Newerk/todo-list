@@ -77,7 +77,7 @@ body {
 
 }
 
-.compact-sidebar {
+/* .compact-sidebar {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     background-color: #323233;
@@ -85,14 +85,18 @@ body {
 
     display: grid;
     grid-template-rows: repeat(6, auto) 1fr repeat(2, auto);
-}
+} */
 
 #content {
     grid-column: 2 / 6;
     grid-row: 2 / 3;
     background-color: #1E1E1E;
 
-    place-content: center;
-    padding: 2rem;
+    /* place-content: center; */
+    /* padding: 2rem; */ /*FIGURE OUT WHAT TO DO WITH THIS PADDING. DEACTIAVTED FOR NOW*/
 
 }
+
+/* [id $= '-btn'] {
+    height: 2rem;
+} */
