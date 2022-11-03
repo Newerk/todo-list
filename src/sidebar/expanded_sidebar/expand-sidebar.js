@@ -4,8 +4,10 @@ import { expandedSidebarLogic } from "./expanded-sidebar-logic";
 import { sideBarIsExpanded } from "../..";
 
 
+
+
 export const expandSidebar = () => {
-    if (sideBarIsExpanded.value === false) {
+    if (sideBarIsExpanded.value === false && window.innerWidth >= 850) {
         expandedSidebarLogic();
 
         const expandedContainer = document.createElement('div');
