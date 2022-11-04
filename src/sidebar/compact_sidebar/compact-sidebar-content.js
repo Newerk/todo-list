@@ -1,6 +1,5 @@
 import './compact-sidebar.css'
 import { expandSidebar } from '../expanded_sidebar/expand-sidebar';
-const content = document.querySelector('#content');
 
 
 
