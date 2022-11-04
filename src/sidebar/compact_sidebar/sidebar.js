@@ -1,4 +1,4 @@
-import { content } from "..";
+import { content } from "../..";
 
 export const sidebar = () => {
     const expandedContainer = document.createElement('div');
