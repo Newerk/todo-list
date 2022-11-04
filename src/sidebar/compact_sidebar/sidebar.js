@@ -1,4 +1,4 @@
-import { content } from "../..";
+import { contentContainer } from "../..";
 
 export const sidebar = () => {
     const expandedContainer = document.createElement('div');
@@ -54,5 +54,5 @@ export const sidebar = () => {
     settings.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
     expandedContainer.appendChild(settings);
 
-    content.appendChild(expandedContainer);
+    contentContainer.appendChild(expandedContainer);
 }

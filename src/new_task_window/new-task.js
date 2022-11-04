@@ -1,4 +1,3 @@
-import { content } from "..";
 import './new-task.css';
 
 export const buildNewTaskWindow = () => {
@@ -63,6 +62,5 @@ export const buildNewTaskWindow = () => {
     newTaskContainer.appendChild(middleContainer)
     newTaskContainer.appendChild(bottomContainer)
 
-    // content.appendChild(newTaskContainer);
 
 }

@@ -1,4 +1,3 @@
-import { content } from "..";
 import './description-box.css'
 
 export const buildDescriptionBox = () => {
@@ -70,13 +69,8 @@ export const buildDescriptionBox = () => {
     bottomContainer.appendChild(editBtn);
 
     
-
     descriptionContainer.appendChild(topContainer);
     descriptionContainer.appendChild(middleContainer)
     descriptionContainer.appendChild(bottomContainer)
-
-
-
-    // content.appendChild(descriptionContainer);
 
 }

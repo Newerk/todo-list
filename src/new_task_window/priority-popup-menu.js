@@ -1,4 +1,3 @@
-import { content } from "..";
 import './new-task.css';
 
 const buildPopUpMenu = () => {
@@ -23,7 +22,6 @@ const buildPopUpMenu = () => {
     priorityPopUpMenu.appendChild(highPriority);
     priorityPopUpMenu.appendChild(urgentPriority);
     
-    // content.appendChild(priorityPopUpMenu);
 }
 
 export default buildPopUpMenu;

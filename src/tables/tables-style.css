@@ -1,0 +1,15 @@
+@import url(../custom-variables.css);
+
+.container {
+    background-color: white;
+    width: 7rem;
+    height: min-content;
+    padding: .3rem;
+
+
+}
+
+[id $= 'td-btn'] {
+    color: black;
+    width: 100%;
+}
