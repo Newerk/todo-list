@@ -1,4 +1,4 @@
-import { content, sideBarIsExpanded } from "../.."
+import { sideBarIsExpanded } from "../.."
 
 export const expandedSidebarLogic = () => {
     sideBarIsExpanded.value = true;
@@ -11,11 +11,9 @@ function checkSize() {
 
     let width = window.innerWidth;
 
-  
     if (width < 850) {
         container.setAttribute('style', 'width: 0px');
         buttons.forEach(el => el.setAttribute('style', 'width: 0px; font-size: 0px; padding: 0px; border: none'));
-        // content.setAttribute('style', 'grid-template-columns: 1fr;');
         sideBarIsExpanded.value = false;
     }
 }
