@@ -13,6 +13,7 @@ function checkSize() {
 
     if (width < 850) {
         container.setAttribute('style', 'width: 0px');
+        document.querySelector('#expand-btn').textContent = '>';
         buttons.forEach(el => el.setAttribute('style', 'width: 0px; font-size: 0px; padding: 0px; border: none'));
         sideBarIsExpanded.value = false;
     }
