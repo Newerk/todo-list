@@ -62,5 +62,6 @@ export const buildNewTaskWindow = () => {
     newTaskContainer.appendChild(middleContainer)
     newTaskContainer.appendChild(bottomContainer)
 
-
+    return newTaskContainer;
 }
+

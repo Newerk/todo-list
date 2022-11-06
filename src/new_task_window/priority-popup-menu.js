@@ -1,6 +1,6 @@
 import './new-task.css';
 
-const buildPopUpMenu = () => {
+export const buildPopUpMenu = () => {
     const priorityPopUpMenu = document.createElement('div');
     priorityPopUpMenu.className = 'priority-popup';
 
@@ -21,7 +21,7 @@ const buildPopUpMenu = () => {
     priorityPopUpMenu.appendChild(normalPriority);
     priorityPopUpMenu.appendChild(highPriority);
     priorityPopUpMenu.appendChild(urgentPriority);
+
+    return priorityPopUpMenu;
     
 }
-
-export default buildPopUpMenu;

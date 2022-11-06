@@ -73,4 +73,5 @@ export const buildDescriptionBox = () => {
     descriptionContainer.appendChild(middleContainer)
     descriptionContainer.appendChild(bottomContainer)
 
+    return descriptionContainer;
 }

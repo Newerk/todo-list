@@ -22,5 +22,5 @@ export const threeDotsMenu = () => {
     container.appendChild(deleteBtn);
 
 
-    content.appendChild(container)
+    return container;
 }
