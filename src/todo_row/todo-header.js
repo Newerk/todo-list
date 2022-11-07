@@ -1,5 +1,12 @@
 import { content } from "..";
 
+/*
+NOTE: The arrows on the header will instead appear on hover, it clicked once, it will first show the up arrow, if clicked again
+ it will show the down arrow, and so on and so on. if the user clicks on a different section to filter with, it will remove the 
+ arrow shown on the last section used, and then apply the rules to the new selected section and filter based on the most current 
+ section used on the header
+ */
+
 export const todoHeader = () => {
     const header = document.createElement('div');
     header.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: grey; ')
