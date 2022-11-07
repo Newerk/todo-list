@@ -4,6 +4,7 @@ import { compactSidebarContent } from './sidebar/compact_sidebar/compact-sidebar
 import { sidebar } from './sidebar/compact_sidebar/sidebar';
 import { homePage } from './pages/home';
 import { todoHeader } from './todo_row/todo-header';
+import { todoListRows } from './todo_row/todo';
 
 
 export let sideBarIsExpanded = { value: false };
@@ -21,3 +22,4 @@ contentContainer.appendChild(content);
 
 homePage();
 todoHeader();
+todoListRows();

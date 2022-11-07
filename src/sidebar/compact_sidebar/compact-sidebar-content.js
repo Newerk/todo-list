@@ -3,7 +3,6 @@ import { expandSidebar } from '../expanded_sidebar/expand-sidebar';
 import { sideBarIsExpanded } from '../..';
 
 
-
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
 export const compactSidebarContent = () => {
         const compactSidebarContentDiv = document.createElement('div');
@@ -22,12 +21,9 @@ export const compactSidebarContent = () => {
                         container.childNodes.forEach(el => el.setAttribute('style', 'width: 0rem; padding: 0rem; border: none; font-size: 0'));
                         sideBarIsExpanded.value = false;
 
-
-
                 } else {
                         expandSidebar();
                         expand.textContent = '>';
-
                 }
         })
         compactSidebarContentDiv.appendChild(expand);

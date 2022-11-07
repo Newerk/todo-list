@@ -55,4 +55,5 @@ export const sidebar = () => {
     expandedContainer.appendChild(settings);
 
     contentContainer.appendChild(expandedContainer);
+
 }
