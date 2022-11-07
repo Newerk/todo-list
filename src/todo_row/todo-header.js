@@ -14,6 +14,7 @@ export const todoHeader = () => {
 
     const statusContainer = document.createElement('div');
     statusContainer.setAttribute('style', 'border: 1px solid black; padding: 0 .5rem 0 .5rem; display: flex;');
+    statusContainer.id = 'header-status';
     const statusText = document.createElement('span');
     statusText.textContent = "Status";
     const statusFilter = document.createElement('div');
@@ -25,6 +26,7 @@ export const todoHeader = () => {
 
     const titleContainer = document.createElement('div');
     titleContainer.setAttribute('style', 'border: 1px solid black; padding-left: .5rem; display: flex;');
+    titleContainer.id = 'header-title';
     const titleText = document.createElement('span');
     titleText.textContent = 'Title';
     const titleFilter = document.createElement('div');
@@ -36,6 +38,7 @@ export const todoHeader = () => {
 
     const priorityContainer = document.createElement('div');
     priorityContainer.setAttribute('style', 'border: 1px solid black; padding: 0 .5rem 0 .5rem; display: flex;');
+    priorityContainer.id = 'header-priority';
     const priorityText = document.createElement('span');
     priorityText.textContent = 'Priority';
     const priorityFilter = document.createElement('div');
@@ -47,6 +50,7 @@ export const todoHeader = () => {
 
     const dueDateContainer = document.createElement('div');
     dueDateContainer.setAttribute('style', 'border: 1px solid black; width: 13rem; padding-left: .5rem; display: flex;');
+    dueDateContainer.id = 'header-due-date';
     const dueDateText = document.createElement('span');
     dueDateText.textContent = 'Due Date'
     const dueDateFilter = document.createElement('div');
