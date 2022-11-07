@@ -16,7 +16,7 @@ export const compactSidebarContent = () => {
         expand.textContent = '>';
         expand.addEventListener('click', function () {
                 if (sideBarIsExpanded.value === true) {
-                        expand.textContent = '>';
+                        expand.textContent = '<';
                         const container = document.querySelector('.expanded-container');
                         container.setAttribute('style', 'width: 0rem');
                         container.childNodes.forEach(el => el.setAttribute('style', 'width: 0rem; padding: 0rem; border: none; font-size: 0'));
@@ -26,7 +26,7 @@ export const compactSidebarContent = () => {
 
                 } else {
                         expandSidebar();
-                        expand.textContent = '<';
+                        expand.textContent = '>';
 
                 }
         })
