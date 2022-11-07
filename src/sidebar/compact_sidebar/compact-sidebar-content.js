@@ -22,9 +22,12 @@ export const compactSidebarContent = () => {
                         container.childNodes.forEach(el => el.setAttribute('style', 'width: 0rem; padding: 0rem; border: none; font-size: 0'));
                         sideBarIsExpanded.value = false;
 
+
+
                 } else {
                         expandSidebar();
                         expand.textContent = '<';
+
                 }
         })
         compactSidebarContentDiv.appendChild(expand);

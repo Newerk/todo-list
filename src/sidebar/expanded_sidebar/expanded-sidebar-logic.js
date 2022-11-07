@@ -1,8 +1,8 @@
 import { sideBarIsExpanded } from "../.."
 
 export const expandedSidebarLogic = () => {
-    sideBarIsExpanded.value = true;
     window.addEventListener('resize', checkSize);
+
 }
 
 function checkSize() {
@@ -16,5 +16,6 @@ function checkSize() {
         document.querySelector('#expand-btn').textContent = '>';
         buttons.forEach(el => el.setAttribute('style', 'width: 0px; font-size: 0px; padding: 0px; border: none'));
         sideBarIsExpanded.value = false;
+
     }
 }

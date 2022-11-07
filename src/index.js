@@ -3,6 +3,7 @@ import { headerContent } from './header/header-content.js';
 import { compactSidebarContent } from './sidebar/compact_sidebar/compact-sidebar-content.js';
 import { sidebar } from './sidebar/compact_sidebar/sidebar';
 import { homePage } from './pages/home';
+import { todoHeader } from './todo_row/todo-header';
 
 
 export let sideBarIsExpanded = { value: false };
@@ -19,3 +20,4 @@ content.id = 'content';
 contentContainer.appendChild(content);
 
 homePage();
+todoHeader();
