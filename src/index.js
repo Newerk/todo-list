@@ -22,5 +22,4 @@ content.id = 'content';
 contentContainer.appendChild(content);
 
 homePage();
-newTaskBtn();
 
