@@ -1,0 +1,8 @@
+[id ^='row-'] {
+    padding: 0 .5rem 0 .5rem;
+}
+
+#row-due-date {
+    display: flex;
+    justify-content: space-between;
+}

@@ -10,7 +10,11 @@ NOTE: The arrows on the header will instead appear on hover, it clicked once, it
 export const todoHeader = () => {
     const header = document.createElement('div');
     header.id = 'todo-header';
-    header.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: grey; ')
+    header.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 1fr; height: 2rem; background-color: grey; ');
+    header.addEventListener('resize', function() {
+        header.setAttribute('style', 'width: 1fr;');
+
+    })
 
     const statusContainer = document.createElement('div');
     statusContainer.setAttribute('style', 'border: 1px solid black; padding: 0 .5rem 0 .5rem; display: flex;');

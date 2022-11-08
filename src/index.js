@@ -23,6 +23,3 @@ contentContainer.appendChild(content);
 homePage();
 todoHeader();
 todoListRows();
-todoListRows();
-todoListRows();
-todoListRows();

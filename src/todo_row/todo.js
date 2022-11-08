@@ -2,34 +2,31 @@
 build how the row of a the todo list will look like.
 
 */
+import './todo.css';
 import { content } from "..";
 
 export const todoListRows = () => {
     const row = document.createElement('div');
     row.className = 'row';
-    row.setAttribute('style', 'align-content: center; display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white;border: grey 1px solid');
-    row.addEventListener('resize', resizeRow(row))
+    row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 1fr; height: 2rem; background-color: white;border: grey 1px solid');
 
     const status = document.createElement('div');
     status.id = 'row-status';
     status.textContent = 'O';
-    status.setAttribute('style', `padding: 0 .5rem 0 .5rem; width: ${(document.getElementById('header-status').clientWidth) / 16}rem;`);
-    status.addEventListener('resize', resizeRow(status));
+    status.setAttribute('style', `display: flex; justify-content: center; width: ${(document.getElementById('header-status').offsetWidth)}px;`);
     row.appendChild(status);
 
     const title = document.createElement('div');
     title.id = 'row-title';
     title.textContent = 'Do something very important';
-    title.setAttribute('style', `padding: 0 .5rem 0 .5rem; width: ${(document.getElementById('header-title').clientWidth / 16)}rem;`);
-    title.addEventListener('resize', resizeRow(title));
+    title.setAttribute('style', ` width: 1fr; text-overflow: ellipsis;`);
 
     row.appendChild(title);
 
     const priority = document.createElement('div');
     priority.id = 'row-priority';
     priority.textContent = 'Urgent';
-    priority.setAttribute('style', `padding: 0 .5rem 0 .5rem; width: ${(document.getElementById('header-priority').clientWidth) / 16}rem;`);
-    priority.addEventListener('resize', resizeRow(priority));
+    priority.setAttribute('style', ` width: ${(document.getElementById('header-priority').offsetWidth)}px;`);
 
 
     row.appendChild(priority);
@@ -37,8 +34,7 @@ export const todoListRows = () => {
     const dueDate = document.createElement('div');
     dueDate.id = 'row-due-date';
     dueDate.textContent = '11/7/2022';
-    dueDate.setAttribute('style', `padding: 0 .5rem 0 .5rem; display: flex; justify-content: space-between; width: ${(document.getElementById('header-due-date').clientWidth) / 16}rem;`);
-    dueDate.addEventListener('resize', resizeRow(dueDate));
+    dueDate.setAttribute('style', ` width: ${(document.getElementById('header-due-date').offsetWidth)}px;`);
 
     row.appendChild(dueDate);
 
@@ -50,36 +46,3 @@ export const todoListRows = () => {
     content.appendChild(row);
 }
 
-function resizeRow(element) {
-    console.log('resizing!');
-
-    switch (element) {
-
-        case 'row':
-            element.setAttribute('style', 'width: 100%;');
-
-            break;
-
-        case 'status':
-            element.setAttribute('style', `width: ${(document.getElementById('header-status').clientWidth) / 16}rem`)
-
-            break;
-
-        case 'title':
-            element.setAttribute('style', `width: ${(document.getElementById('header-title').clientWidth) / 16}rem`)
-
-            break;
-
-        case 'priority':
-            element.setAttribute('style', `width: ${(document.getElementById('header-priority').clientWidth) / 16}rem`)
-
-            break;
-
-        case 'dueDate':
-            element.setAttribute('style', `width: ${(document.getElementById('header-due-date').clientWidth) / 16}rem`)
-
-            break;
-    }
-
-
-}
