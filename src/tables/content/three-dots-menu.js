@@ -5,9 +5,9 @@ export const threeDotsMenu = () => {
     const container = document.createElement('div');
     container.className = 'container';
 
-    const renameBtn = document.createElement('button');
-    renameBtn.textContent = 'RENAME';
-    renameBtn.id = 'rename-td-btn';
+    const editBtn = document.createElement('button');
+    editBtn.textContent = 'EDIT';
+    editBtn.id = 'edit-td-btn';
 
     const duplicateBtn = document.createElement('button');
     duplicateBtn.textContent = 'DUPLICATE';
@@ -17,7 +17,7 @@ export const threeDotsMenu = () => {
     deleteBtn.textContent = 'DELETE';
     deleteBtn.id = 'delete-td-btn';
 
-    container.appendChild(renameBtn);
+    container.appendChild(editBtn);
     container.appendChild(duplicateBtn);
     container.appendChild(deleteBtn);
 

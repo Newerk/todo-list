@@ -5,6 +5,7 @@ import { sidebar } from './sidebar/compact_sidebar/sidebar';
 import { homePage } from './pages/home';
 import { todoHeader } from './todo_row/todo-header';
 import { todoListRows } from './todo_row/todo';
+import { newTaskBtn } from './pages/new-task-btn';
 
 
 export let sideBarIsExpanded = { value: false };
@@ -21,5 +22,5 @@ content.id = 'content';
 contentContainer.appendChild(content);
 
 homePage();
-todoHeader();
-todoListRows();
+newTaskBtn();
+
