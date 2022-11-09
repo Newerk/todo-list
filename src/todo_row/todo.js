@@ -8,7 +8,7 @@ import { content } from "..";
 export const todoListRows = () => {
     const row = document.createElement('div');
     row.className = 'row';
-    row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 1fr; height: 2rem; background-color: white;border: grey 1px solid');
+    row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white;border: grey 1px solid');
 
     const status = document.createElement('div');
     status.id = 'row-status';
@@ -43,6 +43,7 @@ export const todoListRows = () => {
 
     dueDate.appendChild(threeDots);
 
-    content.appendChild(row);
+    // content.appendChild(row);
+    return row;
 }
 

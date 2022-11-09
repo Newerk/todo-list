@@ -22,4 +22,34 @@ content.id = 'content';
 contentContainer.appendChild(content);
 
 homePage();
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+
+
 
