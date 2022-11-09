@@ -23,6 +23,6 @@ export const todayPage = () => {
     container.appendChild(todoListContainer);
     
 
-    content.appendChild(container);
+    return container;
 
 }

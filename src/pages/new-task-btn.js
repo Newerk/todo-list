@@ -1,5 +1,10 @@
 import { todoListRows } from "../todo_row/todo";
 
+/*
+later on this module will only prompt the new-task.js which will handle adding the custom tasks to the page. This button feature 
+is able to currently add rows because its a quick way for me to see changes and interactions while writing this program
+*/
+
 export const newTaskBtn = () => {
     const btnContainer = document.createElement('div');
     btnContainer.setAttribute('style', 'display: flex; width: auto; height: 2rem');
