@@ -8,29 +8,29 @@ import { todoListRows } from './todo_row/todo';
 import { upcomingPage } from './pages/upcoming';
 
 export let sideBarIsExpanded = { value: false };
+
+export const content = document.createElement('div');
+content.id = 'content';
+
 export const contentContainer = document.createElement('div');
 contentContainer.id = 'content-container';
 document.body.appendChild(contentContainer);
+
 
 headerContent();
 compactSidebarContent();
 sidebar();
 
-export const content = document.createElement('div');
-content.id = 'content';
+
 contentContainer.appendChild(content);
 
-// homePage();
-// document.querySelector('.todo-list-container').appendChild(todoListRows());
-// document.querySelector('.todo-list-container').appendChild(todoListRows());
 
-// todayPage();
-// document.querySelector('.todo-list-container').appendChild(todoListRows());
-// document.querySelector('.todo-list-container').appendChild(todoListRows());
-// document.querySelector('.todo-list-container').appendChild(todoListRows());
-// document.querySelector('.todo-list-container').appendChild(todoListRows());
 
-upcomingPage();
+
+homePage();
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+document.querySelector('.todo-list-container').appendChild(todoListRows());
+
 
 
 

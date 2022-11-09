@@ -1,4 +1,7 @@
 import { contentContainer } from "../..";
+import { homePage } from "../../pages/home";
+import { wipeContent } from "../../wipe-content";
+
 
 export const sidebar = () => {
     const expandedContainer = document.createElement('div');
@@ -10,6 +13,9 @@ export const sidebar = () => {
     home.id = 'home-btn-ex';
     home.textContent = 'HOME';
     home.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
+
+    home.addEventListener('click', wipeContent(homePage()));
+
     expandedContainer.appendChild(home);
 
     const today = document.createElement('button');
