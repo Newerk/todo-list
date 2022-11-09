@@ -22,7 +22,10 @@ export const homePage = () => {
 
     container.appendChild(todoHeader());
     container.appendChild(todoListContainer);
+    
 
-    content.appendChild(container);
+    // content.appendChild(container);
+
+    return container;
 
 }
