@@ -336,7 +336,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"wipeContent\": () => (/* binding */ wipeContent)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! . */ \"./src/index.js\");\n\n\nconst wipeContent = (page) => {\n    ___WEBPACK_IMPORTED_MODULE_0__.content.childNodes.forEach(el => el.remove());\n    return ___WEBPACK_IMPORTED_MODULE_0__.content.appendChild(page);    \n}\n\n//# sourceURL=webpack://todo-list/./src/wipe-content.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"wipeContent\": () => (/* binding */ wipeContent)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! . */ \"./src/index.js\");\n\n\n//when local storage is added, it will pull in the appropiate saved data based on the 'page' and load it\n\nconst wipeContent = (page) => {\n    ___WEBPACK_IMPORTED_MODULE_0__.content.childNodes.forEach(el => el.remove());\n    ___WEBPACK_IMPORTED_MODULE_0__.content.appendChild(page);    \n}\n\n//# sourceURL=webpack://todo-list/./src/wipe-content.js?");
 
 /***/ })
 
