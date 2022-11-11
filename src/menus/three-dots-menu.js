@@ -1,8 +1,10 @@
 import './three-dots-menu.css'
 
+export let menuIsOpen = { value: false };
+
 export const threeDotsMenu = () => {
     const container = document.createElement('div');
-    container.className = 'container';
+    container.className = 'td-container';
 
     const editBtn = document.createElement('button');
     editBtn.textContent = 'EDIT';

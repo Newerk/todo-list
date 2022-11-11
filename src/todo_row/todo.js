@@ -2,8 +2,8 @@
 build how the row of a the todo list will look like.
 
 */
+import { menuIsOpen, threeDotsMenu } from '../menus/three-dots-menu';
 import './todo.css';
-import { content } from "..";
 
 export const todoListRows = () => {
     const row = document.createElement('div');
@@ -40,10 +40,22 @@ export const todoListRows = () => {
 
     const threeDots = document.createElement('img');
     threeDots.src = '../src/images/icons/three-dots.svg';
-
+    threeDots.className = 'three-dots';
     dueDate.appendChild(threeDots);
 
-    // content.appendChild(row);
+    threeDots.addEventListener('click', (e) => {
+        if (menuIsOpen.value === false) {
+
+            const positioner = document.createElement('div');
+            positioner.setAttribute('style', 'display: flex; justify-content: end; position: relative; z-index: 1; top: 1rem; grid-column: 4')
+            positioner.appendChild(threeDotsMenu());
+            row.appendChild(positioner);
+
+            menuIsOpen.value = true;
+        }
+
+    })
+
     return row;
 }
 
