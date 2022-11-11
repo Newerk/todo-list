@@ -1,4 +1,4 @@
-import './home.css'
+import './todo-list-styling.css'
 import { todoHeader } from '../todo_row/todo-header';
 
 export const todayPage = () => {

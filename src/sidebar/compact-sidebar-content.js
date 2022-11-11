@@ -2,7 +2,11 @@ import './compact-sidebar.css'
 import { expandSidebar } from './expanded_sidebar/expand-sidebar';
 import { contentContainer, sideBarIsExpanded } from '..';
 import { fullSidebar } from './full-sidebar';
-
+import { todayPage } from '../pages/today';
+import { upcomingPage } from '../pages/upcoming';
+import { pastDuePage } from '../pages/pastdue';
+import { wipeContent } from '../wipe-content';
+import { homePage } from '../pages/home';
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
 export const compactSidebarContent = () => {
@@ -36,21 +40,33 @@ export const compactSidebarContent = () => {
         const home = document.createElement('div');
         home.id = 'home-btn';
         home.textContent = 'HOME';
+        home.addEventListener('click', () => {
+                wipeContent(homePage());
+        });
         compactSidebarContentDiv.appendChild(home);
 
         const today = document.createElement('div');
         today.id = 'today-btn';
         today.textContent = 'TODAY';
+        today.addEventListener('click', () => {
+                wipeContent(todayPage());
+        });
         compactSidebarContentDiv.appendChild(today);
 
         const upcoming = document.createElement('div');
         upcoming.id = 'upcoming-btn';
         upcoming.textContent = 'UPCOMING';
+        upcoming.addEventListener('click', () => {
+                wipeContent(upcomingPage());
+        });
         compactSidebarContentDiv.appendChild(upcoming);
 
         const pastDue = document.createElement('div');
         pastDue.id = 'pastdue-btn';
         pastDue.textContent = 'PAST DUE';
+        pastDue.addEventListener('click', () => {
+                wipeContent(pastDuePage());
+        });
         compactSidebarContentDiv.appendChild(pastDue);
 
         const projects = document.createElement('div');
