@@ -1,5 +1,4 @@
 import './home.css'
-import { content } from ".."
 import { todoHeader } from '../todo_row/todo-header';
 
 export const upcomingPage = () => {
@@ -12,7 +11,7 @@ export const upcomingPage = () => {
     const upcoming = document.createElement('div');
     upcoming.id = 'upcoming';
     upcoming.textContent = 'Upcoming'
-    upcoming.setAttribute('style', 'display: flex; justify-content: start')
+    upcoming.setAttribute('style', 'display: flex; justify-content: start; height: 2rem;')
 
     container.appendChild(upcoming);
 
@@ -23,6 +22,5 @@ export const upcomingPage = () => {
     container.appendChild(todoListContainer);
     
 
-    content.appendChild(container);
-
+return container;
 }

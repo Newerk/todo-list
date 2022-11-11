@@ -55,9 +55,6 @@ export const buildNewTaskWindow = () => {
     addTaskBtn.textContent = '+ADD TASK';
     bottomContainer.appendChild(addTaskBtn);
 
-
-
-
     newTaskContainer.appendChild(topContainer)
     newTaskContainer.appendChild(middleContainer)
     newTaskContainer.appendChild(bottomContainer)

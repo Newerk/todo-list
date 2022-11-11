@@ -1,5 +1,4 @@
-import { content } from "../..";
-import '../../tables/tables-style.css'
+import './three-dots-menu.css'
 
 export const threeDotsMenu = () => {
     const container = document.createElement('div');

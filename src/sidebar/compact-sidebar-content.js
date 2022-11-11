@@ -1,13 +1,13 @@
 import './compact-sidebar.css'
-import { expandSidebar } from '../expanded_sidebar/expand-sidebar';
-import { content, contentContainer, sideBarIsExpanded } from '../..';
-import { sidebar } from '../sidebar';
+import { expandSidebar } from './expanded_sidebar/expand-sidebar';
+import { contentContainer, sideBarIsExpanded } from '..';
+import { fullSidebar } from './full-sidebar';
 
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
 export const compactSidebarContent = () => {
         // sidebar();
-        contentContainer.appendChild(sidebar());
+        contentContainer.appendChild(fullSidebar());
 
         const compactSidebarContentDiv = document.createElement('div');
         compactSidebarContentDiv.className = 'compact-sidebar';

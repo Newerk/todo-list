@@ -1,5 +1,4 @@
 import './home.css'
-import { content } from ".."
 import { newTaskBtn } from "./new-task-btn"
 import { todoHeader } from '../todo_row/todo-header';
 
@@ -23,8 +22,6 @@ export const homePage = () => {
     container.appendChild(todoHeader());
     container.appendChild(todoListContainer);
     
-
-    // content.appendChild(container);
 
     return container;
 

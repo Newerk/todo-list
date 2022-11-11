@@ -1,5 +1,4 @@
 import './home.css'
-import { content } from ".."
 import { todoHeader } from '../todo_row/todo-header';
 
 export const todayPage = () => {
@@ -12,7 +11,7 @@ export const todayPage = () => {
     const today = document.createElement('div');
     today.id = 'today';
     today.textContent = 'Today'
-    today.setAttribute('style', 'display: flex; justify-content: start')
+    today.setAttribute('style', 'display: flex; justify-content: start; height: 2rem;')
 
     container.appendChild(today);
 

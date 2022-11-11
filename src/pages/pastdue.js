@@ -1,5 +1,4 @@
 import './home.css'
-import { content } from ".."
 import { todoHeader } from '../todo_row/todo-header';
 
 export const pastDuePage = () => {
@@ -12,7 +11,7 @@ export const pastDuePage = () => {
     const pastdue = document.createElement('div');
     pastdue.id = 'pastdue';
     pastdue.textContent = 'Past Due'
-    pastdue.setAttribute('style', 'display: flex; justify-content: start')
+    pastdue.setAttribute('style', 'display: flex; justify-content: start; height: 2rem;')
 
     container.appendChild(pastdue);
 
@@ -23,6 +22,6 @@ export const pastDuePage = () => {
     container.appendChild(todoListContainer);
     
 
-    content.appendChild(container);
+    return container;
 
 }

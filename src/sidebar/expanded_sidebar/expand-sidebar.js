@@ -3,8 +3,6 @@ import { sideBarIsExpanded } from "../.."
 import { expandedSidebarLogic } from "./expanded-sidebar-logic";
 
 
-
-
 export const expandSidebar = () => {
     if (sideBarIsExpanded.value === false && window.innerWidth >= 850) {
         expandedSidebarLogic();
