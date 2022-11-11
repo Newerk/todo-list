@@ -38,7 +38,7 @@ export const compactSidebarContent = () => {
 
 
         const home = document.createElement('div');
-        home.id = 'home-btn';
+        home.id = 'home-side-btn';
         home.textContent = 'HOME';
         home.addEventListener('click', () => {
                 wipeContent(homePage());
@@ -46,7 +46,7 @@ export const compactSidebarContent = () => {
         compactSidebarContentDiv.appendChild(home);
 
         const today = document.createElement('div');
-        today.id = 'today-btn';
+        today.id = 'today-side-btn';
         today.textContent = 'TODAY';
         today.addEventListener('click', () => {
                 wipeContent(todayPage());
@@ -54,7 +54,7 @@ export const compactSidebarContent = () => {
         compactSidebarContentDiv.appendChild(today);
 
         const upcoming = document.createElement('div');
-        upcoming.id = 'upcoming-btn';
+        upcoming.id = 'upcoming-side-btn';
         upcoming.textContent = 'UPCOMING';
         upcoming.addEventListener('click', () => {
                 wipeContent(upcomingPage());
@@ -62,7 +62,7 @@ export const compactSidebarContent = () => {
         compactSidebarContentDiv.appendChild(upcoming);
 
         const pastDue = document.createElement('div');
-        pastDue.id = 'pastdue-btn';
+        pastDue.id = 'pastdue-side-btn';
         pastDue.textContent = 'PAST DUE';
         pastDue.addEventListener('click', () => {
                 wipeContent(pastDuePage());
@@ -70,17 +70,17 @@ export const compactSidebarContent = () => {
         compactSidebarContentDiv.appendChild(pastDue);
 
         const projects = document.createElement('div');
-        projects.id = 'projects-btn';
+        projects.id = 'projects-side-btn';
         projects.textContent = 'PROJECTS';
         compactSidebarContentDiv.appendChild(projects);
 
         const account = document.createElement('div');
-        account.id = 'account-btn';
+        account.id = 'account-side-btn';
         account.textContent = 'ACCOUNT';
         compactSidebarContentDiv.appendChild(account);
 
         const settings = document.createElement('div');
-        settings.id = 'settings-btn';
+        settings.id = 'settings-side-btn';
         settings.textContent = 'SETTINGS';
         compactSidebarContentDiv.appendChild(settings);
 

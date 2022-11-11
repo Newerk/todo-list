@@ -1,8 +1,9 @@
 import './three-dots-menu.css'
 
-export let menuIsOpen = { value: false };
-
 export const threeDotsMenu = () => {
+    let menuIsOpen = { value: false };
+
+
     const container = document.createElement('div');
     container.className = 'td-container';
 
@@ -23,5 +24,8 @@ export const threeDotsMenu = () => {
     container.appendChild(deleteBtn);
 
 
-    return container;
+    return {
+        container,
+        menuIsOpen
+    };
 }

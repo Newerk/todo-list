@@ -2,8 +2,9 @@
 build how the row of a the todo list will look like.
 
 */
-import { menuIsOpen, threeDotsMenu } from '../menus/three-dots-menu';
+import { threeDotsMenu } from '../menus/three-dots-menu';
 import './todo.css';
+
 
 export const todoListRows = () => {
     const row = document.createElement('div');
@@ -43,15 +44,19 @@ export const todoListRows = () => {
     threeDots.className = 'three-dots';
     dueDate.appendChild(threeDots);
 
-    threeDots.addEventListener('click', (e) => {
-        if (menuIsOpen.value === false) {
+    let menuStatus = threeDotsMenu().menuIsOpen.value;
 
+    threeDots.addEventListener('click', () => {
+
+        if (menuStatus === false) {
             const positioner = document.createElement('div');
-            positioner.setAttribute('style', 'display: flex; justify-content: end; position: relative; z-index: 1; top: 1rem; grid-column: 4')
-            positioner.appendChild(threeDotsMenu());
+            positioner.setAttribute('style', 'display: flex; justify-content: end; position: relative; z-index: 1; top: .3rem; left: .05rem; grid-column: 4')
+            positioner.appendChild(threeDotsMenu().container);
             row.appendChild(positioner);
+            menuStatus = true;
+        } else {
+            console.log(`cant do that, menu already open`);
 
-            menuIsOpen.value = true;
         }
 
     })
