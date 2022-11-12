@@ -1,3 +1,5 @@
+import { content } from "..";
+import { buildNewTaskWindow } from "../menus/new-task-menu";
 import { todoListRows } from "../todo_row/todo";
 
 /*
@@ -13,8 +15,9 @@ export const newTaskBtn = () => {
     symbol.textContent = '+';
     symbol.setAttribute('style', 'background-color: orange; border-radius: 50%; width: 1.5rem; height: 1.5rem ;text-align: center;');
 
-    symbol.addEventListener('click', function() {
-        document.querySelector('.todo-list-container').appendChild(todoListRows());
+    symbol.addEventListener('click', () => {
+        document.body.querySelector('.todo-list-container').appendChild(buildNewTaskWindow());
+        // btnContainer.appendChild(buildNewTaskWindow());
 
     })
 
