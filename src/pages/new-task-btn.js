@@ -16,9 +16,10 @@ export const newTaskBtn = () => {
     symbol.setAttribute('style', 'background-color: orange; border-radius: 50%; width: 1.5rem; height: 1.5rem ;text-align: center;');
 
     symbol.addEventListener('click', () => {
-        document.body.querySelector('.todo-list-container').appendChild(buildNewTaskWindow());
-        // btnContainer.appendChild(buildNewTaskWindow());
+//add a boolean that checks whether the menu is already open or not so that the user cannot keep pressing the add new task button 
 
+        document.body.querySelector('.top-container').appendChild(buildNewTaskWindow());
+        
     })
 
     const newTask = document.createElement('div');
