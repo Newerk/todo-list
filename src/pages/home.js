@@ -10,7 +10,7 @@ export const homePage = () => {
     container.className = 'tasks-container';
 
     const newTask = document.createElement('div');
-    newTask.className = 'new-task-container';
+    newTask.className = 'top-container';
     newTask.setAttribute('style', 'display: flex; justify-content: end')
     newTask.appendChild(newTaskBtn());
 

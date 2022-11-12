@@ -1,8 +1,8 @@
-import './new-task.css';
+import './new-task-menu.css';
 
 export const buildNewTaskWindow = () => {
     const newTaskContainer = document.createElement('div');
-    newTaskContainer.className = 'build-task-container';
+    newTaskContainer.className = 'new-task-container';
 
 
     const topContainer = document.createElement('div');
