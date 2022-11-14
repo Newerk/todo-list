@@ -1,6 +1,5 @@
-import { content } from "..";
 import { buildNewTaskWindow } from "../menus/new-task-menu";
-import { todoListRows } from "../todo_row/todo";
+import { localStorage } from "../local-storage";
 
 /*
 later on this module will only prompt the new-task.js which will handle adding the custom tasks to the page. This button feature 
@@ -16,10 +15,13 @@ export const newTaskBtn = () => {
     symbol.setAttribute('style', 'background-color: orange; border-radius: 50%; width: 1.5rem; height: 1.5rem ;text-align: center;');
 
     symbol.addEventListener('click', () => {
-//add a boolean that checks whether the menu is already open or not so that the user cannot keep pressing the add new task button 
+        if (localStorage.newTaskMenuActive.value === false) {
+            document.body.querySelector('.top-container').appendChild(buildNewTaskWindow());
+            localStorage.newTaskMenuActive.value = true;
+        } else {
+            console.log('there is a window already opened')
+        }
 
-        document.body.querySelector('.top-container').appendChild(buildNewTaskWindow());
-        
     })
 
     const newTask = document.createElement('div');

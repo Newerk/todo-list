@@ -1,4 +1,5 @@
 import './new-task-menu.css';
+import { localStorage } from '../local-storage';
 
 export const buildNewTaskWindow = () => {
     const newTaskContainer = document.createElement('div');
@@ -32,6 +33,12 @@ export const buildNewTaskWindow = () => {
     const exitBtn = document.createElement('button');
     exitBtn.id = 'exit-btn';
     exitBtn.textContent = 'X'
+    exitBtn.addEventListener('click', () => {
+        if (localStorage.newTaskMenuActive.value === true) {
+            newTaskContainer.remove();
+            localStorage.newTaskMenuActive.value = false;
+        }
+    })
 
     topContainer.appendChild(titleInput);
     topContainer.appendChild(priorityBtn);
