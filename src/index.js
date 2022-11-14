@@ -3,8 +3,8 @@ import { headerContent } from './header/header-content.js';
 import { homePage } from './pages/home';
 import { compactSidebarContent } from './sidebar/compact-sidebar-content';
 import { todoListRows } from './todo_row/todo';
+import { localStorage } from './local-storage';
 
-export let sideBarIsExpanded = { value: false };
 
 export const contentContainer = document.createElement('div');
 contentContainer.id = 'content-container';

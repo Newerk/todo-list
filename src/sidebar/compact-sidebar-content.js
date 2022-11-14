@@ -1,12 +1,14 @@
 import './compact-sidebar.css'
 import { expandSidebar } from './expanded_sidebar/expand-sidebar';
-import { contentContainer, sideBarIsExpanded } from '..';
+import { contentContainer} from '..';
 import { fullSidebar } from './full-sidebar';
 import { todayPage } from '../pages/today';
 import { upcomingPage } from '../pages/upcoming';
 import { pastDuePage } from '../pages/pastdue';
 import { wipeContent } from '../wipe-content';
 import { homePage } from '../pages/home';
+import { localStorage } from '../local-storage';
+
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
 export const compactSidebarContent = () => {
@@ -22,12 +24,12 @@ export const compactSidebarContent = () => {
         expand.id = 'expand-btn';
         expand.textContent = '>';
         expand.addEventListener('click', function () {
-                if (sideBarIsExpanded.value === true) {
+                if (localStorage.sideBarIsExpanded.value === true) {
                         expand.textContent = '<';
                         const container = document.querySelector('.expanded-container');
                         container.setAttribute('style', 'width: 0rem');
                         container.childNodes.forEach(el => el.setAttribute('style', 'width: 0rem; padding: 0rem; border: none; font-size: 0'));
-                        sideBarIsExpanded.value = false;
+                        localStorage.sideBarIsExpanded.value = false;
 
                 } else {
                         expandSidebar();

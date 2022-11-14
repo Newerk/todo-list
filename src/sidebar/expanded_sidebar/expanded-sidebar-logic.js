@@ -1,4 +1,4 @@
-import { sideBarIsExpanded } from "../.."
+import { localStorage } from "../../local-storage";
 
 export const expandedSidebarLogic = () => {
     window.addEventListener('resize', checkSize);
@@ -15,7 +15,7 @@ function checkSize() {
         container.setAttribute('style', 'width: 0px');
         document.querySelector('#expand-btn').textContent = '>';
         buttons.forEach(el => el.setAttribute('style', 'width: 0px; font-size: 0px; padding: 0px; border: none'));
-        sideBarIsExpanded.value = false;
+        localStorage.sideBarIsExpanded.value = false;
 
     }
 }
