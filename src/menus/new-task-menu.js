@@ -1,5 +1,5 @@
 import './new-task-menu.css';
-import { localStorage } from '../local-storage';
+import { storageManagement } from '../local-storage';
 import { todoListRows } from '../todo_row/todo';
 
 export const buildNewTaskWindow = () => {
@@ -35,9 +35,9 @@ export const buildNewTaskWindow = () => {
     exitBtn.id = 'exit-btn';
     exitBtn.textContent = 'X'
     exitBtn.addEventListener('click', () => {
-        if (localStorage.newTaskMenuActive.value === true) {
+        if (storageManagement.newTaskMenuActive.value === true) {
             newTaskContainer.remove();
-            localStorage.newTaskMenuActive.value = false;
+            storageManagement.newTaskMenuActive.value = false;
         }
     })
 
@@ -65,10 +65,10 @@ export const buildNewTaskWindow = () => {
         /*when this module becomes more fleshed out, it will take to account the filters that a todo will have. right now this button will just
         paste a todo onto the homepage*/
         
-        if (localStorage.newTaskMenuActive.value === true) {
+        if (storageManagement.newTaskMenuActive.value === true) {
             document.body.querySelector('.todo-list-container').appendChild(todoListRows());
             newTaskContainer.remove();
-            localStorage.newTaskMenuActive.value = false;
+            storageManagement.newTaskMenuActive.value = false;
         }
 
     })

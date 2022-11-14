@@ -1,5 +1,5 @@
 import { buildNewTaskWindow } from "../menus/new-task-menu";
-import { localStorage } from "../local-storage";
+import { storageManagement } from "../local-storage";
 
 /*
 later on this module will only prompt the new-task.js which will handle adding the custom tasks to the page. This button feature 
@@ -15,9 +15,9 @@ export const newTaskBtn = () => {
     symbol.setAttribute('style', 'background-color: orange; border-radius: 50%; width: 1.5rem; height: 1.5rem ;text-align: center;');
 
     symbol.addEventListener('click', () => {
-        if (localStorage.newTaskMenuActive.value === false) {
+        if (storageManagement.newTaskMenuActive.value === false) {
             document.body.querySelector('.top-container').appendChild(buildNewTaskWindow());
-            localStorage.newTaskMenuActive.value = true;
+            storageManagement.newTaskMenuActive.value = true;
         } else {
             console.log('there is a window already opened')
         }
