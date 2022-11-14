@@ -1,5 +1,6 @@
 import './new-task-menu.css';
 import { localStorage } from '../local-storage';
+import { todoListRows } from '../todo_row/todo';
 
 export const buildNewTaskWindow = () => {
     const newTaskContainer = document.createElement('div');
@@ -60,6 +61,19 @@ export const buildNewTaskWindow = () => {
     const addTaskBtn = document.createElement('button');
     addTaskBtn.id = 'add-task-btn';
     addTaskBtn.textContent = '+ADD TASK';
+    addTaskBtn.addEventListener('click', () => {
+        /*when this module becomes more fleshed out, it will take to account the filters that a todo will have. right now this button will just
+        paste the todo onto the homepage*/
+        /* should not be able to click this button multiple times, once the button is pressed, it will close the new task window and set the value to false;*/
+        
+        if (localStorage.newTaskMenuActive.value === true) {
+            document.body.querySelector('.todo-list-container').appendChild(todoListRows());
+            newTaskContainer.remove();
+            localStorage.newTaskMenuActive.value = false;
+        }
+
+    })
+
     bottomContainer.appendChild(addTaskBtn);
 
     newTaskContainer.appendChild(topContainer)
