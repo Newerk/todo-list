@@ -27,7 +27,7 @@ export const compactSidebarContent = () => {
                         expand.textContent = '<';
                         const container = document.querySelector('.expanded-container');
                         container.setAttribute('style', 'width: 0rem');
-                        container.childNodes.forEach(el => el.setAttribute('style', 'width: 0rem; padding: 0rem; border: none; font-size: 0'));
+                        container.childNodes.forEach(el => el.setAttribute('style', 'width: 0rem; padding: 0rem; border: none; font-size: 0;'));
                         storageManagement.sideBarIsExpanded.value = false;
 
                 } else {

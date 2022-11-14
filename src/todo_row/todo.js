@@ -46,6 +46,8 @@ export const todoListRows = () => {
 
     let menuStatus = threeDotsMenu().menuIsOpen.value;
 
+
+    //edit this event so that if the three dots button is pressed again, it will remove the div**if this is still here, it wasnt done yet
     threeDots.addEventListener('click', () => {
 
         if (menuStatus === false) {
