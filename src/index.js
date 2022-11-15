@@ -20,12 +20,25 @@ document.body.appendChild(contentContainer);
 
 contentContainer.appendChild(content);
 
+//using parse will allow me to directly interact with the objects stores in the localStorage
+// console.log(JSON.parse(localStorage.getItem('objectTest'))); 
+
+
+// const obj = JSON.parse(localStorage.getItem('objectTest'));
+
+// obj.key_two = 'replaced';
+
+
+
+const getIndexTwo =  JSON.parse(localStorage.getItem('objectTest_2'));
+getIndexTwo._key_two = 'FLKJSDHFLSKJDHFLSDKJFHLDKJHFLSDJHF';
+
+const updatedIndexTwo = JSON.stringify(getIndexTwo);
+
+localStorage.setItem('objectTest_2', updatedIndexTwo);
+
 console.log(localStorage);
-console.log(JSON.parse(localStorage.getItem('objectTest'))); //using parse will allow me to directly interact with the objects stores in the localStorage
-
-const keyOne = JSON.parse(localStorage.getItem('objectTest'));
-
-console.log(keyOne['key_one']);
+// localStorage.removeItem('objectTest');
 
 
 

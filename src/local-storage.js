@@ -18,12 +18,12 @@ const lsObjectTest = {
 }
 
 const lsObjectTest_TWO = {
-    key_one : 'one',
-    key_two : 'two',
-    key_three : 'three'
+    _key_one : 'one',
+    _key_two : 'two',
+    _key_three : 'three'
 }
 
-localStorage.setItem('objectTest', JSON.stringify(lsObjectTest));
+// localStorage.setItem('objectTest', JSON.stringify(lsObjectTest));
 localStorage.setItem('objectTest_2', JSON.stringify(lsObjectTest_TWO));
 
 
