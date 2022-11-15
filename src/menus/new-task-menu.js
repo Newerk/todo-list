@@ -1,5 +1,5 @@
 import './new-task-menu.css';
-import { storageManagement } from '../local-storage';
+import { saveTodoToStorage, storageManagement } from '../local-storage';
 import { todoListRows } from '../todo_row/todo';
 
 export const buildNewTaskWindow = () => {
@@ -66,10 +66,13 @@ export const buildNewTaskWindow = () => {
         paste a todo onto the homepage*/
         
         if (storageManagement.newTaskMenuActive.value === true) {
-            document.body.querySelector('.todo-list-container').appendChild(todoListRows());
+            document.body.querySelector('#todo-list-container').appendChild(todoListRows());
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
         }
+
+        console.log(localStorage);
+
 
     })
 

@@ -16,7 +16,7 @@ export const todayPage = () => {
     container.appendChild(today);
 
     const todoListContainer = document.createElement('div');
-    todoListContainer.className = 'todo-list-container';
+    todoListContainer.id = 'todo-list-container';
 
     container.appendChild(todoHeader());
     container.appendChild(todoListContainer);

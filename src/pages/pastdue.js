@@ -16,7 +16,7 @@ export const pastDuePage = () => {
     container.appendChild(pastdue);
 
     const todoListContainer = document.createElement('div');
-    todoListContainer.className = 'todo-list-container';
+    todoListContainer.id = 'todo-list-container';
 
     container.appendChild(todoHeader());
     container.appendChild(todoListContainer);
