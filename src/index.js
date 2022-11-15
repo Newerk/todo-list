@@ -23,7 +23,9 @@ contentContainer.appendChild(content);
 console.log(localStorage);
 console.log(JSON.parse(localStorage.getItem('objectTest'))); //using parse will allow me to directly interact with the objects stores in the localStorage
 
+const keyOne = JSON.parse(localStorage.getItem('objectTest'));
 
+console.log(keyOne['key_one']);
 
 
 
