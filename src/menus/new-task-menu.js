@@ -1,6 +1,7 @@
 import './new-task-menu.css';
 import { saveTodoToStorage, storageManagement } from '../local-storage';
 import { todoListRows } from '../todo_row/todo';
+import { isFirstDayOfMonth } from 'date-fns';
 
 
 /*
@@ -8,7 +9,8 @@ todo list object template = {
     title: '',
     dueDate: '',
     description: '', this will not appear on the todo list div, but will need to be stored so that it can be shown on the expanded screen
-    priorty: '',
+    priorty: '', (defaults to normal is not chosen)
+    status: '' , (defaults to incomplete, status will change once user clicks the check box)
 }
 
 when the user clicks the '+Add Task' button, it will take the title, priority(if none is selected, default to normal),
@@ -29,20 +31,23 @@ how everything will interact:
 -function creates a todo row, fills in the information, and append them to the page for each object
 -function should not constantly create duplicate divs of already existing todos everytime a new tasks is created
 -function needs to only add a todo row for the newest object created
+-once the row is created and the user changes the status of the task, it will grab the desired object from the local storage, and change the status, and then set it back the local storage
 
-**something I may keep in mind, what if i create an array of objects that represents all the rows
+**something I may keep in mind, what if i create an array of objects that represents all the rows**
         let rows = [
             obj = {
                 title: 'Check email',
                 dueDate: '2022-11-12',
                 description: 'nigerian prince said i won $14,000,000',
                 priorty: 'Urgent',
+                status: 'complete',
             },
             obj = {
                 title: 'Doctor appointment',
                 dueDate: '2023-01-04',
                 description: 'first check up in 10 years',
                 priorty: 'High',
+                status: 'incomplete',
 
             },
             obj = {
@@ -50,6 +55,7 @@ how everything will interact:
                 dueDate: '2022-12-25',
                 description: 'secret santa this year, dont forget gifts at home again',
                 priorty: 'Normal',
+                status: 'incomplete',
 
             },
             obj = {
@@ -57,6 +63,7 @@ how everything will interact:
                 dueDate: '2022-11-25',
                 description: 'get a ps5',
                 priorty: 'Normal',
+                status: 'incomplete',
 
             },
         ]
