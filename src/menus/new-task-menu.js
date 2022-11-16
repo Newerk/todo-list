@@ -101,38 +101,7 @@ export const buildNewTaskWindow = () => {
 
 
         //when a priority is chosen, it will change the priority button to the selected on, adnd perhaps also change the color
-        switch (e.target.id) {
-            case 'normal-priority-btn':
-                priorityBtn.textContent = 'NORMAL';
-                priorityBtn.setAttribute('style', 'background-color: skyblue;');
-
-                document.getElementById('priority-menu').hidden = true;
-                storageManagement.priorityMenuActive.value = false;
-
-                break;
-
-            case 'high-priority-btn':
-                priorityBtn.textContent = 'HIGH';
-                priorityBtn.setAttribute('style', 'background-color: yellow;');
-
-
-                document.getElementById('priority-menu').hidden = true;
-                storageManagement.priorityMenuActive.value = false;
-
-                break;
-
-            case 'urgent-priority-btn':
-                priorityBtn.textContent = 'URGENT';
-                priorityBtn.setAttribute('style', 'background-color: red;');
-
-
-                document.getElementById('priority-menu').hidden = true;
-                storageManagement.priorityMenuActive.value = false;
-
-                break;
-
-
-        }
+        
 
         if (storageManagement.priorityMenuActive.value === false) {
             priorityMenu.appendChild(buildPopUpMenu());
@@ -142,11 +111,45 @@ export const buildNewTaskWindow = () => {
 
             storageManagement.priorityMenuActive.value = true;
 
+
+            
         } else {
             document.getElementById('priority-menu').remove();
             storageManagement.priorityMenuActive.value = false;
         }
 
+        switch (e.target.id) {
+            case 'normal-priority-btn':
+                priorityBtn.textContent = 'NORMAL';
+                priorityBtn.setAttribute('style', 'background-color: skyblue;');
+
+                priorityMenu.hidden = true;
+                storageManagement.priorityMenuActive.value = false;
+
+                break;
+
+            case 'high-priority-btn':
+                priorityBtn.textContent = 'HIGH';
+                priorityBtn.setAttribute('style', 'background-color: yellow;');
+
+
+                priorityMenu.hidden = true;
+                storageManagement.priorityMenuActive.value = false;
+
+                break;
+
+            case 'urgent-priority-btn':
+                priorityBtn.textContent = 'URGENT';
+                priorityBtn.setAttribute('style', 'background-color: red;');
+
+
+                priorityMenu.hidden = true;
+                storageManagement.priorityMenuActive.value = false;
+
+                break;
+
+
+        }
     })
 
     const dueDateBtn = document.createElement('button');
