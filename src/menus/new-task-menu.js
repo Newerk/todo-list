@@ -100,9 +100,6 @@ export const buildNewTaskWindow = () => {
         priorityMenu.id = 'priority-menu';
 
 
-        //when a priority is chosen, it will change the priority button to the selected on, adnd perhaps also change the color
-        
-
         if (storageManagement.priorityMenuActive.value === false) {
             priorityMenu.appendChild(buildPopUpMenu());
             priorityMenu.setAttribute('style', 'position: absolute; width: width: 6rem;')
@@ -111,8 +108,6 @@ export const buildNewTaskWindow = () => {
 
             storageManagement.priorityMenuActive.value = true;
 
-
-            
         } else {
             document.getElementById('priority-menu').remove();
             storageManagement.priorityMenuActive.value = false;
@@ -122,7 +117,6 @@ export const buildNewTaskWindow = () => {
             case 'normal-priority-btn':
                 priorityBtn.textContent = 'NORMAL';
                 priorityBtn.setAttribute('style', 'background-color: skyblue;');
-
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
 
@@ -131,8 +125,6 @@ export const buildNewTaskWindow = () => {
             case 'high-priority-btn':
                 priorityBtn.textContent = 'HIGH';
                 priorityBtn.setAttribute('style', 'background-color: yellow;');
-
-
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
 
@@ -141,19 +133,17 @@ export const buildNewTaskWindow = () => {
             case 'urgent-priority-btn':
                 priorityBtn.textContent = 'URGENT';
                 priorityBtn.setAttribute('style', 'background-color: red;');
-
-
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
 
                 break;
 
-
         }
     })
 
-    const dueDateBtn = document.createElement('button');
+    const dueDateBtn = document.createElement('input');
     dueDateBtn.id = 'due-date-btn';
+    dueDateBtn.type = 'date';
     dueDateBtn.textContent = 'DUE DATE';
 
     const exitBtn = document.createElement('button');
