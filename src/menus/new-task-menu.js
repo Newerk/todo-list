@@ -92,6 +92,9 @@ export const buildNewTaskWindow = () => {
     titleInput.type = 'text';
     titleInput.textContent = 'USER ENTERED TITLE';
 
+    const prioDateWrapper = document.createElement('div');
+    prioDateWrapper.id = 'priority-date-wrapper';
+
     const priorityBtn = document.createElement('button');
     priorityBtn.id = 'priority-btn';
     priorityBtn.textContent = 'PRIORITY';
@@ -146,6 +149,9 @@ export const buildNewTaskWindow = () => {
     dueDateBtn.type = 'date';
     dueDateBtn.textContent = 'DUE DATE';
 
+    prioDateWrapper.appendChild(priorityBtn);
+    prioDateWrapper.appendChild(dueDateBtn);
+
     const exitBtn = document.createElement('button');
     exitBtn.id = 'exit-btn';
     exitBtn.textContent = 'X'
@@ -157,8 +163,7 @@ export const buildNewTaskWindow = () => {
     })
 
     topContainer.appendChild(titleInput);
-    topContainer.appendChild(priorityBtn);
-    topContainer.appendChild(dueDateBtn);
+    topContainer.appendChild(prioDateWrapper);
     topContainer.appendChild(exitBtn);
 
 
