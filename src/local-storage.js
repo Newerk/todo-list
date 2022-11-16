@@ -1,7 +1,7 @@
 export const storageManagement = {
     sideBarIsExpanded: { value: false },
     newTaskMenuActive: { value: false },
-    filters: {},
+    priorityMenuActive: { value: false},
 }
 
 /*start small, make a function that saves the new tasks added or removed upon refresh. dont worry bout the inforamtion in the todo list

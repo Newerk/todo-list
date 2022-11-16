@@ -45,7 +45,7 @@ textarea {
 
 #title-input {
     color: #A6A6A6;
-
+    background-color: #252526;
 }
 
 #priority-btn {
@@ -80,7 +80,7 @@ textarea {
     display: flex;
     flex-direction: column;
 
-    width: 6vw;
+    width: 6rem;
     height: auto;
 
     border-radius: var(--menu_radius);
@@ -91,9 +91,11 @@ textarea {
 
     padding-right: .6rem;
 
+    margin-left: -.4rem;
 
 
 }
+
 
 [id *='priority-btn'] {
     width: 100%;

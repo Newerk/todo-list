@@ -1,4 +1,4 @@
-import './new-task.css';
+import './new-task-menu.css';
 
 export const buildPopUpMenu = () => {
     const priorityPopUpMenu = document.createElement('div');

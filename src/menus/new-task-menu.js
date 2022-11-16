@@ -2,6 +2,7 @@ import './new-task-menu.css';
 import { saveTodoToStorage, storageManagement } from '../local-storage';
 import { todoListRows } from '../todo_row/todo';
 import { isFirstDayOfMonth } from 'date-fns';
+import { buildPopUpMenu } from './priority-popup-menu';
 
 
 /*
@@ -86,13 +87,67 @@ export const buildNewTaskWindow = () => {
 
 
 
-    const titleInput = document.createElement('div');
+    const titleInput = document.createElement('input');
     titleInput.id = 'title-input';
+    titleInput.type = 'text';
     titleInput.textContent = 'USER ENTERED TITLE';
 
     const priorityBtn = document.createElement('button');
     priorityBtn.id = 'priority-btn';
     priorityBtn.textContent = 'PRIORITY';
+    priorityBtn.addEventListener('click', (e) => {
+        const priorityMenu = document.createElement('div');
+        priorityMenu.id = 'priority-menu';
+
+
+        //when a priority is chosen, it will change the priority button to the selected on, adnd perhaps also change the color
+        switch (e.target.id) {
+            case 'normal-priority-btn':
+                priorityBtn.textContent = 'NORMAL';
+                priorityBtn.setAttribute('style', 'background-color: skyblue;');
+
+                document.getElementById('priority-menu').hidden = true;
+                storageManagement.priorityMenuActive.value = false;
+
+                break;
+
+            case 'high-priority-btn':
+                priorityBtn.textContent = 'HIGH';
+                priorityBtn.setAttribute('style', 'background-color: yellow;');
+
+
+                document.getElementById('priority-menu').hidden = true;
+                storageManagement.priorityMenuActive.value = false;
+
+                break;
+
+            case 'urgent-priority-btn':
+                priorityBtn.textContent = 'URGENT';
+                priorityBtn.setAttribute('style', 'background-color: red;');
+
+
+                document.getElementById('priority-menu').hidden = true;
+                storageManagement.priorityMenuActive.value = false;
+
+                break;
+
+
+        }
+
+        if (storageManagement.priorityMenuActive.value === false) {
+            priorityMenu.appendChild(buildPopUpMenu());
+            priorityMenu.setAttribute('style', 'position: absolute; width: width: 6rem;')
+
+            priorityBtn.appendChild(priorityMenu);
+
+            storageManagement.priorityMenuActive.value = true;
+
+        } else {
+            document.getElementById('priority-menu').remove();
+            storageManagement.priorityMenuActive.value = false;
+        }
+
+    })
 
     const dueDateBtn = document.createElement('button');
     dueDateBtn.id = 'due-date-btn';
