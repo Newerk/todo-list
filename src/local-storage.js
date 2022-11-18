@@ -4,12 +4,6 @@ export const storageManagement = {
     priorityMenuActive: { value: false},
 }
 
-/*start small, make a function that saves the new tasks added or removed upon refresh. dont worry bout the inforamtion in the todo list
-if i add 3 new tasks, they should remain upon refresh*/
-export const saveTodoToStorage = (div) => {
-document.querySelector('#todo-list-container');
-}
-
 
 const lsObjectTest = {
     key_one : 'one',
@@ -23,7 +17,8 @@ const lsObjectTest_TWO = {
     _key_three : 'three'
 }
 
+
 // localStorage.setItem('objectTest', JSON.stringify(lsObjectTest));
-localStorage.setItem('objectTest_2', JSON.stringify(lsObjectTest_TWO));
+// localStorage.setItem('objectTest_2', JSON.stringify(lsObjectTest_TWO));
 
 

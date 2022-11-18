@@ -1,5 +1,5 @@
 import './new-task-menu.css';
-import { saveTodoToStorage, storageManagement } from '../local-storage';
+import { rows, saveTodoToStorage, storageManagement } from '../local-storage';
 import { todoListRows } from '../todo_row/todo';
 import { isFirstDayOfMonth } from 'date-fns';
 import { buildPopUpMenu } from './priority-popup-menu';
@@ -190,8 +190,6 @@ export const buildNewTaskWindow = () => {
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
         }
-
-        console.log(localStorage);
 
 
     })
