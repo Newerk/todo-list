@@ -7,12 +7,6 @@ later on this module will only prompt the new-task.js which will handle adding t
 is able to currently add rows because its a quick way for me to see changes and interactions while writing this program
 */
 
-function addCount(num) {
-    num += 1;
-    localStorage.setItem('count', JSON.stringify(num));
-    console.log(localStorage);
-
-};
 
 export const newTaskBtn = () => {
     const btnContainer = document.createElement('div');
@@ -24,7 +18,6 @@ export const newTaskBtn = () => {
     symbol.setAttribute('style', 'background-color: orange; border-radius: 50%; width: 1.5rem; height: 1.5rem ;text-align: center;');
 
     symbol.addEventListener('click', () => {
-        addCount(getCount());
         
         if (storageManagement.newTaskMenuActive.value === false) {
             document.body.querySelector('.top-container').appendChild(buildNewTaskWindow());
