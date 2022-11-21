@@ -63,6 +63,6 @@ export const todoListRows = () => {
 
     })
 
-    return row;
+    return {row,title};
 }
 

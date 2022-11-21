@@ -185,8 +185,16 @@ export const buildNewTaskWindow = () => {
         /*when this module becomes more fleshed out, it will take to account the filters that a todo will have. right now this button will just
         paste a todo onto the homepage*/
 
+        /*
+        create a newRow Var is an instance of the function call todoListRows(); Calling this function over and over in the same scope will
+        constantly new rows instead of this add task menu modifying a single row
+        */
+       
         if (storageManagement.newTaskMenuActive.value === true) {
-            document.body.querySelector('#todo-list-container').appendChild(todoListRows());
+            let newRow = todoListRows();
+            newRow.title.textContent = titleInput.value;
+            document.body.querySelector('#todo-list-container').appendChild(newRow.row);
+
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
         }
