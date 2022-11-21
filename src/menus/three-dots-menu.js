@@ -1,7 +1,32 @@
 import './three-dots-menu.css'
 
 export const threeDotsMenu = () => {
-    let menuIsOpen = { value: false };
+    let menuIsOpen = {
+        value: false,
+
+        get getValue() {
+            return this.value;
+        },
+
+        set setValue(boolean){
+            this.value = boolean;
+
+        },
+
+        setOppositeValue: function(originalValue) {
+
+            if (originalValue === false) {
+                this.value = true;
+                console.log(`menu is now set to ${this.value}`)
+
+            } else {
+                this.value = false;
+                console.log(`menu is now set to ${this.value}`)
+
+            }
+        }
+    };
+
 
 
     const container = document.createElement('div');
@@ -33,6 +58,8 @@ export const threeDotsMenu = () => {
     };
 }
 
+
+
 function closeDiv() {
-    document.querySelector('.td-container').remove();
+    // document.querySelector('.td-container').remove();
 }

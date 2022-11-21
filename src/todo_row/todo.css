@@ -17,4 +17,5 @@
 .three-dots {
     grid-column: 2;
     place-self: end;
+    position: relative;
 }
