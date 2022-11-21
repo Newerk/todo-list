@@ -258,11 +258,19 @@ function dueDateValue(currentRow, value) {
         console.log("YOU'VE CHOSEN TODAY's DATE");
         currentRow.dueDate.textContent = `${month}/${day}/${year}`;
 
-    } else {
+    } else if(value !== formattedDate && value !== '') {
         let arr = value.split('-');
         let reArrage = `${arr[1]}/${arr[2]}/${arr[0]}`
         currentRow.dueDate.textContent = reArrage;
 
+    } 
+    
+    //might remove this else bracket and instead use HTML Form verification and regex to not allow the user to pick a date before today.
+    //will also consider adding requirements tag to the form element, title
+    else {
+        console.log("NO DATE CHOSEN, DEFAULTING TO TODAY'S DATE");
+
+        currentRow.dueDate.textContent = `${month}/${day}/${year}`;
     }
 
 }
