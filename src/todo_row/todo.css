@@ -2,7 +2,19 @@
     padding: 0 .5rem 0 .5rem;
 }
 
+.due-date-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 .5rem 0 .5rem;
+
+}
+
 #row-due-date {
-    display: flex;
-    justify-content: space-between;
+    grid-column: 1;
+    padding: 0;
+}
+
+.three-dots {
+    grid-column: 2;
+    place-self: end;
 }

@@ -189,16 +189,15 @@ export const buildNewTaskWindow = () => {
         create a newRow Var as an instance of the function call todoListRows(); this allows me to modify a single row at a time since
         I am only focused on one instance
         */
-        if (dueDateBtn.value === '') {
-            console.log('please enter a date');
-            return;
+        // if (dueDateBtn.value === '') {
+        //     console.log('please enter a date');
+        //     return;
 
-        } else if (storageManagement.newTaskMenuActive.value === true) {
+        // } else 
+        if (storageManagement.newTaskMenuActive.value === true) {
             let newRow = todoListRows();
             newRow.title.textContent = titleInput.value;
-            dueDateValue(dueDateBtn.value)
-            // console.log(dueDateBtn.value);
-
+            dueDateValue(newRow, dueDateBtn.value)
             priorityChecker(newRow, priorityBtn.textContent);
 
             document.body.querySelector('#todo-list-container').appendChild(newRow.row);
@@ -244,7 +243,7 @@ function priorityChecker(currentRow, priorityBtnTextContent) {
 }
 
 //if date chosen is before 'today', this will not be allowed, and the user will be asked to choose a different date
-function dueDateValue(value) {
+function dueDateValue(currentRow, value) {
     let today = new Date();
     let month = today.getMonth() + 1;
     let day = today.getDate();
@@ -257,11 +256,13 @@ function dueDateValue(value) {
     if (value === formattedDate) {
         //todo will only been shown on the home and today page. no where else
         console.log("YOU'VE CHOSEN TODAY's DATE");
+        currentRow.dueDate.textContent = `${month}/${day}/${year}`;
+
+    } else {
+        let arr = value.split('-');
+        let reArrage = `${arr[1]}/${arr[2]}/${arr[0]}`
+        currentRow.dueDate.textContent = reArrage;
 
     }
-    // else if (value === '') {
-    //     console.log("THIS WILL DEFAULT THE DATE TO TODAY IF NO DATE IS CHOSEN");
-
-    // }
 
 }

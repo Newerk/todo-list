@@ -32,17 +32,24 @@ export const todoListRows = () => {
 
     row.appendChild(priority);
 
+    const dueDateContainer = document.createElement('div');
+    dueDateContainer.className = 'due-date-container';
+    dueDateContainer.setAttribute('style', ` width: ${(document.getElementById('header-due-date').offsetWidth)}px;`);
+
+
     const dueDate = document.createElement('div');
     dueDate.id = 'row-due-date';
-    // dueDate.textContent = '11/7/2022';
-    dueDate.setAttribute('style', ` width: ${(document.getElementById('header-due-date').offsetWidth)}px;`);
-
-    row.appendChild(dueDate);
 
     const threeDots = document.createElement('img');
     threeDots.src = '../src/images/icons/three-dots.svg';
     threeDots.className = 'three-dots';
-    dueDate.appendChild(threeDots);
+
+    dueDateContainer.appendChild(dueDate)
+    dueDateContainer.appendChild(threeDots);
+
+
+    row.appendChild(dueDateContainer);
+
 
     let menuStatus = threeDotsMenu().menuIsOpen.value;
 
