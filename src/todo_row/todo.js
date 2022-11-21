@@ -26,7 +26,7 @@ export const todoListRows = () => {
 
     const priority = document.createElement('div');
     priority.id = 'row-priority';
-    priority.textContent = 'Urgent';
+    // priority.textContent = 'Urgent';
     priority.setAttribute('style', ` width: ${(document.getElementById('header-priority').offsetWidth)}px;`);
 
 
@@ -63,6 +63,6 @@ export const todoListRows = () => {
 
     })
 
-    return {row,title};
+    return {row,title,priority};
 }
 

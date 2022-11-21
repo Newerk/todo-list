@@ -189,10 +189,11 @@ export const buildNewTaskWindow = () => {
         create a newRow Var is an instance of the function call todoListRows(); Calling this function over and over in the same scope will
         constantly new rows instead of this add task menu modifying a single row
         */
-       
+
         if (storageManagement.newTaskMenuActive.value === true) {
             let newRow = todoListRows();
             newRow.title.textContent = titleInput.value;
+            priorityChecker(newRow, priorityBtn.textContent);
             document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
             newTaskContainer.remove();
@@ -211,3 +212,24 @@ export const buildNewTaskWindow = () => {
     return newTaskContainer;
 }
 
+function priorityChecker(currentRow, priorityBtnTextContent) {
+
+    switch (priorityBtnTextContent) {
+        case 'PRIORITY':
+            currentRow.priority.textContent = 'Normal';
+
+            break;
+        case 'NORMAL':
+            currentRow.priority.textContent = 'Normal';
+
+            break;
+        case 'HIGH':
+            currentRow.priority.textContent = 'High';
+
+            break;
+        case 'URGENT':
+            currentRow.priority.textContent = 'Urgent';
+
+            break;
+    }
+}
