@@ -34,7 +34,7 @@ export const todoListRows = () => {
 
     const dueDate = document.createElement('div');
     dueDate.id = 'row-due-date';
-    dueDate.textContent = '11/7/2022';
+    // dueDate.textContent = '11/7/2022';
     dueDate.setAttribute('style', ` width: ${(document.getElementById('header-due-date').offsetWidth)}px;`);
 
     row.appendChild(dueDate);
@@ -63,6 +63,6 @@ export const todoListRows = () => {
 
     })
 
-    return {row,title,priority};
+    return {row,title,priority,dueDate};
 }
 

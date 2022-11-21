@@ -186,19 +186,28 @@ export const buildNewTaskWindow = () => {
         paste a todo onto the homepage*/
 
         /*
-        create a newRow Var is an instance of the function call todoListRows(); Calling this function over and over in the same scope will
-        constantly new rows instead of this add task menu modifying a single row
+        create a newRow Var as an instance of the function call todoListRows(); this allows me to modify a single row at a time since
+        I am only focused on one instance
         */
+        if (dueDateBtn.value === '') {
+            console.log('please enter a date');
+            return;
 
-        if (storageManagement.newTaskMenuActive.value === true) {
+        } else if (storageManagement.newTaskMenuActive.value === true) {
             let newRow = todoListRows();
             newRow.title.textContent = titleInput.value;
+            dueDateValue(dueDateBtn.value)
+            // console.log(dueDateBtn.value);
+
             priorityChecker(newRow, priorityBtn.textContent);
+
             document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
         }
+
+
 
 
     })
@@ -232,4 +241,27 @@ function priorityChecker(currentRow, priorityBtnTextContent) {
 
             break;
     }
+}
+
+//if date chosen is before 'today', this will not be allowed, and the user will be asked to choose a different date
+function dueDateValue(value) {
+    let today = new Date();
+    let month = today.getMonth() + 1;
+    let day = today.getDate();
+    let year = today.getFullYear();
+
+    let formattedDate = `${year}-${month}-${day}`;
+
+
+
+    if (value === formattedDate) {
+        //todo will only been shown on the home and today page. no where else
+        console.log("YOU'VE CHOSEN TODAY's DATE");
+
+    }
+    // else if (value === '') {
+    //     console.log("THIS WILL DEFAULT THE DATE TO TODAY IF NO DATE IS CHOSEN");
+
+    // }
+
 }
