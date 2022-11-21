@@ -269,7 +269,6 @@ function dueDateValue(currentRow, value) {
     //will also consider adding requirements tag to the form element, title
     else {
         console.log("NO DATE CHOSEN, DEFAULTING TO TODAY'S DATE");
-
         currentRow.dueDate.textContent = `${month}/${day}/${year}`;
     }
 
