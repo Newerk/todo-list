@@ -8,5 +8,5 @@ display on that page. homepage can show every todo list no matter the filter,
 but when a task is past due, only the tasks with duedates before the most current date
 will appear on that page
 
-
+SIMPLY: A Module That Controls which Todos Show on the Screen
 */
