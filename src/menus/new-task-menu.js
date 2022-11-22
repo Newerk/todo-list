@@ -205,10 +205,6 @@ export const buildNewTaskWindow = () => {
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
         }
-
-
-
-
     })
 
     bottomContainer.appendChild(addTaskBtn);
