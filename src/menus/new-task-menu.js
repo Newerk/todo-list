@@ -193,24 +193,15 @@ export const buildNewTaskWindow = () => {
             let newRow = todoListRows();
             todoObj.title = newRow.title.textContent = titleInput.value;
             todoObj.dueDate = dueDateValue(newRow, dueDateBtn.value);
+            todoObj.description = descriptionInput.value;
             todoObj.priority = priorityChecker(newRow, priorityBtn.textContent);
             todoObj.status = 'Incomplete';
-            todoObj.description = descriptionInput.value;
 
 
             document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
-
-            //store row as an object in the row array located in the loca-storage module
-            // const todoObj = {
-            //     title: '',
-            //     dueDate: '',
-            //     description: '', //this will not appear on the todo list div, but will need to be stored so that it can be shown on the expanded screen
-            //     priorty: '', //(defaults to normal is not chosen)
-            //     status: '', //(defaults to incomplete, status will change once user clicks the check box)
-            // }
 
             rows.push(todoObj);
             console.log(rows);
