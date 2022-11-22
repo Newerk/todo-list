@@ -1,5 +1,5 @@
 import './new-task-menu.css';
-import { rows, saveTodoToStorage, storageManagement } from '../local-storage';
+import { rows, storageManagement } from '../local-storage';
 import { todoListRows } from '../todo_row/todo';
 import { isFirstDayOfMonth } from 'date-fns';
 import { buildPopUpMenu } from './priority-popup-menu';
@@ -184,26 +184,38 @@ export const buildNewTaskWindow = () => {
     addTaskBtn.addEventListener('click', () => {
         /*when this module becomes more fleshed out, it will take to account the filters that a todo will have. right now this button will just
         paste a todo onto the homepage*/
+        const todoObj = {
 
-        /*
-        create a newRow Var as an instance of the function call todoListRows(); this allows me to modify a single row at a time since
-        I am only focused on one instance
-        */
-        // if (dueDateBtn.value === '') {
-        //     console.log('please enter a date');
-        //     return;
+        }
 
-        // } else 
+
         if (storageManagement.newTaskMenuActive.value === true) {
             let newRow = todoListRows();
-            newRow.title.textContent = titleInput.value;
-            dueDateValue(newRow, dueDateBtn.value)
-            priorityChecker(newRow, priorityBtn.textContent);
+            todoObj.title = newRow.title.textContent = titleInput.value;
+            todoObj.dueDate = dueDateValue(newRow, dueDateBtn.value);
+            todoObj.priority = priorityChecker(newRow, priorityBtn.textContent);
+            todoObj.status = 'Incomplete';
+            todoObj.description = descriptionInput.value;
+
 
             document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
+
+            //store row as an object in the row array located in the loca-storage module
+            // const todoObj = {
+            //     title: '',
+            //     dueDate: '',
+            //     description: '', //this will not appear on the todo list div, but will need to be stored so that it can be shown on the expanded screen
+            //     priorty: '', //(defaults to normal is not chosen)
+            //     status: '', //(defaults to incomplete, status will change once user clicks the check box)
+            // }
+
+            rows.push(todoObj);
+            console.log(rows);
+
+
         }
     })
 
@@ -236,6 +248,8 @@ function priorityChecker(currentRow, priorityBtnTextContent) {
 
             break;
     }
+
+    return currentRow.priority.textContent;
 }
 
 //if date chosen is before 'today', this will not be allowed, and the user will be asked to choose a different date
@@ -254,13 +268,13 @@ function dueDateValue(currentRow, value) {
         console.log("YOU'VE CHOSEN TODAY's DATE");
         currentRow.dueDate.textContent = `${month}/${day}/${year}`;
 
-    } else if(value !== formattedDate && value !== '') {
+    } else if (value !== formattedDate && value !== '') {
         let arr = value.split('-');
         let reArrage = `${arr[1]}/${arr[2]}/${arr[0]}`
         currentRow.dueDate.textContent = reArrage;
 
-    } 
-    
+    }
+
     //might remove this else bracket and instead use HTML Form verification and regex to not allow the user to pick a date before today.
     //will also consider adding requirements tag to the form element, title
     else {
@@ -268,4 +282,5 @@ function dueDateValue(currentRow, value) {
         currentRow.dueDate.textContent = `${month}/${day}/${year}`;
     }
 
+    return currentRow.dueDate.textContent;
 }

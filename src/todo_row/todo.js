@@ -19,14 +19,12 @@ export const todoListRows = () => {
 
     const title = document.createElement('div');
     title.id = 'row-title';
-    title.textContent = 'Do something very important';
     title.setAttribute('style', ` width: 1fr; text-overflow: ellipsis;`);
 
     row.appendChild(title);
 
     const priority = document.createElement('div');
     priority.id = 'row-priority';
-    // priority.textContent = 'Urgent';
     priority.setAttribute('style', ` width: ${(document.getElementById('header-priority').offsetWidth)}px;`);
 
 
@@ -55,7 +53,6 @@ export const todoListRows = () => {
             positioner.appendChild(threeDotsMenu().container);
             row.appendChild(positioner);
             menuStatus.setValue = true;
-
 
         } else if (menu === true){
             closeThreeDotMenu();
