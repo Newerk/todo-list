@@ -50,7 +50,7 @@ export const todoListRows = () => {
             const positioner = document.createElement('div');
             positioner.className = 'positioner';
             positioner.setAttribute('style', 'display: flex; justify-content: end; position: relative; z-index: 1; top: .3rem; left: .05rem; grid-column: 4')
-            positioner.appendChild(threeDotsMenu().container);
+            positioner.appendChild(threeDotsMenu());
             row.appendChild(positioner);
             menuStatus.setValue = true;
 

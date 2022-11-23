@@ -43,9 +43,8 @@ export const threeDotsMenu = () => {
     container.appendChild(deleteBtn);
 
 
-    return {
-        container,
-    };
+    return container;
+
 }
 
 
