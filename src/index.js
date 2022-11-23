@@ -2,6 +2,8 @@ import './style.css'
 import { headerContent } from './header/header-content.js';
 import { homePage } from './pages/home';
 import { compactSidebarContent } from './sidebar/compact-sidebar-content';
+import { todoListRows } from './todo_row/todo';
+import { rows } from './local-storage';
 
 //using  an if statment to check if a localstorage key is existing allows you to keep values after referesh. Other wise it will always reset the localstorage and remake every key to its default values
 (() => {
@@ -29,6 +31,38 @@ compactSidebarContent();
 document.body.appendChild(contentContainer);
 
 contentContainer.appendChild(content);
+
+
+
+document.querySelector('#header-logo').addEventListener('click', () => {
+
+/*--------------------------------------------------------------------------------------------------------------*/
+/*THIS IS SIMPLY A TEST EXAMPLE OF HOW I WILL FILTER THOUGH THE ROWS ARRAY TO SHOW THE CORRECT INFORMATION*/
+/*THIS IS USELESS AND WILL NEED TO BE DELETED ONCE THE FILTERING IS IMPLEMENTED*/
+
+    const todoObj = {};
+    let newRow = todoListRows();
+    todoObj.title = 'UNFILTERED';
+    todoObj.dueDate = 'UNFILTERED';
+    todoObj.description = 'UNFILTERED';
+    todoObj.priority = 'UNFILTERED';
+    todoObj.status = 'Incomplete';
+
+    document.body.querySelector('#todo-list-container').appendChild(newRow.row);
+
+    rows.push(todoObj);
+    console.log(rows);
+
+    const result = rows.filter(obj => {
+        return obj.filter === 'home';
+
+    })
+
+    console.log(`LIST OF ROWS THAT WILL ONLY SHOW ON THE HOME PAGE:`);
+    console.log(result);
+
+})
+/*--------------------------------------------------------------------------------------------------------------*/
 
 
 

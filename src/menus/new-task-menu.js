@@ -160,6 +160,7 @@ export const buildNewTaskWindow = () => {
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
         }
+
     })
 
     topContainer.appendChild(titleInput);
@@ -184,9 +185,7 @@ export const buildNewTaskWindow = () => {
     addTaskBtn.addEventListener('click', () => {
         /*when this module becomes more fleshed out, it will take to account the filters that a todo will have. right now this button will just
         paste a todo onto the homepage*/
-        const todoObj = {
-
-        }
+        const todoObj = {};
 
 
         if (storageManagement.newTaskMenuActive.value === true) {
@@ -196,6 +195,15 @@ export const buildNewTaskWindow = () => {
             todoObj.description = descriptionInput.value;
             todoObj.priority = priorityChecker(newRow, priorityBtn.textContent);
             todoObj.status = 'Incomplete';
+
+
+            /*run a function here that takes an object as an argument. This function
+            will be full of if statements or switch/cases to check if
+            the user entered date is before, after, or the same as today's date.
+            This will determine which filter to add onto the object. now whenever 
+            updateScreen() from the update-info module is ran, it will determine which
+            todos to show depending on the page you are on
+            */
 
 
             document.body.querySelector('#todo-list-container').appendChild(newRow.row);
