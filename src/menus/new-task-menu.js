@@ -1,5 +1,5 @@
 import './new-task-menu.css';
-import { rows, storageManagement } from '../local-storage';
+import { storageManagement } from '../local-storage';
 import { todoListRows } from '../todo_row/todo';
 import { isFirstDayOfMonth } from 'date-fns';
 import { buildPopUpMenu } from './priority-popup-menu';
@@ -188,7 +188,6 @@ export const buildNewTaskWindow = () => {
         paste a todo onto the homepage*/
         const todoObj = {};
 
-
         if (storageManagement.newTaskMenuActive.value === true) {
             let newRow = todoListRows();
             todoObj.title = newRow.title.textContent = titleInput.value;
@@ -214,8 +213,13 @@ export const buildNewTaskWindow = () => {
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
 
+
+            let rows = JSON.parse(localStorage.getItem('rows'));
             rows.push(todoObj);
-            console.log(rows);
+
+            localStorage.setItem('rows', JSON.stringify(rows));
+            
+            console.log(localStorage.rows);
 
 
         }
