@@ -11,7 +11,7 @@ will appear on that page
 SIMPLY: A Module That Controls which Todos Show on the Screen
 */
 
-export const updateScreen = () => {
+export const updateInfo = (obj) => {
     /*perhaps add a boolean value on each page module that lets a user know if they
     are on that page or Notification.
                 exmaple of why this can be useful:
@@ -51,4 +51,6 @@ A WAY TO GET THE EXACT OBJECT THROUGH PROPERY VALUES WITHOUT A FOR LOOP
 
     console.log(result) 
     */
+
+
 }

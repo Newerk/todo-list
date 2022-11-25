@@ -3,6 +3,7 @@ import { rows, storageManagement } from '../local-storage';
 import { todoListRows } from '../todo_row/todo';
 import { isFirstDayOfMonth } from 'date-fns';
 import { buildPopUpMenu } from './priority-popup-menu';
+import { todoFilterLogic } from '../todoFilterLogic';
 
 
 /*
@@ -196,15 +197,17 @@ export const buildNewTaskWindow = () => {
             todoObj.priority = priorityChecker(newRow, priorityBtn.textContent);
             todoObj.status = 'Incomplete';
 
-
-            /*run a function here that takes an object as an argument. This function
+            /*
+            run a function here that takes an object as an argument. This function
             will be full of if statements or switch/cases to check if
             the user entered date is before, after, or the same as today's date.
             This will determine which filter to add onto the object. now whenever 
             updateScreen() from the update-info module is ran, it will determine which
             todos to show depending on the page you are on
-            */
 
+            todoFilterLogic(todoObj);
+            */
+            todoFilterLogic(todoObj);
 
             document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
