@@ -57,11 +57,8 @@ A WAY TO GET THE EXACT OBJECT THROUGH PROPERY VALUES WITHOUT A FOR LOOP
 
 
     //this feature function desnt work yet
-    const wipe = (() => {
-        console.log(document.querySelector('#todo-list-container').childNodes.forEach(child => child.remove()));
-        console.log('WIPED')
-    })();;
 
+    wipe();
 
     let rows = JSON.parse(localStorage.getItem('rows'));
 
@@ -69,15 +66,11 @@ A WAY TO GET THE EXACT OBJECT THROUGH PROPERY VALUES WITHOUT A FOR LOOP
         const element = rows[index];
 
         todoListRows(element.title, element.priority, element.dueDate).build();
-        //    document.body.querySelector('#todo-list-container').appendChild(newRow.row);
-
-
-        // console.log(`STATUS: ${element.status}`);
-        // console.log(`TITLE: ${element.title}`); 
-        // console.log(`PRIORITY: ${element.priority}`); 
-        // console.log(`DUEDATE: ${element.dueDate}`);
     }
 
 
 }
 
+function wipe() {
+    document.body.querySelectorAll('#row').forEach(el => el.remove());
+};

@@ -84,8 +84,6 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate) => {
     }
 
 
-
-
     return { row, title, priority, dueDate, build };
 }
 
