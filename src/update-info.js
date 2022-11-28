@@ -11,6 +11,9 @@ will appear on that page
 SIMPLY: A Module That Controls which Todos Show on the Screen
 */
 
+import { todoListRows } from "./todo_row/todo";
+import { wipeContent } from "./wipe-content";
+
 export const updateInfo = (obj) => {
     /*perhaps add a boolean value on each page module that lets a user know if they
     are on that page or Notification.
@@ -52,5 +55,23 @@ A WAY TO GET THE EXACT OBJECT THROUGH PROPERY VALUES WITHOUT A FOR LOOP
     console.log(result) 
     */
 
+    // wipeContent();
+
+    let rows = JSON.parse(localStorage.getItem('rows'));
+
+    for (let index = 0; index < rows.length; index++) {
+        const element = rows[index];
+
+       let newRow = todoListRows(element.status, element.title, element.priority, element.dueDate);
+    //    document.body.querySelector('#todo-list-container').appendChild(newRow.row);
+
+
+        // console.log(`STATUS: ${element.status}`);
+        // console.log(`TITLE: ${element.title}`); 
+        // console.log(`PRIORITY: ${element.priority}`); 
+        // console.log(`DUEDATE: ${element.dueDate}`);
+    }
+
 
 }
+

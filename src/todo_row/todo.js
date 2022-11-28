@@ -6,25 +6,37 @@ import { closeThreeDotMenu, threeDotsMenu, menuStatus } from '../menus/three-dot
 import './todo.css';
 
 
-export const todoListRows = () => {
+export const todoListRows = (ls_Status, ls_Title, ls_Priority, ls_DueDate) => {
     const row = document.createElement('div');
     row.id = 'row';
     row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white;border: grey 1px solid');
 
     const status = document.createElement('div');
     status.id = 'row-status';
-    status.textContent = 'O';
+    // status.textContent = 'O';
+    if (ls_Status === 'Complete') {
+        // add check mark, and add a strike though on the title or greyed out
+        status.textContent = 'O';
+
+    } else if (ls_Status === 'Incomplete') {
+        // show default view of todo
+        status.textContent = 'X';
+
+    }
+
     status.setAttribute('style', `display: flex; justify-content: center; width: ${(document.getElementById('header-status').offsetWidth)}px;`);
     row.appendChild(status);
 
     const title = document.createElement('div');
     title.id = 'row-title';
+    title.textContent = ls_Title;
     title.setAttribute('style', ` width: 1fr; text-overflow: ellipsis;`);
 
     row.appendChild(title);
 
     const priority = document.createElement('div');
     priority.id = 'row-priority';
+    priority.textContent = ls_Priority;
     priority.setAttribute('style', ` width: ${(document.getElementById('header-priority').offsetWidth)}px;`);
 
 
@@ -37,6 +49,7 @@ export const todoListRows = () => {
 
     const dueDate = document.createElement('div');
     dueDate.id = 'row-due-date';
+    dueDate.textContent = ls_DueDate;
 
     const threeDots = document.createElement('img');
     threeDots.src = '../src/images/icons/three-dots.svg';
@@ -46,7 +59,7 @@ export const todoListRows = () => {
     threeDots.addEventListener('click', () => {
         let menu = menuStatus.getValue;
 
-        if (menu === false ) {
+        if (menu === false) {
             const positioner = document.createElement('div');
             positioner.className = 'positioner';
             positioner.setAttribute('style', 'display: flex; justify-content: end; position: relative; z-index: 1; top: .3rem; left: .05rem; grid-column: 4')
@@ -54,7 +67,7 @@ export const todoListRows = () => {
             row.appendChild(positioner);
             menuStatus.setValue = true;
 
-        } else if (menu === true){
+        } else if (menu === true) {
             closeThreeDotMenu();
         }
     });
@@ -64,6 +77,8 @@ export const todoListRows = () => {
 
 
     row.appendChild(dueDateContainer);
+
+    document.body.querySelector('#todo-list-container').appendChild(row);
 
 
 

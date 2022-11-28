@@ -3,6 +3,7 @@ import { headerContent } from './header/header-content.js';
 import { homePage } from './pages/home';
 import { compactSidebarContent } from './sidebar/compact-sidebar-content';
 import { todoListRows } from './todo_row/todo';
+import { updateInfo } from './update-info';
 // import { rows } from './local-storage';
 
 
@@ -32,41 +33,28 @@ document.querySelector('#header-logo').addEventListener('click', () => {
 /*THIS IS SIMPLY A TEST EXAMPLE OF HOW I WILL FILTER THOUGH THE ROWS ARRAY TO SHOW THE CORRECT INFORMATION*/
 /*THIS IS USELESS AND WILL NEED TO BE DELETED ONCE THE FILTERING IS IMPLEMENTED*/
 
-    const todoObj = {};
-    let newRow = todoListRows();
-    todoObj.title = 'UNFILTERED';
-    todoObj.dueDate = 'UNFILTERED';
-    todoObj.description = 'UNFILTERED';
-    todoObj.priority = 'UNFILTERED';
-    todoObj.status = 'Incomplete';
+    // const todoObj = {};
+    // let newRow = todoListRows();
+    // todoObj.title = 'UNFILTERED';
+    // todoObj.dueDate = 'UNFILTERED';
+    // todoObj.description = 'UNFILTERED';
+    // todoObj.priority = 'UNFILTERED';
+    // todoObj.status = 'Incomplete';
 
-    document.body.querySelector('#todo-list-container').appendChild(newRow.row);
+    // document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
-    rows.push(todoObj);
-    console.log(rows);
+    // rows.push(todoObj);
+    // console.log(rows);
 
-    const result = rows.filter(obj => {
-        return obj.filter === 'home';
+    // const result = rows.filter(obj => {
+    //     return obj.filter === 'home';
 
-    })
+    // })
 
-    console.log(`LIST OF ROWS THAT WILL ONLY SHOW ON THE HOME PAGE:`);
-    console.log(result);
+    // console.log(`LIST OF ROWS THAT WILL ONLY SHOW ON THE HOME PAGE:`);
+    // console.log(result);
 
+    updateInfo();
 })
 /*--------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// updateInfo();
