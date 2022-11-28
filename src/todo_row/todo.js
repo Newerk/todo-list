@@ -6,7 +6,7 @@ import { closeThreeDotMenu, threeDotsMenu, menuStatus } from '../menus/three-dot
 import './todo.css';
 
 
-export const todoListRows = (ls_Status, ls_Title, ls_Priority, ls_DueDate) => {
+export const todoListRows = (ls_Title, ls_Priority, ls_DueDate) => {
     const row = document.createElement('div');
     row.id = 'row';
     row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white;border: grey 1px solid');
@@ -14,15 +14,15 @@ export const todoListRows = (ls_Status, ls_Title, ls_Priority, ls_DueDate) => {
     const status = document.createElement('div');
     status.id = 'row-status';
     // status.textContent = 'O';
-    if (ls_Status === 'Complete') {
-        // add check mark, and add a strike though on the title or greyed out
-        status.textContent = 'O';
+    // if (ls_Status === 'Complete') {
+    // add check mark, and add a strike though on the title or greyed out
+    // status.textContent = 'O';
 
-    } else if (ls_Status === 'Incomplete') {
-        // show default view of todo
-        status.textContent = 'X';
+    // } else if (ls_Status === 'Incomplete') {
+    // show default view of todo
+    status.textContent = 'X';
 
-    }
+    // }
 
     status.setAttribute('style', `display: flex; justify-content: center; width: ${(document.getElementById('header-status').offsetWidth)}px;`);
     row.appendChild(status);
@@ -78,13 +78,14 @@ export const todoListRows = (ls_Status, ls_Title, ls_Priority, ls_DueDate) => {
 
     row.appendChild(dueDateContainer);
 
-    document.body.querySelector('#todo-list-container').appendChild(row);
+    const build = () => {
+        document.body.querySelector('#todo-list-container').appendChild(row);
+
+    }
 
 
 
 
-
-
-    return { row, title, priority, dueDate };
+    return { row, title, priority, dueDate, build };
 }
 

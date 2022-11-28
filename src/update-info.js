@@ -14,7 +14,7 @@ SIMPLY: A Module That Controls which Todos Show on the Screen
 import { todoListRows } from "./todo_row/todo";
 import { wipeContent } from "./wipe-content";
 
-export const updateInfo = (obj) => {
+export const updateInfo = () => {
     /*perhaps add a boolean value on each page module that lets a user know if they
     are on that page or Notification.
                 exmaple of why this can be useful:
@@ -55,15 +55,21 @@ A WAY TO GET THE EXACT OBJECT THROUGH PROPERY VALUES WITHOUT A FOR LOOP
     console.log(result) 
     */
 
-    // wipeContent();
+
+    //this feature function desnt work yet
+    const wipe = (() => {
+        console.log(document.querySelector('#todo-list-container').childNodes.forEach(child => child.remove()));
+        console.log('WIPED')
+    })();;
+
 
     let rows = JSON.parse(localStorage.getItem('rows'));
 
     for (let index = 0; index < rows.length; index++) {
         const element = rows[index];
 
-       let newRow = todoListRows(element.status, element.title, element.priority, element.dueDate);
-    //    document.body.querySelector('#todo-list-container').appendChild(newRow.row);
+        todoListRows(element.title, element.priority, element.dueDate).build();
+        //    document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
 
         // console.log(`STATUS: ${element.status}`);

@@ -4,6 +4,7 @@ import { todoListRows } from '../todo_row/todo';
 import { isFirstDayOfMonth } from 'date-fns';
 import { buildPopUpMenu } from './priority-popup-menu';
 import { todoFilterLogic } from '../todoFilterLogic';
+import { updateInfo } from '../update-info';
 
 
 /*
@@ -189,12 +190,15 @@ export const buildNewTaskWindow = () => {
         const todoObj = {};
 
         if (storageManagement.newTaskMenuActive.value === true) {
-            let newRow = todoListRows();
-            todoObj.title = newRow.title.textContent = titleInput.value;
-            todoObj.dueDate = dueDateValue(newRow, dueDateBtn.value);
+            // let newRow = 
+            todoObj.title = titleInput.value;
+            todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
             todoObj.description = descriptionInput.value;
-            todoObj.priority = priorityChecker(newRow, priorityBtn.textContent);
+            todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
             todoObj.status = 'Incomplete';
+
+            // todoListRows(todoObj.title,todoObj.priority,todoObj.dueDate).build();
+
 
             /*
             run a function here that takes an object as an argument. This function
@@ -206,9 +210,9 @@ export const buildNewTaskWindow = () => {
 
             todoFilterLogic(todoObj);
             */
-            todoFilterLogic(todoObj);
+            // todoFilterLogic(todoObj);
 
-            document.body.querySelector('#todo-list-container').appendChild(newRow.row);
+            // document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
@@ -220,6 +224,8 @@ export const buildNewTaskWindow = () => {
             localStorage.setItem('rows', JSON.stringify(rows));
             
             console.log(localStorage.rows);
+
+            updateInfo();
 
 
         }
@@ -234,32 +240,32 @@ export const buildNewTaskWindow = () => {
     return newTaskContainer;
 }
 
-function priorityChecker(currentRow, priorityBtnTextContent) {
+function priorityChecker(obj, priorityBtnTextContent) {
 
     switch (priorityBtnTextContent) {
         case 'PRIORITY':
-            currentRow.priority.textContent = 'Normal';
+            obj.priority = 'Normal';
 
             break;
         case 'NORMAL':
-            currentRow.priority.textContent = 'Normal';
+            obj.priority = 'Normal';
 
             break;
         case 'HIGH':
-            currentRow.priority.textContent = 'High';
+            obj.priority = 'High';
 
             break;
         case 'URGENT':
-            currentRow.priority.textContent = 'Urgent';
+            obj.priority = 'Urgent';
 
             break;
     }
 
-    return currentRow.priority.textContent;
+    return obj.priority;
 }
 
 //if date chosen is before 'today', this will not be allowed, and the user will be asked to choose a different date
-function dueDateValue(currentRow, value) {
+function dueDateValue(obj, value) {
     let today = new Date();
     let month = today.getMonth() + 1;
     let day = today.getDate();
@@ -272,12 +278,12 @@ function dueDateValue(currentRow, value) {
     if (value === formattedDate) {
         //todo will only been shown on the home and today page. no where else
         console.log("YOU'VE CHOSEN TODAY's DATE");
-        currentRow.dueDate.textContent = `${month}/${day}/${year}`;
+        obj.dueDate = `${month}/${day}/${year}`;
 
     } else if (value !== formattedDate && value !== '') {
         let arr = value.split('-');
         let reArrage = `${arr[1]}/${arr[2]}/${arr[0]}`
-        currentRow.dueDate.textContent = reArrage;
+        obj.dueDate = reArrage;
 
     }
 
@@ -285,8 +291,8 @@ function dueDateValue(currentRow, value) {
     //will also consider adding requirements tag to the form element, title
     else {
         console.log("NO DATE CHOSEN, DEFAULTING TO TODAY'S DATE");
-        currentRow.dueDate.textContent = `${month}/${day}/${year}`;
+        obj.dueDate = `${month}/${day}/${year}`;
     }
 
-    return currentRow.dueDate.textContent;
+    return obj.dueDate;
 }
