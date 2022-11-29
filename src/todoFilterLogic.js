@@ -13,6 +13,4 @@ export const todoFilterLogic = (obj) => {
 
     }
 
-    console.log(obj);
-
 }

@@ -21,8 +21,8 @@ export const homePage = () => {
 
     container.appendChild(todoHeader());
     container.appendChild(todoListContainer);
-    
-
+        
     return container;
 
 }
+

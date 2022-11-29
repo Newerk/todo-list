@@ -1,6 +1,6 @@
 import './compact-sidebar.css'
 import { expandSidebar } from './expanded_sidebar/expand-sidebar';
-import { contentContainer} from '..';
+import { contentContainer } from '..';
 import { fullSidebar } from './full-sidebar';
 import { todayPage } from '../pages/today';
 import { upcomingPage } from '../pages/upcoming';
@@ -8,6 +8,7 @@ import { pastDuePage } from '../pages/pastdue';
 import { wipeContent } from '../wipe-content';
 import { homePage } from '../pages/home';
 import { storageManagement } from '../local-storage';
+import { updateInfo } from '../update-info';
 
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
@@ -43,6 +44,8 @@ export const compactSidebarContent = () => {
         home.textContent = 'HOME';
         home.addEventListener('click', () => {
                 wipeContent(homePage());
+                updateInfo();
+
         });
         compactSidebarContentDiv.appendChild(home);
 
@@ -51,6 +54,8 @@ export const compactSidebarContent = () => {
         today.textContent = 'TODAY';
         today.addEventListener('click', () => {
                 wipeContent(todayPage());
+                updateInfo();
+
         });
         compactSidebarContentDiv.appendChild(today);
 
@@ -59,6 +64,8 @@ export const compactSidebarContent = () => {
         upcoming.textContent = 'UPCOMING';
         upcoming.addEventListener('click', () => {
                 wipeContent(upcomingPage());
+                updateInfo();
+
         });
         compactSidebarContentDiv.appendChild(upcoming);
 
@@ -67,6 +74,7 @@ export const compactSidebarContent = () => {
         pastDue.textContent = 'PAST DUE';
         pastDue.addEventListener('click', () => {
                 wipeContent(pastDuePage());
+                updateInfo();
         });
         compactSidebarContentDiv.appendChild(pastDue);
 
@@ -86,5 +94,5 @@ export const compactSidebarContent = () => {
         compactSidebarContentDiv.appendChild(settings);
 
 
-        
+
 };

@@ -210,7 +210,7 @@ export const buildNewTaskWindow = () => {
 
             todoFilterLogic(todoObj);
             */
-            // todoFilterLogic(todoObj);
+            todoFilterLogic(todoObj);
 
             // document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
@@ -223,7 +223,7 @@ export const buildNewTaskWindow = () => {
 
             localStorage.setItem('rows', JSON.stringify(rows));
             
-            console.log(localStorage.rows);
+            console.log(JSON.parse(localStorage.getItem('rows')))
 
             updateInfo();
 

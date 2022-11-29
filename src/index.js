@@ -25,11 +25,11 @@ document.body.appendChild(contentContainer);
 
 contentContainer.appendChild(content);
 
+updateInfo();
 
 
-document.querySelector('#header-logo').addEventListener('click', () => {
-    // if (document.querySelector(selectors)) {
-        
-    // }
-    updateInfo();
-})
+// document.querySelector('#header-logo').addEventListener('click', () => {
+
+//     updateInfo();
+
+// })

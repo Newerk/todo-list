@@ -3,6 +3,7 @@ import { homePage } from "../pages/home";
 import { todayPage } from "../pages/today";
 import { upcomingPage } from "../pages/upcoming";
 import { pastDuePage } from "../pages/pastdue";
+import { updateInfo } from "../update-info";
 
 
 export const fullSidebar = () => {
@@ -27,6 +28,7 @@ today.textContent = 'TODAY';
 today.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
 today.addEventListener('click', () => {
     wipeContent(todayPage());
+    updateInfo();
 });
 
 
@@ -37,6 +39,8 @@ upcoming.textContent = 'UPCOMING';
 upcoming.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
 upcoming.addEventListener('click', () => {
     wipeContent(upcomingPage());
+    updateInfo();
+
 });
 
 const pastDue = document.createElement('button');
@@ -46,6 +50,8 @@ pastDue.textContent = 'PAST DUE';
 pastDue.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
 pastDue.addEventListener('click', () => {
     wipeContent(pastDuePage());
+    updateInfo();
+
 });
 
 
