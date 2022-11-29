@@ -2,9 +2,9 @@ import './style.css'
 import { headerContent } from './header/header-content.js';
 import { homePage } from './pages/home';
 import { compactSidebarContent } from './sidebar/compact-sidebar-content';
-import { todoListRows } from './todo_row/todo';
 import { updateInfo } from './update-info';
-// import { rows } from './local-storage';
+import { activePageTracker } from './active-page-tracker';
+import { storageManagement } from './local-storage';
 
 
 
@@ -25,11 +25,6 @@ document.body.appendChild(contentContainer);
 
 contentContainer.appendChild(content);
 
+activePageTracker(storageManagement.onHomePage);
 updateInfo();
 
-
-// document.querySelector('#header-logo').addEventListener('click', () => {
-
-//     updateInfo();
-
-// })

@@ -9,6 +9,7 @@ import { wipeContent } from '../wipe-content';
 import { homePage } from '../pages/home';
 import { storageManagement } from '../local-storage';
 import { updateInfo } from '../update-info';
+import { activePageTracker } from '../active-page-tracker';
 
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
@@ -44,7 +45,17 @@ export const compactSidebarContent = () => {
         home.textContent = 'HOME';
         home.addEventListener('click', () => {
                 wipeContent(homePage());
+                activePageTracker(storageManagement.onHomePage)
+
+                console.log(`
+                ON HOME PAGE: ${storageManagement.onHomePage.value}
+                ON TODAY PAGE: ${storageManagement.onTodayPage.value}
+                ON UPCOMING PAGE: ${storageManagement.onUpcomingPage.value}
+                ON PASTDUE PAGE: ${storageManagement.onPastDuePage.value}`
+                );
+
                 updateInfo();
+
 
         });
         compactSidebarContentDiv.appendChild(home);
@@ -54,6 +65,14 @@ export const compactSidebarContent = () => {
         today.textContent = 'TODAY';
         today.addEventListener('click', () => {
                 wipeContent(todayPage());
+                activePageTracker(storageManagement.onTodayPage)
+
+                console.log(`
+                ON HOME PAGE: ${storageManagement.onHomePage.value}
+                ON TODAY PAGE: ${storageManagement.onTodayPage.value}
+                ON UPCOMING PAGE: ${storageManagement.onUpcomingPage.value}
+                ON PASTDUE PAGE: ${storageManagement.onPastDuePage.value}`
+                );
                 updateInfo();
 
         });
@@ -64,6 +83,14 @@ export const compactSidebarContent = () => {
         upcoming.textContent = 'UPCOMING';
         upcoming.addEventListener('click', () => {
                 wipeContent(upcomingPage());
+                activePageTracker(storageManagement.onUpcomingPage)
+
+                console.log(`
+                ON HOME PAGE: ${storageManagement.onHomePage.value}
+                ON TODAY PAGE: ${storageManagement.onTodayPage.value}
+                ON UPCOMING PAGE: ${storageManagement.onUpcomingPage.value}
+                ON PASTDUE PAGE: ${storageManagement.onPastDuePage.value}`
+                );
                 updateInfo();
 
         });
@@ -74,6 +101,14 @@ export const compactSidebarContent = () => {
         pastDue.textContent = 'PAST DUE';
         pastDue.addEventListener('click', () => {
                 wipeContent(pastDuePage());
+                activePageTracker(storageManagement.onPastDuePage)
+
+                console.log(`
+                ON HOME PAGE: ${storageManagement.onHomePage.value}
+                ON TODAY PAGE: ${storageManagement.onTodayPage.value}
+                ON UPCOMING PAGE: ${storageManagement.onUpcomingPage.value}
+                ON PASTDUE PAGE: ${storageManagement.onPastDuePage.value}`
+                );
                 updateInfo();
         });
         compactSidebarContentDiv.appendChild(pastDue);

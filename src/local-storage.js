@@ -18,8 +18,16 @@ import { updateInfo } from "./update-info";
 export const storageManagement = {
     sideBarIsExpanded: { value: false },
     newTaskMenuActive: { value: false },
-    priorityMenuActive: { value: false},
+    priorityMenuActive: { value: false },
+
+    onHomePage: { value: false },
+    onTodayPage: { value: false },
+    onUpcomingPage: { value: false },
+    onPastDuePage: { value: false },
+
 }
+
+
 
 // export let rows = [];
 
