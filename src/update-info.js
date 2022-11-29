@@ -29,8 +29,7 @@ export const updateInfo = () => {
         }
     }
 
-
-
+//IMPORTANT NOTE: on 11/30/2022, the 'today 0','todau 1', and 'today 2' should all be in paste due page
     switch (true) {
         case storageManagement.onHomePage.value:
             //build DOM for all todos
