@@ -36,4 +36,5 @@ export const activePageTracker = (activePage) => {
 
     }
 
+    return activePage.value;
 }

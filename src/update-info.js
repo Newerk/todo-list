@@ -16,44 +16,69 @@ import { storageManagement } from "./local-storage";
 import { activePageTracker } from "./active-page-tracker";
 
 export const updateInfo = () => {
+    let rows = JSON.parse(localStorage.getItem('rows'));
+
+    const showFromFilter = (filter) => {
+        for (let i = 0; i < rows.length; i++) {
+            const element = rows[i];
+
+            switch (element.filter) {
+                case 'today':
+                    todoListRows(element.title, element.priority, element.dueDate).build();
+
+                    break;
+
+                case 'upcoming':
+                    // todoListRows(element.title, element.priority, element.dueDate).build();
+
+                    break;
+
+                case 'pastdue':
+                    // todoListRows(element.title, element.priority, element.dueDate).build();
+
+                    break;
+            }
+        }
+    }
 
 
-    // perhaps add a boolean value on each page module that lets a user know if they
-    // are on that page or Notification.
-    //             exmaple of why this can be useful:
 
     switch (true) {
-        case activePageTracker(storageManagement.onHomePage):
+        case storageManagement.onHomePage.value:
             //build DOM for all todos
             wipe();
-            const showAll = (() => {        
-                let rows = JSON.parse(localStorage.getItem('rows'));
-        
-                for (let index = 0; index < rows.length; index++) {
-                    const element = rows[index];
-        
+            const showAll = (() => {
+
+                for (let i = 0; i < rows.length; i++) {
+                    const element = rows[i];
+
                     todoListRows(element.title, element.priority, element.dueDate).build();
                 }
             })();
 
             break;
 
-        case activePageTracker(storageManagement.onTodayPage):
+        case storageManagement.onTodayPage.value:
             //build DOM for todos due today
             wipe();
+            showFromFilter('today');
 
 
             break;
 
-        case activePageTracker(storageManagement.onUpcomingPage):
+        case storageManagement.onUpcomingPage.value:
             //build DOM for upcoming todos
             wipe();
+            // showFromFilter('upcoming');
+
 
             break;
 
-        case activePageTracker(storageManagement.onPastDuePage):
+        case storageManagement.onPastDuePage.value:
             //build DOM for pastDue todos
             wipe();
+            // showFromFilter('pastdue');
+
 
             break;
     }
@@ -79,17 +104,17 @@ A WAY TO GET THE EXACT OBJECT THROUGH PROPERY VALUES WITHOUT A FOR LOOP
 
     //this feature function desnt work yet
 
-    const showAll = () => {
-        // wipe();
+    // const showAll = () => {
+    //     // wipe();
 
-        let rows = JSON.parse(localStorage.getItem('rows'));
+    //     let rows = JSON.parse(localStorage.getItem('rows'));
 
-        for (let index = 0; index < rows.length; index++) {
-            const element = rows[index];
+    //     for (let index = 0; index < rows.length; index++) {
+    //         const element = rows[index];
 
-            todoListRows(element.title, element.priority, element.dueDate).build();
-        }
-    }
+    //         todoListRows(element.title, element.priority, element.dueDate).build();
+    //     }
+    // }
 
 
 
