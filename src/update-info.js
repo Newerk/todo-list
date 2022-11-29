@@ -22,21 +22,9 @@ export const updateInfo = () => {
         for (let i = 0; i < rows.length; i++) {
             const element = rows[i];
 
-            switch (element.filter) {
-                case 'today':
-                    todoListRows(element.title, element.priority, element.dueDate).build();
+            if (element.filter === filter) {
+                todoListRows(element.title, element.priority, element.dueDate).build();
 
-                    break;
-
-                case 'upcoming':
-                    // todoListRows(element.title, element.priority, element.dueDate).build();
-
-                    break;
-
-                case 'pastdue':
-                    // todoListRows(element.title, element.priority, element.dueDate).build();
-
-                    break;
             }
         }
     }
@@ -69,7 +57,7 @@ export const updateInfo = () => {
         case storageManagement.onUpcomingPage.value:
             //build DOM for upcoming todos
             wipe();
-            // showFromFilter('upcoming');
+            showFromFilter('upcoming');
 
 
             break;
@@ -77,7 +65,7 @@ export const updateInfo = () => {
         case storageManagement.onPastDuePage.value:
             //build DOM for pastDue todos
             wipe();
-            // showFromFilter('pastdue');
+            showFromFilter('pastdue');
 
 
             break;

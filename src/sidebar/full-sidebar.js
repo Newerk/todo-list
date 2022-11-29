@@ -4,6 +4,8 @@ import { todayPage } from "../pages/today";
 import { upcomingPage } from "../pages/upcoming";
 import { pastDuePage } from "../pages/pastdue";
 import { updateInfo } from "../update-info";
+import { storageManagement } from "../local-storage";
+import { activePageTracker } from "../active-page-tracker";
 
 
 export const fullSidebar = () => {
@@ -19,6 +21,8 @@ export const fullSidebar = () => {
     home.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
     home.addEventListener('click', () => {
         wipeContent(homePage());
+        activePageTracker(storageManagement.onHomePage)
+        updateInfo();
 });
 
 const today = document.createElement('button');
@@ -28,6 +32,7 @@ today.textContent = 'TODAY';
 today.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
 today.addEventListener('click', () => {
     wipeContent(todayPage());
+    activePageTracker(storageManagement.onTodayPage)
     updateInfo();
 });
 
@@ -39,6 +44,7 @@ upcoming.textContent = 'UPCOMING';
 upcoming.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
 upcoming.addEventListener('click', () => {
     wipeContent(upcomingPage());
+    activePageTracker(storageManagement.onUpcomingPage)
     updateInfo();
 
 });
@@ -50,6 +56,7 @@ pastDue.textContent = 'PAST DUE';
 pastDue.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
 pastDue.addEventListener('click', () => {
     wipeContent(pastDuePage());
+    activePageTracker(storageManagement.onPastDuePage)
     updateInfo();
 
 });
