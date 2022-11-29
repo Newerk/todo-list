@@ -19,3 +19,11 @@ export const todoFilterLogic = (obj) => {
     }
 
 }
+
+
+//needs to update everyday, or every time the page is loaded so that once a project becomes past due, it will have its
+// filter changed, and then be visible in the past due tab w/o  manually changing it
+const updateFilter = () => {
+
+}
+
