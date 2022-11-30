@@ -29,7 +29,25 @@ export const updateInfo = () => {
         }
     }
 
-//IMPORTANT NOTE: on 11/30/2022, the 'today 0','todau 1', and 'today 2' should all be in paste due page
+    //needs to update everyday, or every time the page is loaded so that once a project becomes past due, it will have its
+    // filter changed, and then be visible in the past due tab w/o  manually changing it
+    const updateFilter = (obj) => {
+        const today = new Date;
+        const todaysDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+
+        for (let i = 0; i < obj.length; i++) {
+            const element = obj[i];
+
+            if (element.dueDate < todaysDate) {
+                element.filter = 'pastdue';
+                console.log(JSON.stringify(element) + ' is now pastdue');
+            }
+        }
+
+        localStorage.setItem('rows', JSON.stringify(obj));
+
+    }
+
     switch (true) {
         case storageManagement.onHomePage.value:
             //build DOM for all todos
@@ -49,6 +67,7 @@ export const updateInfo = () => {
             //build DOM for todos due today
             wipe();
             showFromFilter('today');
+            updateFilter(rows);
 
 
             break;
@@ -57,6 +76,7 @@ export const updateInfo = () => {
             //build DOM for upcoming todos
             wipe();
             showFromFilter('upcoming');
+            updateFilter(rows);
 
 
             break;
@@ -65,6 +85,7 @@ export const updateInfo = () => {
             //build DOM for pastDue todos
             wipe();
             showFromFilter('pastdue');
+            updateFilter(rows);
 
 
             break;
@@ -88,25 +109,10 @@ A WAY TO GET THE EXACT OBJECT THROUGH PROPERY VALUES WITHOUT A FOR LOOP
     console.log(result) 
     */
 
-
-    //this feature function desnt work yet
-
-    // const showAll = () => {
-    //     // wipe();
-
-    //     let rows = JSON.parse(localStorage.getItem('rows'));
-
-    //     for (let index = 0; index < rows.length; index++) {
-    //         const element = rows[index];
-
-    //         todoListRows(element.title, element.priority, element.dueDate).build();
-    //     }
-    // }
-
-
-
 }
 
 function wipe() {
     document.body.querySelectorAll('#row').forEach(el => el.remove());
 };
+
+
