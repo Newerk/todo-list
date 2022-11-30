@@ -46,14 +46,6 @@ export const compactSidebarContent = () => {
         home.addEventListener('click', () => {
                 wipeContent(homePage());
                 activePageTracker(storageManagement.onHomePage)
-
-                console.log(`
-                ON HOME PAGE: ${storageManagement.onHomePage.value}
-                ON TODAY PAGE: ${storageManagement.onTodayPage.value}
-                ON UPCOMING PAGE: ${storageManagement.onUpcomingPage.value}
-                ON PASTDUE PAGE: ${storageManagement.onPastDuePage.value}`
-                );
-
                 updateInfo();
 
 
@@ -66,13 +58,6 @@ export const compactSidebarContent = () => {
         today.addEventListener('click', () => {
                 wipeContent(todayPage());
                 activePageTracker(storageManagement.onTodayPage)
-
-                console.log(`
-                ON HOME PAGE: ${storageManagement.onHomePage.value}
-                ON TODAY PAGE: ${storageManagement.onTodayPage.value}
-                ON UPCOMING PAGE: ${storageManagement.onUpcomingPage.value}
-                ON PASTDUE PAGE: ${storageManagement.onPastDuePage.value}`
-                );
                 updateInfo();
 
         });
@@ -84,13 +69,6 @@ export const compactSidebarContent = () => {
         upcoming.addEventListener('click', () => {
                 wipeContent(upcomingPage());
                 activePageTracker(storageManagement.onUpcomingPage)
-
-                console.log(`
-                ON HOME PAGE: ${storageManagement.onHomePage.value}
-                ON TODAY PAGE: ${storageManagement.onTodayPage.value}
-                ON UPCOMING PAGE: ${storageManagement.onUpcomingPage.value}
-                ON PASTDUE PAGE: ${storageManagement.onPastDuePage.value}`
-                );
                 updateInfo();
 
         });
@@ -102,13 +80,6 @@ export const compactSidebarContent = () => {
         pastDue.addEventListener('click', () => {
                 wipeContent(pastDuePage());
                 activePageTracker(storageManagement.onPastDuePage)
-
-                console.log(`
-                ON HOME PAGE: ${storageManagement.onHomePage.value}
-                ON TODAY PAGE: ${storageManagement.onTodayPage.value}
-                ON UPCOMING PAGE: ${storageManagement.onUpcomingPage.value}
-                ON PASTDUE PAGE: ${storageManagement.onPastDuePage.value}`
-                );
                 updateInfo();
         });
         compactSidebarContentDiv.appendChild(pastDue);
@@ -116,16 +87,26 @@ export const compactSidebarContent = () => {
         const projects = document.createElement('div');
         projects.id = 'projects-side-btn';
         projects.textContent = 'PROJECTS';
+        projects.addEventListener('click', () => {
+                wipeContent(projectPage());
+        });
         compactSidebarContentDiv.appendChild(projects);
+
 
         const account = document.createElement('div');
         account.id = 'account-side-btn';
         account.textContent = 'ACCOUNT';
+        account.addEventListener('clicl', () => {
+                wipeContent(accountPage());
+        });
         compactSidebarContentDiv.appendChild(account);
 
         const settings = document.createElement('div');
         settings.id = 'settings-side-btn';
         settings.textContent = 'SETTINGS';
+        settings.addEventListener('click', () => {
+                wipeContent(settingsPage());
+        });
         compactSidebarContentDiv.appendChild(settings);
 
 
