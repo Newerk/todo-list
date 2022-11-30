@@ -1,4 +1,4 @@
-import './todo-list-styling.css'
+import './page-styling.css'
 import { todoHeader } from '../todo_row/todo-header';
 
 export const upcomingPage = () => {

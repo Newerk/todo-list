@@ -1,6 +1,5 @@
 import { buildNewTaskWindow } from "../menus/new-task-menu";
 import { storageManagement } from "../local-storage";
-import { getCount } from "..";
 
 /*
 later on this module will only prompt the new-task.js which will handle adding the custom tasks to the page. This button feature 
