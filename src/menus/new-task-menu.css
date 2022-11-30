@@ -1,5 +1,16 @@
 @import url('../custom-variables.css');
 
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px #252526 inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #A6A6A6;
+}
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: /*your box-shadow*/ 0 0 0 50px #252526 inset;
+    -webkit-text-fill-color: #A6A6A6;
+}
+
+
+
 /*NEW TASK WINDOW*/
 .new-task-container {
     display: flex;
