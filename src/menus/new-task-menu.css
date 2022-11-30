@@ -54,7 +54,7 @@ textarea {
     display: grid;
     grid-template-columns: repeat(1, 1fr) auto;
     grid-template-rows: 1fr 1fr;
-    padding-bottom: 7rem;
+    padding-bottom: 5.4rem;
 }
 
 #priority-date-wrapper {
