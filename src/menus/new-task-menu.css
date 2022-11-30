@@ -18,7 +18,8 @@ input:-webkit-autofill:focus {
     justify-content: space-between;
     background-color: #252526;
     width: 30rem;
-    height: 30rem;
+    /* height: 30rem; */
+    height: auto;
 
     border-radius: var(--menu_radius);
     padding: 1rem;
@@ -49,10 +50,11 @@ textarea {
 
 
 /*3 SECTION OF CONTAINERS*/
-.top-container {
+.nt-top-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr) auto;
     grid-template-rows: 1fr 1fr;
+    padding-bottom: 7rem;
 }
 
 #priority-date-wrapper {

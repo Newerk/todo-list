@@ -38,9 +38,12 @@ export const updateInfo = () => {
         for (let i = 0; i < obj.length; i++) {
             const element = obj[i];
 
-            if (element.dueDate < todaysDate) {
+            let dueDateArr = element.dueDate.split('/');
+            let dueDate = `${dueDateArr[2]}-${dueDateArr[0]}-${dueDateArr[1]}`
+
+            if (dueDate < todaysDate) {
                 element.filter = 'pastdue';
-                console.log(JSON.stringify(element) + ' is now pastdue');
+
             }
         }
 

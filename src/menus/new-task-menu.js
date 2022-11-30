@@ -78,7 +78,7 @@ export const buildNewTaskWindow = () => {
 
 
     const topContainer = document.createElement('div');
-    topContainer.className = 'top-container';
+    topContainer.className = 'nt-top-container';
 
     const middleContainer = document.createElement('div');
     middleContainer.className = 'middle-container';
@@ -234,7 +234,7 @@ export const buildNewTaskWindow = () => {
     bottomContainer.appendChild(addTaskBtn);
 
     newTaskContainer.appendChild(topContainer)
-    newTaskContainer.appendChild(middleContainer)
+    // newTaskContainer.appendChild(middleContainer)
     newTaskContainer.appendChild(bottomContainer)
 
     return newTaskContainer;
