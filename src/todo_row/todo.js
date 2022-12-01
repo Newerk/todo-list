@@ -13,6 +13,21 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate) => {
 
     const status = document.createElement('div');
     status.id = 'row-status';
+
+    let statusCheckbox = document.createElement('input');
+    statusCheckbox.type = 'checkbox';
+    statusCheckbox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            //write a console log that shows which task from the rows array was checked. vice versa for unchecking            
+
+        } else {
+            console.log('task was unchecked')
+        }
+
+    })
+    status.appendChild(statusCheckbox)
+
+
     // status.textContent = 'O';
     // if (ls_Status === 'Complete') {
     // add check mark, and add a strike though on the title or greyed out
@@ -20,7 +35,7 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate) => {
 
     // } else if (ls_Status === 'Incomplete') {
     // show default view of todo
-    status.textContent = 'X';
+    // status.textContent = 'X';
 
     // }
 
