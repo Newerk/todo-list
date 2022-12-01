@@ -19,3 +19,15 @@
     place-self: end;
     position: relative;
 }
+
+#row-title {
+    white-space: nowrap;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */  
+
+}
+
+#row-title::-webkit-scrollbar {
+    display: none;
+  }
