@@ -6,7 +6,9 @@ import { closeThreeDotMenu, threeDotsMenu, menuStatus } from '../menus/three-dot
 import './todo.css';
 
 
-export const todoListRows = (ls_Title, ls_Priority, ls_DueDate) => {
+export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
+    let lsRows = JSON.parse(localStorage.getItem('rows'));
+
     const row = document.createElement('div');
     row.id = 'row';
     row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white;border: grey 1px solid');
@@ -14,17 +16,53 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate) => {
     const status = document.createElement('div');
     status.id = 'row-status';
 
+
     let statusCheckbox = document.createElement('input');
     statusCheckbox.type = 'checkbox';
+
+    let getStatus = () => {
+        if (ls_Status === 'Complete') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    statusCheckbox.checked = getStatus();
+
+
     statusCheckbox.addEventListener('change', (e) => {
+
         if (e.target.checked) {
-            //write a console log that shows which task from the rows array was checked. vice versa for unchecking            
+
+            let result = lsRows.filter(obj => {
+                if (obj.title === e.target.parentElement.parentElement.querySelector('#row-title').textContent) {
+                    obj.status = 'Complete';
+
+                    return localStorage.setItem('rows', JSON.stringify(lsRows))
+                }
+
+            })
+
+            console.log(JSON.parse(localStorage.getItem('rows')))
+
+
 
         } else {
-            console.log('task was unchecked')
+            let result = lsRows.filter(obj => {
+                if (obj.title === e.target.parentElement.parentElement.querySelector('#row-title').textContent) {
+                    obj.status = 'Incomplete';
+
+                    return localStorage.setItem('rows', JSON.stringify(lsRows))
+                }
+
+            })
+
+            console.log(JSON.parse(localStorage.getItem('rows')))
         }
 
     })
+
     status.appendChild(statusCheckbox)
 
 

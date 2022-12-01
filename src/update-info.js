@@ -23,7 +23,7 @@ export const updateInfo = () => {
             const element = rows[i];
 
             if (element.filter === filter) {
-                todoListRows(element.title, element.priority, element.dueDate).build();
+                todoListRows(element.title, element.priority, element.dueDate, element.status).build();
 
             }
         }
@@ -60,7 +60,7 @@ export const updateInfo = () => {
                 for (let i = 0; i < rows.length; i++) {
                     const element = rows[i];
 
-                    todoListRows(element.title, element.priority, element.dueDate).build();
+                    todoListRows(element.title, element.priority, element.dueDate, element.status).build();
                 }
             })();
 
@@ -117,5 +117,3 @@ A WAY TO GET THE EXACT OBJECT THROUGH PROPERY VALUES WITHOUT A FOR LOOP
 function wipe() {
     document.body.querySelectorAll('#row').forEach(el => el.remove());
 };
-
-
