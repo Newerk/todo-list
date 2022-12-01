@@ -6,8 +6,9 @@ import { pastDuePage } from "../pages/pastdue";
 import { updateInfo } from "../update-info";
 import { storageManagement } from "../local-storage";
 import { activePageTracker } from "../active-page-tracker";
-import { projectPage } from "../pages/projects";
+import { projectsPage } from '../pages/projects';
 import { settingsPage } from "../pages/settings";
+import { accountPage } from "../pages/account";
 
 
 export const fullSidebar = () => {
@@ -70,7 +71,7 @@ export const fullSidebar = () => {
     projects.textContent = 'PROJECTS';
     projects.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
     projects.addEventListener('click', () => {
-        wipeContent(projectPage());
+        wipeContent(projectsPage());
     });
 
     const account = document.createElement('button');
@@ -78,7 +79,7 @@ export const fullSidebar = () => {
     account.id = 'account-btn-ex';
     account.textContent = 'ACCOUNT';
     account.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
-    account.addEventListener('clicl', () => {
+    account.addEventListener('click', () => {
         wipeContent(accountPage());
     });
 

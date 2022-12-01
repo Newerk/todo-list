@@ -9,7 +9,10 @@ import { wipeContent } from '../wipe-content';
 import { homePage } from '../pages/home';
 import { storageManagement } from '../local-storage';
 import { updateInfo } from '../update-info';
-import { activePageTracker } from '../active-page-tracker';
+import { activePageTracker } from '../active-page-tracker'; 
+import { projectsPage } from '../pages/projects';
+import { accountPage } from '../pages/account';
+import { settingsPage } from '../pages/settings';
 
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
@@ -88,7 +91,7 @@ export const compactSidebarContent = () => {
         projects.id = 'projects-side-btn';
         projects.textContent = 'PROJECTS';
         projects.addEventListener('click', () => {
-                wipeContent(projectPage());
+                wipeContent(projectsPage());
         });
         compactSidebarContentDiv.appendChild(projects);
 
@@ -96,7 +99,7 @@ export const compactSidebarContent = () => {
         const account = document.createElement('div');
         account.id = 'account-side-btn';
         account.textContent = 'ACCOUNT';
-        account.addEventListener('clicl', () => {
+        account.addEventListener('click', () => {
                 wipeContent(accountPage());
         });
         compactSidebarContentDiv.appendChild(account);

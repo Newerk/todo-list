@@ -12,3 +12,7 @@
     width: 100%;
     height: calc(100vh - (var(--menu_padding)*2) - var(--header_height) - 4rem);
 }
+
+.projects-container {
+    border: 2px solid black;
+}
