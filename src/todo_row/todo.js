@@ -39,6 +39,8 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
                 if (obj.title === e.target.parentElement.parentElement.querySelector('#row-title').textContent) {
                     obj.status = 'Complete';
 
+                    e.target.parentElement.parentElement.querySelector('#row-title').style.setProperty('text-decoration', 'line-through');
+
                     return localStorage.setItem('rows', JSON.stringify(lsRows))
                 }
 
@@ -52,6 +54,9 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
             let result = lsRows.filter(obj => {
                 if (obj.title === e.target.parentElement.parentElement.querySelector('#row-title').textContent) {
                     obj.status = 'Incomplete';
+
+                    e.target.parentElement.parentElement.querySelector('#row-title').style.textDecoration = null;
+
 
                     return localStorage.setItem('rows', JSON.stringify(lsRows))
                 }
@@ -84,6 +89,12 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
     title.id = 'row-title';
     title.textContent = ls_Title;
     title.setAttribute('style', ` width: 1fr; text-overflow: ellipsis;`);
+
+    if (ls_Status === 'Complete') {
+        title.setAttribute('style', `text-decoration: line-through`);
+
+        
+    }
 
     row.appendChild(title);
 
