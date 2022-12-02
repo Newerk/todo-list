@@ -115,48 +115,57 @@ export const editTaskWindow = () => {
 
 
     //right now this adds a new task instead of editing the selected task
-    const addTaskBtn = document.createElement('button');
-    addTaskBtn.id = 'add-task-btn';
-    addTaskBtn.textContent = 'SAVE CHANGES';
-    addTaskBtn.addEventListener('click', () => {
+    const editTaskBtn = document.createElement('button');
+    editTaskBtn.id = 'add-task-btn';
+    editTaskBtn.textContent = 'SAVE CHANGES';
+    editTaskBtn.addEventListener('click', () => {
+        let rows = JSON.parse(localStorage.getItem('rows'));
         const todoObj = {};
+        let arr = [];
+
+        let activeRowTitle = rows.forEach(obj => {
+            if (obj.title === storageManagement.titleOfActiveRow) {
+                console.log(obj.title)
+                return obj.title;//the title of the current row that edit button was clicked on
+            }
+        })
 
         if (titleInput.value === '') {
             console.log('please enter a title');
             titleInput.setAttribute('style', 'background-color: rgb(246,166,166, .1) ')
             titleInput.addEventListener('input', () => titleInput.setAttribute('style', 'background-color: none;'))
             return;
-            
-        }else
 
-        if (storageManagement.editTaskMenuActive.value === true) {
-            todoObj.title = titleInput.value;
-            todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
-            todoObj.description = descriptionInput.value;
-            todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
-            todoObj.status = 'Incomplete';
+        } else
 
-            todoFilterLogic(todoObj);
+            if (storageManagement.editTaskMenuActive.value === true) {
+                todoObj.title = titleInput.value;
+                todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
+                todoObj.description = descriptionInput.value;
+                todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
+                todoObj.status = 'Incomplete';
 
-
-            newTaskContainer.remove();
-            storageManagement.editTaskMenuActive.value = false;
+                todoFilterLogic(todoObj);
 
 
-            let rows = JSON.parse(localStorage.getItem('rows'));
-            rows.push(todoObj);
-
-            localStorage.setItem('rows', JSON.stringify(rows));
-            
-            console.log(JSON.parse(localStorage.getItem('rows')))
-
-            updateInfo();
+                newTaskContainer.remove();
+                storageManagement.editTaskMenuActive.value = false;
 
 
-        }
+                let rows = JSON.parse(localStorage.getItem('rows'));
+                rows.push(todoObj);
+
+                localStorage.setItem('rows', JSON.stringify(rows));
+
+                console.log(JSON.parse(localStorage.getItem('rows')))
+
+                updateInfo();
+
+
+            }
     })
 
-    bottomContainer.appendChild(addTaskBtn);
+    bottomContainer.appendChild(editTaskBtn);
 
     newTaskContainer.appendChild(topContainer)
     newTaskContainer.appendChild(bottomContainer)

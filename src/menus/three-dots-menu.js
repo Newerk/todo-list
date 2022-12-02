@@ -22,18 +22,18 @@ export const threeDotsMenu = () => {
     const editBtn = document.createElement('button');
     editBtn.textContent = 'EDIT';
     editBtn.id = 'edit-td-btn';
-    editBtn.addEventListener('click', () => {
-        closeThreeDotMenu();
-        
-            if (storageManagement.editTaskMenuActive.value === false) {
-                document.body.querySelector('.top-container').appendChild(editTaskWindow());
-                storageManagement.editTaskMenuActive.value = true;
-            } else {
-                console.log('there is a window already opened')
-            }
+    editBtn.addEventListener('click', (e) => {
+        storageManagement.titleOfActiveRow = e.target.parentElement.parentElement.parentElement.querySelector('#row-title').textContent;
 
-            console.log('edit menu pops up')
-    
+        closeThreeDotMenu();
+
+        if (storageManagement.editTaskMenuActive.value === false) {
+            document.body.querySelector('.top-container').appendChild(editTaskWindow());
+            storageManagement.editTaskMenuActive.value = true;
+        } else {
+            console.log('there is a window already opened')
+        }
+
 
     });
 
