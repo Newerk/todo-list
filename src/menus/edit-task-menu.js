@@ -5,7 +5,7 @@ import { todoFilterLogic } from '../todoFilterLogic';
 import { updateInfo } from '../update-info';
 
 
-export const buildNewTaskWindow = () => {
+export const editTaskWindow = () => {
     const newTaskContainer = document.createElement('div');
     newTaskContainer.className = 'new-task-container';
 
@@ -90,9 +90,9 @@ export const buildNewTaskWindow = () => {
     exitBtn.id = 'exit-btn';
     exitBtn.textContent = 'X'
     exitBtn.addEventListener('click', () => {
-        if (storageManagement.newTaskMenuActive.value === true) {
+        if (storageManagement.editTaskMenuActive.value === true) {
             newTaskContainer.remove();
-            storageManagement.newTaskMenuActive.value = false;
+            storageManagement.editTaskMenuActive.value = false;
         }
 
     })
@@ -113,12 +113,12 @@ export const buildNewTaskWindow = () => {
     middleContainer.appendChild(descriptionInput);
 
 
+
+    //right now this adds a new task instead of editing the selected task
     const addTaskBtn = document.createElement('button');
     addTaskBtn.id = 'add-task-btn';
-    addTaskBtn.textContent = '+ADD TASK';
+    addTaskBtn.textContent = 'SAVE CHANGES';
     addTaskBtn.addEventListener('click', () => {
-        /*when this module becomes more fleshed out, it will take to account the filters that a todo will have. right now this button will just
-        paste a todo onto the homepage*/
         const todoObj = {};
 
         if (titleInput.value === '') {
@@ -126,55 +126,39 @@ export const buildNewTaskWindow = () => {
             titleInput.setAttribute('style', 'background-color: rgb(246,166,166, .1) ')
             titleInput.addEventListener('input', () => titleInput.setAttribute('style', 'background-color: none;'))
             return;
+            
+        }else
 
-        } else
+        if (storageManagement.editTaskMenuActive.value === true) {
+            todoObj.title = titleInput.value;
+            todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
+            todoObj.description = descriptionInput.value;
+            todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
+            todoObj.status = 'Incomplete';
 
-            if (storageManagement.newTaskMenuActive.value === true) {
-                // let newRow = 
-                todoObj.title = titleInput.value;
-                todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
-                todoObj.description = descriptionInput.value;
-                todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
-                todoObj.status = 'Incomplete';
-
-                // todoListRows(todoObj.title,todoObj.priority,todoObj.dueDate).build();
-
-
-                /*
-                run a function here that takes an object as an argument. This function
-                will be full of if statements or switch/cases to check if
-                the user entered date is before, after, or the same as today's date.
-                This will determine which filter to add onto the object. now whenever 
-                updateScreen() from the update-info module is ran, it will determine which
-                todos to show depending on the page you are on
-    
-                todoFilterLogic(todoObj);
-                */
-                todoFilterLogic(todoObj);
-
-                // document.body.querySelector('#todo-list-container').appendChild(newRow.row);
-
-                newTaskContainer.remove();
-                storageManagement.newTaskMenuActive.value = false;
+            todoFilterLogic(todoObj);
 
 
-                let rows = JSON.parse(localStorage.getItem('rows'));
-                rows.push(todoObj);
-
-                localStorage.setItem('rows', JSON.stringify(rows));
-
-                console.log(JSON.parse(localStorage.getItem('rows')))
-
-                updateInfo();
+            newTaskContainer.remove();
+            storageManagement.editTaskMenuActive.value = false;
 
 
-            }
+            let rows = JSON.parse(localStorage.getItem('rows'));
+            rows.push(todoObj);
+
+            localStorage.setItem('rows', JSON.stringify(rows));
+            
+            console.log(JSON.parse(localStorage.getItem('rows')))
+
+            updateInfo();
+
+
+        }
     })
 
     bottomContainer.appendChild(addTaskBtn);
 
     newTaskContainer.appendChild(topContainer)
-    // newTaskContainer.appendChild(middleContainer)
     newTaskContainer.appendChild(bottomContainer)
 
     return newTaskContainer;
@@ -212,7 +196,6 @@ function dueDateValue(obj, value) {
     let year = today.getFullYear();
 
     let formattedDate = `${year}-${month}-${day}`;
-
 
 
     if (value === formattedDate) {

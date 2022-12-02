@@ -1,3 +1,5 @@
+import { storageManagement } from '../local-storage';
+import { editTaskWindow } from './edit-task-menu';
 import './three-dots-menu.css'
 
 export let menuStatus = {
@@ -22,6 +24,17 @@ export const threeDotsMenu = () => {
     editBtn.id = 'edit-td-btn';
     editBtn.addEventListener('click', () => {
         closeThreeDotMenu();
+        
+            if (storageManagement.editTaskMenuActive.value === false) {
+                document.body.querySelector('.top-container').appendChild(editTaskWindow());
+                storageManagement.editTaskMenuActive.value = true;
+            } else {
+                console.log('there is a window already opened')
+            }
+
+            console.log('edit menu pops up')
+    
+
     });
 
     const duplicateBtn = document.createElement('button');
