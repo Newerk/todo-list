@@ -71,17 +71,6 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
     status.appendChild(statusCheckbox)
 
 
-    // status.textContent = 'O';
-    // if (ls_Status === 'Complete') {
-    // add check mark, and add a strike though on the title or greyed out
-    // status.textContent = 'O';
-
-    // } else if (ls_Status === 'Incomplete') {
-    // show default view of todo
-    // status.textContent = 'X';
-
-    // }
-
     status.setAttribute('style', `display: flex; justify-content: center; width: ${(document.getElementById('header-status').offsetWidth)}px;`);
     row.appendChild(status);
 
@@ -93,7 +82,6 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
     if (ls_Status === 'Complete') {
         title.setAttribute('style', `text-decoration: line-through`);
 
-        
     }
 
     row.appendChild(title);
