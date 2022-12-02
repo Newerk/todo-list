@@ -7,7 +7,6 @@ import './todo.css';
 
 
 export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
-    let lsRows = JSON.parse(localStorage.getItem('rows'));
 
     const row = document.createElement('div');
     row.id = 'row';
@@ -32,6 +31,8 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
 
 
     statusCheckbox.addEventListener('change', (e) => {
+        let lsRows = JSON.parse(localStorage.getItem('rows'));
+
 
         if (e.target.checked) {
 
