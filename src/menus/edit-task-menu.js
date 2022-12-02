@@ -123,12 +123,16 @@ export const editTaskWindow = () => {
         const todoObj = {};
         let arr = [];
 
-        let activeRowTitle = rows.forEach(obj => {
+        let getActiveRowTitle = rows.forEach(obj => {
+            let title;
             if (obj.title === storageManagement.titleOfActiveRow) {
-                console.log(obj.title)
-                return obj.title;//the title of the current row that edit button was clicked on
+                // console.log(obj.title)
+                title = obj.title;
             }
+            return title;//the title of the current row that edit button was clicked on
         })
+        console.log('Active row title: '+ getActiveRowTitle)//figure out why this is returning not defined
+
 
         if (titleInput.value === '') {
             console.log('please enter a title');
@@ -140,6 +144,7 @@ export const editTaskWindow = () => {
 
             if (storageManagement.editTaskMenuActive.value === true) {
                 todoObj.title = titleInput.value;
+
                 todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
                 todoObj.description = descriptionInput.value;
                 todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
