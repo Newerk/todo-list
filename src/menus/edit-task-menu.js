@@ -25,6 +25,7 @@ export const editTaskWindow = () => {
     titleInput.id = 'title-input';
     titleInput.type = 'text';
     titleInput.required = true;
+    titleInput.value = storageManagement.titleOfActiveRow;
 
     const prioDateWrapper = document.createElement('div');
     prioDateWrapper.id = 'priority-date-wrapper';
@@ -128,8 +129,9 @@ export const editTaskWindow = () => {
             if (obj.title === storageManagement.titleOfActiveRow) {
                 // console.log(obj.title)
                 title = obj.title;
+                return title;//the title of the current row that edit button was clicked on
+
             }
-            return title;//the title of the current row that edit button was clicked on
         })
         console.log('Active row title: '+ getActiveRowTitle)//figure out why this is returning not defined
 
@@ -144,7 +146,6 @@ export const editTaskWindow = () => {
 
             if (storageManagement.editTaskMenuActive.value === true) {
                 todoObj.title = titleInput.value;
-
                 todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
                 todoObj.description = descriptionInput.value;
                 todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
