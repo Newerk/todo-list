@@ -115,5 +115,5 @@ A WAY TO GET THE EXACT OBJECT THROUGH PROPERY VALUES WITHOUT A FOR LOOP
 }
 
 function wipe() {
-    document.body.querySelectorAll('#row').forEach(el => el.remove());
+    document.body.querySelectorAll('.row').forEach(el => el.remove());
 };
