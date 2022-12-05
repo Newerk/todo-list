@@ -2,6 +2,7 @@
 build how the row of a the todo list will look like.
 
 */
+import { storageManagement } from '../local-storage';
 import { closeThreeDotMenu, threeDotsMenu, menuStatus } from '../menus/three-dots-menu';
 import './todo.css';
 
@@ -9,7 +10,9 @@ import './todo.css';
 export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
 
     const row = document.createElement('div');
-    row.id = 'row';
+    row.className = 'row';
+    const uniqueID = "id" + Math.random().toString(16).slice(2);
+    row.id = uniqueID;
     row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white;border: grey 1px solid');
 
     const status = document.createElement('div');

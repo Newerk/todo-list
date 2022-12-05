@@ -28,6 +28,7 @@ export const storageManagement = {
 
     titleOfActiveRow: null,
     priorityOfActiveRow: null,
+    idOfActiveRow: null,
 
 
 }

@@ -25,6 +25,7 @@ export const threeDotsMenu = () => {
     editBtn.addEventListener('click', (e) => {
         storageManagement.titleOfActiveRow = e.target.parentElement.parentElement.parentElement.querySelector('#row-title').textContent;
         storageManagement.priorityOfActiveRow = e.target.parentElement.parentElement.parentElement.querySelector('#row-priority').textContent
+        storageManagement.idOfActiveRow = e.target.parentElement.parentElement.parentElement.id;
 
         closeThreeDotMenu();
 

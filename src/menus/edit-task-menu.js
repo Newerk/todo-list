@@ -191,6 +191,8 @@ export const editTaskWindow = () => {
 
 
             }
+
+            console.log(`ID of active row: ${storageManagement.idOfActiveRow}`)
     })
 
     bottomContainer.appendChild(editTaskBtn);
