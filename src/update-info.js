@@ -13,19 +13,17 @@ SIMPLY: A Module That Controls which Todos Show on the Screen
 
 import { todoListRows } from "./todo_row/todo";
 import { storageManagement } from "./local-storage";
-import { activePageTracker } from "./active-page-tracker";
 
 export const updateInfo = () => {
     let rows = JSON.parse(localStorage.getItem('rows'));
 
     const showFromFilter = (filter) => {
-        for (let i = 0; i < rows.length; i++) {
-            const element = rows[i];
-
-            if (element.filter === filter) {
-                todoListRows(element.title, element.priority, element.dueDate, element.status).build();
+        for (const iterator of rows) {
+            if (iterator.filter === filter) {
+                todoListRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status).build();
 
             }
+
         }
     }
 
@@ -35,14 +33,12 @@ export const updateInfo = () => {
         const today = new Date;
         const todaysDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
-        for (let i = 0; i < obj.length; i++) {
-            const element = obj[i];
-
-            let dueDateArr = element.dueDate.split('/');
+        for (const iterator of rows) {
+            let dueDateArr = iterator.dueDate.split('/');
             let dueDate = `${dueDateArr[2]}-${dueDateArr[0]}-${dueDateArr[1]}`
 
             if (dueDate < todaysDate) {
-                element.filter = 'pastdue';
+                iterator.filter = 'pastdue';
 
             }
         }
@@ -55,14 +51,11 @@ export const updateInfo = () => {
         case storageManagement.onHomePage.value:
             //build DOM for all todos
             wipe();
-            const showAll = (() => {
 
-                for (let i = 0; i < rows.length; i++) {
-                    const element = rows[i];
+            for (const iterator of rows) {
+                todoListRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status).build();
 
-                    todoListRows(element.title, element.priority, element.dueDate, element.status).build();
-                }
-            })();
+            }
 
             break;
 
