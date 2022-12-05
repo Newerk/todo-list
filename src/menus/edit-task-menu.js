@@ -26,6 +26,7 @@ export const editTaskWindow = () => {
     titleInput.type = 'text';
     titleInput.required = true;
     titleInput.value = storageManagement.titleOfActiveRow;
+    titleInput.autofocus = true;
 
     const prioDateWrapper = document.createElement('div');
     prioDateWrapper.id = 'priority-date-wrapper';

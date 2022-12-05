@@ -25,6 +25,7 @@ export const buildNewTaskWindow = () => {
     titleInput.id = 'title-input';
     titleInput.type = 'text';
     titleInput.required = true;
+    titleInput.autofocus = true;
 
     const prioDateWrapper = document.createElement('div');
     prioDateWrapper.id = 'priority-date-wrapper';
