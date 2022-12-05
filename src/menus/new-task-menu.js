@@ -31,7 +31,7 @@ export const buildNewTaskWindow = () => {
 
     const priorityBtn = document.createElement('button');
     priorityBtn.id = 'priority-btn';
-    priorityBtn.textContent = 'PRIORITY';
+    priorityBtn.textContent = 'Priority';
     priorityBtn.addEventListener('click', (e) => {
         const priorityMenu = document.createElement('div');
         priorityMenu.id = 'priority-menu';
@@ -52,7 +52,7 @@ export const buildNewTaskWindow = () => {
 
         switch (e.target.id) {
             case 'normal-priority-btn':
-                priorityBtn.textContent = 'NORMAL';
+                priorityBtn.textContent = 'Normal';
                 priorityBtn.setAttribute('style', 'background-color: skyblue;');
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
@@ -60,7 +60,7 @@ export const buildNewTaskWindow = () => {
                 break;
 
             case 'high-priority-btn':
-                priorityBtn.textContent = 'HIGH';
+                priorityBtn.textContent = 'High';
                 priorityBtn.setAttribute('style', 'background-color: yellow;');
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
@@ -68,7 +68,7 @@ export const buildNewTaskWindow = () => {
                 break;
 
             case 'urgent-priority-btn':
-                priorityBtn.textContent = 'URGENT';
+                priorityBtn.textContent = 'Urgent';
                 priorityBtn.setAttribute('style', 'background-color: red;');
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
@@ -81,7 +81,7 @@ export const buildNewTaskWindow = () => {
     const dueDateBtn = document.createElement('input');
     dueDateBtn.id = 'due-date-btn';
     dueDateBtn.type = 'date';
-    dueDateBtn.textContent = 'DUE DATE';
+    dueDateBtn.textContent = 'Due Date';
 
     prioDateWrapper.appendChild(priorityBtn);
     prioDateWrapper.appendChild(dueDateBtn);
@@ -183,19 +183,19 @@ export const buildNewTaskWindow = () => {
 function priorityChecker(obj, priorityBtnTextContent) {
 
     switch (priorityBtnTextContent) {
-        case 'PRIORITY':
+        case 'Priority':
             obj.priority = 'Normal';
 
             break;
-        case 'NORMAL':
+        case 'Normal':
             obj.priority = 'Normal';
 
             break;
-        case 'HIGH':
+        case 'High':
             obj.priority = 'High';
 
             break;
-        case 'URGENT':
+        case 'Urgent':
             obj.priority = 'Urgent';
 
             break;

@@ -82,7 +82,7 @@ export const buildNewProjectWindow = () => {
     const dueDateBtn = document.createElement('input');
     dueDateBtn.id = 'due-date-btn';
     dueDateBtn.type = 'date';
-    dueDateBtn.textContent = 'DUE DATE';
+    dueDateBtn.textContent = 'Due Date';
 
     prioDateWrapper.appendChild(priorityBtn);
     prioDateWrapper.appendChild(dueDateBtn);
@@ -176,19 +176,19 @@ export const buildNewProjectWindow = () => {
 function priorityChecker(obj, priorityBtnTextContent) {
 
     switch (priorityBtnTextContent) {
-        case 'PRIORITY':
+        case 'Priority':
             obj.priority = 'Normal';
 
             break;
-        case 'NORMAL':
+        case 'Normal':
             obj.priority = 'Normal';
 
             break;
-        case 'HIGH':
+        case 'High':
             obj.priority = 'High';
 
             break;
-        case 'URGENT':
+        case 'Urgent':
             obj.priority = 'Urgent';
 
             break;

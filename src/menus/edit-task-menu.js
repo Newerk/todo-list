@@ -32,7 +32,29 @@ export const editTaskWindow = () => {
 
     const priorityBtn = document.createElement('button');
     priorityBtn.id = 'priority-btn';
-    priorityBtn.textContent = 'PRIORITY';
+    priorityBtn.textContent = storageManagement.priorityOfActiveRow;
+    switch (priorityBtn.textContent) {
+        case 'Normal':
+            priorityBtn.setAttribute('style', 'background-color: skyblue;');
+            storageManagement.priorityMenuActive.value = false;
+
+            break;
+
+        case 'High':
+            priorityBtn.setAttribute('style', 'background-color: yellow;');
+            storageManagement.priorityMenuActive.value = false;
+
+            break;
+
+        case 'Urgent':
+            priorityBtn.setAttribute('style', 'background-color: red;');
+            storageManagement.priorityMenuActive.value = false;
+
+            break;
+
+    }
+
+
     priorityBtn.addEventListener('click', (e) => {
         const priorityMenu = document.createElement('div');
         priorityMenu.id = 'priority-menu';
@@ -82,7 +104,7 @@ export const editTaskWindow = () => {
     const dueDateBtn = document.createElement('input');
     dueDateBtn.id = 'due-date-btn';
     dueDateBtn.type = 'date';
-    dueDateBtn.textContent = 'DUE DATE';
+    dueDateBtn.textContent = 'Due Date';
 
     prioDateWrapper.appendChild(priorityBtn);
     prioDateWrapper.appendChild(dueDateBtn);
@@ -182,19 +204,19 @@ export const editTaskWindow = () => {
 function priorityChecker(obj, priorityBtnTextContent) {
 
     switch (priorityBtnTextContent) {
-        case 'PRIORITY':
+        case 'Priority':
             obj.priority = 'Normal';
 
             break;
-        case 'NORMAL':
+        case 'Normal':
             obj.priority = 'Normal';
 
             break;
-        case 'HIGH':
+        case 'High':
             obj.priority = 'High';
 
             break;
-        case 'URGENT':
+        case 'Urgent':
             obj.priority = 'Urgent';
 
             break;

@@ -27,7 +27,8 @@ export const storageManagement = {
     onPastDuePage: { value: false },
 
     titleOfActiveRow: null,
-    
+    priorityOfActiveRow: null,
+
 
 }
 
