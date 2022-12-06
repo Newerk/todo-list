@@ -4,6 +4,7 @@ import { buildPopUpMenu } from './priority-popup-menu';
 import { todoFilterLogic } from '../todoFilterLogic';
 import { updateInfo } from '../update-info';
 import { todoListRows } from '../todo_row/todo';
+import { dueDateValue } from './new-task-menu';
 
 
 export const editTaskWindow = () => {
@@ -159,22 +160,28 @@ export const editTaskWindow = () => {
 
         } else
 
-
-        //get object, by id. copy id as the id for the selected div element
             if (storageManagement.editTaskMenuActive.value === true) {
                 let row = JSON.parse(localStorage.getItem('rows'));
-                let matchingRow = row.filter(obj => {
-                    return obj.id === targetedRow.id;
-                })
 
-                console.log('matching row: ' + JSON.stringify(matchingRow));
+                targetedRow.querySelector('#row-title').textContent = titleInput.value;
+
+                let matchingRow = row.find(obj => obj.id === targetedRow.id);
+
+                //new values that will be updated by the user changes
+                matchingRow.title = titleInput.value;
+                matchingRow.dueDate = dueDateValue(matchingRow, dueDateBtn.value); // not working for some reason
+                matchingRow.priority = priorityChecker(matchingRow, priorityBtn.textContent);
+
+
+                localStorage.setItem('rows', JSON.stringify(row));
+                console.log(JSON.parse(localStorage.getItem('rows')))
                 
                 newTaskContainer.remove();
                 storageManagement.editTaskMenuActive.value = false;
                 updateInfo();
             }
 
-            console.log(`ID of active row: ${storageManagement.idOfActiveRow}`)
+        console.log(`ID of active row: ${storageManagement.idOfActiveRow}`)
     })
 
     bottomContainer.appendChild(editTaskBtn);

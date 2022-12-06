@@ -166,7 +166,7 @@ export const buildNewTaskWindow = () => {
     return newTaskContainer;
 }
 
-function priorityChecker(obj, priorityBtnTextContent) {
+export function priorityChecker(obj, priorityBtnTextContent) {
 
     switch (priorityBtnTextContent) {
         case 'Priority':
@@ -196,7 +196,7 @@ function priorityChecker(obj, priorityBtnTextContent) {
 }
 
 //if date chosen is before 'today', this will not be allowed, and the user will be asked to choose a different date
-function dueDateValue(obj, value) {
+export function dueDateValue(obj, value) {
     let today = new Date();
     let month = today.getMonth() + 1;
     let day = today.getDate();
