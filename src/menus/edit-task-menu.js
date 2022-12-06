@@ -1,10 +1,8 @@
 import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
 import { buildPopUpMenu } from './priority-popup-menu';
-import { todoFilterLogic } from '../todoFilterLogic';
 import { updateInfo } from '../update-info';
-import { todoListRows } from '../todo_row/todo';
-import { dueDateValue } from './new-task-menu';
+import { dueDateValue, priorityChecker } from './new-task-menu';
 
 
 export const editTaskWindow = () => {
@@ -78,7 +76,7 @@ export const editTaskWindow = () => {
 
         switch (e.target.id) {
             case 'normal-priority-btn':
-                priorityBtn.textContent = 'NORMAL';
+                priorityBtn.textContent = 'Normal';
                 priorityBtn.setAttribute('style', 'background-color: skyblue;');
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
@@ -86,7 +84,7 @@ export const editTaskWindow = () => {
                 break;
 
             case 'high-priority-btn':
-                priorityBtn.textContent = 'HIGH';
+                priorityBtn.textContent = 'High';
                 priorityBtn.setAttribute('style', 'background-color: yellow;');
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
@@ -94,7 +92,7 @@ export const editTaskWindow = () => {
                 break;
 
             case 'urgent-priority-btn':
-                priorityBtn.textContent = 'URGENT';
+                priorityBtn.textContent = 'Urgent';
                 priorityBtn.setAttribute('style', 'background-color: red;');
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
@@ -169,8 +167,8 @@ export const editTaskWindow = () => {
 
                 //new values that will be updated by the user changes
                 matchingRow.title = titleInput.value;
-                matchingRow.dueDate = dueDateValue(matchingRow, dueDateBtn.value); // not working for some reason
-                matchingRow.priority = priorityChecker(matchingRow, priorityBtn.textContent);
+                matchingRow.dueDate = dueDateValue(matchingRow, dueDateBtn.value); 
+                matchingRow.priority = priorityChecker(matchingRow, priorityBtn.textContent); // not working for some reason
 
 
                 localStorage.setItem('rows', JSON.stringify(row));
@@ -192,26 +190,3 @@ export const editTaskWindow = () => {
     return newTaskContainer;
 }
 
-function priorityChecker(obj, priorityBtnTextContent) {
-
-    switch (priorityBtnTextContent) {
-        case 'Priority':
-            obj.priority = 'Normal';
-
-            break;
-        case 'Normal':
-            obj.priority = 'Normal';
-
-            break;
-        case 'High':
-            obj.priority = 'High';
-
-            break;
-        case 'Urgent':
-            obj.priority = 'Urgent';
-
-            break;
-    }
-
-    return obj.priority;
-}
