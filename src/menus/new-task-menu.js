@@ -214,6 +214,7 @@ function dueDateValue(obj, value) {
 
     let formattedDate = `${year}-${month}-${day}`;
 
+    // console.log('the day is ' + day);
 
 
     if (value === formattedDate) {
@@ -231,6 +232,10 @@ function dueDateValue(obj, value) {
     //might remove this else bracket and instead use HTML Form verification and regex to not allow the user to pick a date before today.
     //will also consider adding requirements tag to the form element, title
     else {
+        if (day < 10) {
+            day = '0' + day.toString();
+            console.log(day)
+        }
         console.log("NO DATE CHOSEN, DEFAULTING TO TODAY'S DATE");
         obj.dueDate = `${month}/${day}/${year}`;
     }
