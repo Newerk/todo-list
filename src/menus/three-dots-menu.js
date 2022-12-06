@@ -55,15 +55,17 @@ export const threeDotsMenu = () => {
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'DELETE';
     deleteBtn.id = 'delete-td-btn';
-    deleteBtn.addEventListener('click', () => {
-        // 1) get the correct index in the rows localstorage, remove it from the local storage
+    deleteBtn.addEventListener('click', (e) => {
         let rows = JSON.parse(localStorage.getItem('rows'));
-        //perhaps I can trace which index to delete based on the parent dom of this three dots menu
-        console.log(rows[5].title) //Should says 'DELETE'. I want to figure out how i can delete this. I also have to keep inmind about duplicate tasks. I dont want one button press to remove all duplicate todos, only the todo that the open menu is applied to
+        const targetedRow = e.target.parentElement.parentElement.parentElement;
 
-        // 2) delete the node from the HTML
 
-        // 3) close the menu
+        //object that needs to be removed from array
+        let remove = rows.filter(obj => obj.id === targetedRow.id);
+        console.log(`obj that needs to be removed: ${JSON.stringify(remove)}`)
+
+        // document.getElementById(storageManagement.idOfActiveRow).remove()
+
         closeThreeDotMenu();
     });
 
