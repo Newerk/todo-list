@@ -35,7 +35,7 @@ export const updateInfo = () => {
 
         for (const iterator of rows) {
             let dueDateArr = iterator.dueDate.split('/');
-            let dueDate = `${dueDateArr[2]}-${dueDateArr[0]}-${dueDateArr[1]}`
+            let dueDate = `${dueDateArr[2]}-${parseInt(dueDateArr[0])}-${parseInt(dueDateArr[1])}`
 
             if (dueDate < todaysDate) {
                 iterator.filter = 'pastdue';

@@ -132,7 +132,7 @@ export const buildNewProjectWindow = () => {
             todoObj.status = 'Incomplete';
 
 
-            todoFilterLogic(todoObj);
+            // todoFilterLogic(todoObj);
 
 
             newTaskContainer.remove();
