@@ -168,12 +168,7 @@ export const editTaskWindow = () => {
                 })
 
                 console.log('matching row: ' + JSON.stringify(matchingRow));
-
-                todoObj.title = titleInput.value;
-                todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
-                todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
-
-                todoFilterLogic(todoObj);
+                
                 newTaskContainer.remove();
                 storageManagement.editTaskMenuActive.value = false;
                 updateInfo();
@@ -212,40 +207,4 @@ function priorityChecker(obj, priorityBtnTextContent) {
     }
 
     return obj.priority;
-}
-
-//if date chosen is before 'today', this will not be allowed, and the user will be asked to choose a different date
-function dueDateValue(obj, value) {
-    let today = new Date();
-    let month = today.getMonth() + 1;
-    let day = today.getDate();
-    let year = today.getFullYear();
-
-    let formattedDate = `${year}-${month}-${day}`;
-
-
-    if (value === formattedDate) {
-        //todo will only been shown on the home and today page. no where else
-        console.log("YOU'VE CHOSEN TODAY's DATE");
-        obj.dueDate = `${month}/${day}/${year}`;
-
-    } else if (value !== formattedDate && value !== '') {
-        let arr = value.split('-');
-        let reArrage = `${arr[1]}/${arr[2]}/${arr[0]}`
-        obj.dueDate = reArrage;
-
-    }
-
-    //might remove this else bracket and instead use HTML Form verification and regex to not allow the user to pick a date before today.
-    //will also consider adding requirements tag to the form element, title
-    else {
-        if (day < 10) {
-            day = '0' + day.toString();
-            console.log(day)
-        }
-        console.log("NO DATE CHOSEN, DEFAULTING TO TODAY'S DATE");
-        obj.dueDate = `${month}/${day}/${year}`;
-    }
-
-    return obj.dueDate;
 }
