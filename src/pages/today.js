@@ -8,10 +8,18 @@ export const todayPage = () => {
     container.setAttribute('style', 'height: 100%; width: 100%;')
     container.className = 'tasks-container';
 
+    const topContainer = document.createElement('div');
+    topContainer.className = 'top-container';
+    topContainer.setAttribute('style', 'display: flex; justify-content: end')
+
     const today = document.createElement('div');
     today.id = 'today';
     today.textContent = 'Today'
     today.setAttribute('style', 'display: flex; justify-content: start; height: 2rem;')
+
+    topContainer.appendChild(today);
+    container.appendChild(topContainer)
+
 
     container.appendChild(today);
 

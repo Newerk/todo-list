@@ -8,12 +8,18 @@ export const pastDuePage = () => {
     container.setAttribute('style', 'height: 100%; width: 100%;')
     container.className = 'tasks-container';
 
+    const topContainer = document.createElement('div');
+    topContainer.className = 'top-container';
+    topContainer.setAttribute('style', 'display: flex; justify-content: end')
+
+
     const pastdue = document.createElement('div');
     pastdue.id = 'pastdue';
     pastdue.textContent = 'Past Due'
     pastdue.setAttribute('style', 'display: flex; justify-content: start; height: 2rem;')
 
-    container.appendChild(pastdue);
+    topContainer.appendChild(pastdue);
+    container.appendChild(topContainer)
 
     const todoListContainer = document.createElement('div');
     todoListContainer.id = 'todo-list-container';

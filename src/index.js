@@ -27,4 +27,3 @@ contentContainer.appendChild(content);
 
 activePageTracker(storageManagement.onHomePage);
 updateInfo();
-
