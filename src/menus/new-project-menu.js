@@ -3,6 +3,7 @@ import { storageManagement } from '../local-storage';
 import { buildPopUpMenu } from './priority-popup-menu';
 import { todoFilterLogic } from '../todoFilterLogic';
 import { updateInfo } from '../update-info';
+import { dueDateValue, priorityChecker } from './new-task-menu';
 
 
 export const buildNewProjectWindow = () => {
@@ -130,22 +131,9 @@ export const buildNewProjectWindow = () => {
             todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
             todoObj.status = 'Incomplete';
 
-            // todoListRows(todoObj.title,todoObj.priority,todoObj.dueDate).build();
-
-
-            /*
-            run a function here that takes an object as an argument. This function
-            will be full of if statements or switch/cases to check if
-            the user entered date is before, after, or the same as today's date.
-            This will determine which filter to add onto the object. now whenever 
-            updateScreen() from the update-info module is ran, it will determine which
-            todos to show depending on the page you are on
 
             todoFilterLogic(todoObj);
-            */
-            todoFilterLogic(todoObj);
 
-            // document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
             newTaskContainer.remove();
             storageManagement.newTaskMenuActive.value = false;
@@ -171,61 +159,4 @@ export const buildNewProjectWindow = () => {
     newTaskContainer.appendChild(bottomContainer)
 
     return newTaskContainer;
-}
-
-function priorityChecker(obj, priorityBtnTextContent) {
-
-    switch (priorityBtnTextContent) {
-        case 'Priority':
-            obj.priority = 'Normal';
-
-            break;
-        case 'Normal':
-            obj.priority = 'Normal';
-
-            break;
-        case 'High':
-            obj.priority = 'High';
-
-            break;
-        case 'Urgent':
-            obj.priority = 'Urgent';
-
-            break;
-    }
-
-    return obj.priority;
-}
-
-//if date chosen is before 'today', this will not be allowed, and the user will be asked to choose a different date
-function dueDateValue(obj, value) {
-    let today = new Date();
-    let month = today.getMonth() + 1;
-    let day = today.getDate();
-    let year = today.getFullYear();
-
-    let formattedDate = `${year}-${month}-${day}`;
-
-
-
-    if (value === formattedDate) {
-        //todo will only been shown on the home and today page. no where else
-        console.log("YOU'VE CHOSEN TODAY's DATE");
-        obj.dueDate = `${month}/${day}/${year}`;
-
-    } else if (value !== formattedDate && value !== '') {
-        let arr = value.split('-');
-        let reArrage = `${arr[1]}/${arr[2]}/${arr[0]}`
-        obj.dueDate = reArrage;
-
-    }
-
-    //might remove this else bracket and instead use HTML Form verification and regex to not allow the user to pick a date before today.
-    //will also consider adding requirements tag to the form element, title
-    else {
-        console.log("NO DATE CHOSEN, DEFAULTING TO TODAY'S DATE");
-        obj.dueDate = `${month}/${day}/${year}`;
-    }
-
-    return obj.dueDate;
 }

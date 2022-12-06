@@ -106,6 +106,9 @@ export const editTaskWindow = () => {
     dueDateBtn.id = 'due-date-btn';
     dueDateBtn.type = 'date';
     dueDateBtn.textContent = 'Due Date';
+    let ls_DueDate = storageManagement.dateOfActiveRow.split('/');
+    let reArragedDueDate = `${ls_DueDate[2]}-${ls_DueDate[0]}-${ls_DueDate[1]}`
+    dueDateBtn.value = reArragedDueDate;
 
     prioDateWrapper.appendChild(priorityBtn);
     prioDateWrapper.appendChild(dueDateBtn);

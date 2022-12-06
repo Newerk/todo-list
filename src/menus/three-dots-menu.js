@@ -28,6 +28,7 @@ export const threeDotsMenu = () => {
         storageManagement.titleOfActiveRow = targetedRow.querySelector('#row-title').textContent;
         storageManagement.priorityOfActiveRow = targetedRow.querySelector('#row-priority').textContent;
         storageManagement.idOfActiveRow = targetedRow.id;
+        storageManagement.dateOfActiveRow = targetedRow.querySelector('#row-due-date').textContent;
 
         closeThreeDotMenu();
 
