@@ -131,29 +131,15 @@ export const buildNewTaskWindow = () => {
         } else
 
             if (storageManagement.newTaskMenuActive.value === true) {
-                // let newRow = 
+                const uniqueID = "id" + Math.random().toString(16).slice(2);
+
                 todoObj.title = titleInput.value;
                 todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
-                todoObj.description = descriptionInput.value;
                 todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
                 todoObj.status = 'Incomplete';
-
-                // todoListRows(todoObj.title,todoObj.priority,todoObj.dueDate).build();
-
-
-                /*
-                run a function here that takes an object as an argument. This function
-                will be full of if statements or switch/cases to check if
-                the user entered date is before, after, or the same as today's date.
-                This will determine which filter to add onto the object. now whenever 
-                updateScreen() from the update-info module is ran, it will determine which
-                todos to show depending on the page you are on
-    
+                todoObj.id = uniqueID;
+                
                 todoFilterLogic(todoObj);
-                */
-                todoFilterLogic(todoObj);
-
-                // document.body.querySelector('#todo-list-container').appendChild(newRow.row);
 
                 newTaskContainer.remove();
                 storageManagement.newTaskMenuActive.value = false;

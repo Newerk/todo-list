@@ -7,12 +7,11 @@ import { closeThreeDotMenu, threeDotsMenu, menuStatus } from '../menus/three-dot
 import './todo.css';
 
 
-export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
+export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls_ID) => {
 
     const row = document.createElement('div');
     row.className = 'row';
-    const uniqueID = "id" + Math.random().toString(16).slice(2);
-    row.id = uniqueID;
+    row.id = ls_ID;
     row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white;border: grey 1px solid');
 
     const status = document.createElement('div');
@@ -140,6 +139,6 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status) => {
     }
 
 
-    return { row, title, priority, dueDate, build };
+    return { build };
 }
 

@@ -20,7 +20,7 @@ export const updateInfo = () => {
     const showFromFilter = (filter) => {
         for (const iterator of rows) {
             if (iterator.filter === filter) {
-                todoListRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status).build();
+                todoListRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status, iterator.id).build();
 
             }
 
@@ -53,7 +53,7 @@ export const updateInfo = () => {
             wipe();
 
             for (const iterator of rows) {
-                todoListRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status).build();
+                todoListRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status, iterator.id).build();
 
             }
 

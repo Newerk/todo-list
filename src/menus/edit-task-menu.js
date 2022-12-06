@@ -3,6 +3,7 @@ import { storageManagement } from '../local-storage';
 import { buildPopUpMenu } from './priority-popup-menu';
 import { todoFilterLogic } from '../todoFilterLogic';
 import { updateInfo } from '../update-info';
+import { todoListRows } from '../todo_row/todo';
 
 
 export const editTaskWindow = () => {
@@ -145,8 +146,10 @@ export const editTaskWindow = () => {
     editTaskBtn.addEventListener('click', () => {
         let rows = JSON.parse(localStorage.getItem('rows'));
         const todoObj = {};
-        const targetedRow = storageManagement.idOfActiveRow;
-        let arr = [];
+        const targetedRow = document.getElementById(storageManagement.idOfActiveRow);
+        targetedRow.setAttribute('style', 'background-color: green');
+        console.log(`targeted row: ${targetedRow.id}`)
+
 
 
         if (titleInput.value === '') {
@@ -157,10 +160,12 @@ export const editTaskWindow = () => {
 
         } else
 
+
+        //get object, by id. copy id as the id for the selected div element
             if (storageManagement.editTaskMenuActive.value === true) {
                 todoObj.title = titleInput.value;
                 todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
-                todoObj.description = descriptionInput.value;
+                // todoObj.description = descriptionInput.value;
                 todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
                 todoObj.status = 'Incomplete';
 
