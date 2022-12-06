@@ -1,4 +1,5 @@
 import { storageManagement } from '../local-storage';
+import { updateInfo } from '../update-info';
 import { editTaskWindow } from './edit-task-menu';
 import './three-dots-menu.css'
 
@@ -42,15 +43,6 @@ export const threeDotsMenu = () => {
 
     });
 
-    const duplicateBtn = document.createElement('button');
-    duplicateBtn.textContent = 'DUPLICATE';
-    duplicateBtn.id = 'duplicate-td-btn';
-    duplicateBtn.addEventListener('click', () => {
-        closeThreeDotMenu();
-    });
-
-
-    let t = [];
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'DELETE';
@@ -58,15 +50,15 @@ export const threeDotsMenu = () => {
     deleteBtn.addEventListener('click', (e) => {
         let rows = JSON.parse(localStorage.getItem('rows'));
         const targetedRow = e.target.parentElement.parentElement.parentElement;
-
-
-        //object that needs to be removed from array
-        let remove = rows.filter(obj => obj.id === targetedRow.id);
-        console.log(`obj that needs to be removed: ${JSON.stringify(remove)}`)
-
-        // document.getElementById(storageManagement.idOfActiveRow).remove()
-
         closeThreeDotMenu();
+
+        //returns a new list of objs that DONT have the targeted id
+        let selectedRowRemoved = rows.filter(obj => obj.id != targetedRow.id);
+        rows = selectedRowRemoved;
+
+        localStorage.setItem('rows', JSON.stringify(rows));
+        updateInfo();
+
     });
 
     container.append(editBtn, deleteBtn);
