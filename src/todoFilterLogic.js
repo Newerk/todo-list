@@ -5,7 +5,7 @@ export const todoFilterLogic = (obj) => {
 
 
     let breakApart = obj.dueDate.split('/');
-    let formattedDueDate = `${breakApart[2]}-${breakApart[0]}-${breakApart[1]}`
+    let formattedDueDate = `${breakApart[2]}-${breakApart[0]}-${parseInt(breakApart[1])}`
 
     if (formattedDueDate === formattedTodaysDate) {
         obj.filter = 'today';

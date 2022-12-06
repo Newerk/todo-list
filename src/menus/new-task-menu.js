@@ -138,7 +138,7 @@ export const buildNewTaskWindow = () => {
                 todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
                 todoObj.status = 'Incomplete';
                 todoObj.id = uniqueID;
-                
+
                 todoFilterLogic(todoObj);
 
                 newTaskContainer.remove();
@@ -153,7 +153,6 @@ export const buildNewTaskWindow = () => {
                 console.log(JSON.parse(localStorage.getItem('rows')))
 
                 updateInfo();
-
 
             }
     })
@@ -186,6 +185,11 @@ function priorityChecker(obj, priorityBtnTextContent) {
             obj.priority = 'Urgent';
 
             break;
+
+        default:
+            obj.priority = 'Normal';
+            break;
+
     }
 
     return obj.priority;

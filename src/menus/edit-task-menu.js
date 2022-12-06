@@ -147,7 +147,6 @@ export const editTaskWindow = () => {
         let rows = JSON.parse(localStorage.getItem('rows'));
         const todoObj = {};
         const targetedRow = document.getElementById(storageManagement.idOfActiveRow);
-        targetedRow.setAttribute('style', 'background-color: green');
         console.log(`targeted row: ${targetedRow.id}`)
 
 
@@ -163,29 +162,21 @@ export const editTaskWindow = () => {
 
         //get object, by id. copy id as the id for the selected div element
             if (storageManagement.editTaskMenuActive.value === true) {
+                let row = JSON.parse(localStorage.getItem('rows'));
+                let matchingRow = row.filter(obj => {
+                    return obj.id === targetedRow.id;
+                })
+
+                console.log('matching row: ' + JSON.stringify(matchingRow));
+
                 todoObj.title = titleInput.value;
                 todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
-                // todoObj.description = descriptionInput.value;
                 todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
-                todoObj.status = 'Incomplete';
 
                 todoFilterLogic(todoObj);
-
-
                 newTaskContainer.remove();
                 storageManagement.editTaskMenuActive.value = false;
-
-
-                let rows = JSON.parse(localStorage.getItem('rows'));
-                rows.push(todoObj);
-
-                localStorage.setItem('rows', JSON.stringify(rows));
-
-                console.log(JSON.parse(localStorage.getItem('rows')))
-
                 updateInfo();
-
-
             }
 
             console.log(`ID of active row: ${storageManagement.idOfActiveRow}`)
