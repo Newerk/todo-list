@@ -23,9 +23,11 @@ export const threeDotsMenu = () => {
     editBtn.textContent = 'EDIT';
     editBtn.id = 'edit-td-btn';
     editBtn.addEventListener('click', (e) => {
-        storageManagement.titleOfActiveRow = e.target.parentElement.parentElement.parentElement.querySelector('#row-title').textContent;
-        storageManagement.priorityOfActiveRow = e.target.parentElement.parentElement.parentElement.querySelector('#row-priority').textContent;
-        storageManagement.idOfActiveRow = e.target.parentElement.parentElement.parentElement.id;
+        const targetedRow = e.target.parentElement.parentElement.parentElement;
+
+        storageManagement.titleOfActiveRow = targetedRow.querySelector('#row-title').textContent;
+        storageManagement.priorityOfActiveRow = targetedRow.querySelector('#row-priority').textContent;
+        storageManagement.idOfActiveRow = targetedRow.id;
 
         closeThreeDotMenu();
 

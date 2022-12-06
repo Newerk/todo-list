@@ -145,18 +145,8 @@ export const editTaskWindow = () => {
     editTaskBtn.addEventListener('click', () => {
         let rows = JSON.parse(localStorage.getItem('rows'));
         const todoObj = {};
+        const targetedRow = storageManagement.idOfActiveRow;
         let arr = [];
-
-        let getActiveRowTitle = rows.forEach(obj => {
-            let title;
-            if (obj.title === storageManagement.titleOfActiveRow) {
-                // console.log(obj.title)
-                title = obj.title;
-                return title;//the title of the current row that edit button was clicked on
-
-            }
-        })
-        console.log('Active row title: '+ getActiveRowTitle)//figure out why this is returning not defined
 
 
         if (titleInput.value === '') {
@@ -253,6 +243,10 @@ function dueDateValue(obj, value) {
     //might remove this else bracket and instead use HTML Form verification and regex to not allow the user to pick a date before today.
     //will also consider adding requirements tag to the form element, title
     else {
+        if (day < 10) {
+            day = '0' + day.toString();
+            console.log(day)
+        }
         console.log("NO DATE CHOSEN, DEFAULTING TO TODAY'S DATE");
         obj.dueDate = `${month}/${day}/${year}`;
     }
