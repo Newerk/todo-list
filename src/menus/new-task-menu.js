@@ -226,6 +226,11 @@ function dueDateValue(obj, value) {
             day = '0' + day.toString();
             console.log(day)
         }
+        if (month < 10 ) {
+            month = '0' + month.toString();
+            console.log(month)
+
+        }
         console.log("NO DATE CHOSEN, DEFAULTING TO TODAY'S DATE");
         obj.dueDate = `${month}/${day}/${year}`;
     }
