@@ -18,6 +18,7 @@ import { updateInfo } from "./update-info";
 export const storageManagement = {
     sideBarIsExpanded: { value: false },
     newTaskMenuActive: { value: false },
+    newProjectMenuActive: {value: false},
     priorityMenuActive: { value: false },
     editTaskMenuActive: { value: false },
 
