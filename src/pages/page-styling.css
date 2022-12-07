@@ -8,11 +8,31 @@
 }
 
 #todo-list-container {
-    overflow-y:auto;
+    overflow-y: auto;
     width: 100%;
     height: calc(100vh - (var(--menu_padding)*2) - var(--header_height) - 4rem);
 }
 
-.projects-container {
+.projects-wrapper {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+
     border: 2px solid black;
+}
+
+.projects-header {
+    grid-row: 1;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: pink;
+}
+
+.projects-content {
+    grid-row: 2;
+
+    height: 100%;
+    width: 100%;
+    background-color: purple;
 }

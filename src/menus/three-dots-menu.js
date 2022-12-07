@@ -52,7 +52,7 @@ export const threeDotsMenu = () => {
         const targetedRow = e.target.parentElement.parentElement.parentElement;
         closeThreeDotMenu();
 
-        //returns a new list of objs that DONT have the targeted id
+        //returns a new array of objs that DONT have the targeted id
         let selectedRowRemoved = rows.filter(obj => obj.id != targetedRow.id);
         rows = selectedRowRemoved;
 

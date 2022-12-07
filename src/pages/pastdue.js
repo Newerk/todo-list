@@ -12,7 +12,6 @@ export const pastDuePage = () => {
     topContainer.className = 'top-container';
     topContainer.setAttribute('style', 'display: flex; justify-content: end')
 
-
     const pastdue = document.createElement('div');
     pastdue.id = 'pastdue';
     pastdue.textContent = 'Past Due'
@@ -20,6 +19,9 @@ export const pastDuePage = () => {
 
     topContainer.appendChild(pastdue);
     container.appendChild(topContainer)
+
+    
+    container.appendChild(pastdue);
 
     const todoListContainer = document.createElement('div');
     todoListContainer.id = 'todo-list-container';

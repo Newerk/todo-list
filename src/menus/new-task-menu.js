@@ -226,7 +226,7 @@ export function dueDateValue(obj, value) {
             day = '0' + day.toString();
             console.log(day)
         }
-        if (month < 10 ) {
+        if (month < 10) {
             month = '0' + month.toString();
             console.log(month)
 
