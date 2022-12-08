@@ -17,11 +17,14 @@
     display: grid;
     grid-template-rows: 2rem 1fr;
 
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .projects-header {
     grid-row: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     height: 100%;
     width: 100%;
@@ -35,4 +38,6 @@
     height: 100%;
     width: 100%;
     background-color: purple;
+        border: 1px solid black;
+
 }

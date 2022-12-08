@@ -1,7 +1,6 @@
 import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
 import { buildPopUpMenu } from './priority-popup-menu';
-import { todoFilterLogic } from '../todoFilterLogic';
 import { updateInfo } from '../update-info';
 import { dueDateValue, priorityChecker } from './new-task-menu';
 

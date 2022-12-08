@@ -19,7 +19,7 @@ export const newProjectBtn = () => {
     symbol.addEventListener('click', () => {
         
         if (storageManagement.newProjectMenuActive.value === false) {
-            document.body.querySelector('.projects-header').appendChild(buildNewProjectWindow());
+            document.body.querySelector('.projects-content').appendChild(buildNewProjectWindow()).setAttribute('style', 'z-index: 1; right: 16px');
             storageManagement.newProjectMenuActive.value = true;
         } else {
             console.log('there is a window already opened')
