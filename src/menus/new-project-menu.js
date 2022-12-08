@@ -6,8 +6,8 @@ import { dueDateValue, priorityChecker } from './new-task-menu';
 
 
 export const buildNewProjectWindow = () => {
-    const newTaskContainer = document.createElement('div');
-    newTaskContainer.className = 'new-task-container';
+    const newProjectContainer = document.createElement('div');
+    newProjectContainer.className = 'new-project-container';
 
 
     const topContainer = document.createElement('div');
@@ -91,9 +91,9 @@ export const buildNewProjectWindow = () => {
     exitBtn.id = 'exit-btn';
     exitBtn.textContent = 'X'
     exitBtn.addEventListener('click', () => {
-        if (storageManagement.newTaskMenuActive.value === true) {
-            newTaskContainer.remove();
-            storageManagement.newTaskMenuActive.value = false;
+        if (storageManagement.newProjectMenuActive.value === true) {
+            newProjectContainer.remove();
+            storageManagement.newProjectMenuActive.value = false;
         }
 
     })
@@ -114,15 +114,15 @@ export const buildNewProjectWindow = () => {
     middleContainer.appendChild(descriptionInput);
 
 
-    const addTaskBtn = document.createElement('button');
-    addTaskBtn.id = 'add-task-btn';
-    addTaskBtn.textContent = '+ADD TASK';
-    addTaskBtn.addEventListener('click', () => {
+    const addProjectBtn = document.createElement('button');
+    addProjectBtn.id = 'add-project-btn';
+    addProjectBtn.textContent = '+ADD PROJECT';
+    addProjectBtn.addEventListener('click', () => {
         /*when this module becomes more fleshed out, it will take to account the filters that a todo will have. right now this button will just
         paste a todo onto the homepage*/
         const todoObj = {};
 
-        if (storageManagement.newTaskMenuActive.value === true) {
+        if (storageManagement.newProjectMenuActive.value === true) {
             // let newRow = 
             todoObj.title = titleInput.value;
             todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
@@ -134,8 +134,8 @@ export const buildNewProjectWindow = () => {
             // todoFilterLogic(todoObj);
 
 
-            newTaskContainer.remove();
-            storageManagement.newTaskMenuActive.value = false;
+            newProjectContainer.remove();
+            storageManagement.newProjectMenuActive.value = false;
 
 
             let rows = JSON.parse(localStorage.getItem('rows'));
@@ -151,11 +151,11 @@ export const buildNewProjectWindow = () => {
         }
     })
 
-    bottomContainer.appendChild(addTaskBtn);
+    bottomContainer.appendChild(addProjectBtn);
 
-    newTaskContainer.appendChild(topContainer)
+    newProjectContainer.appendChild(topContainer)
     // newTaskContainer.appendChild(middleContainer)
-    newTaskContainer.appendChild(bottomContainer)
+    newProjectContainer.appendChild(bottomContainer)
 
-    return newTaskContainer;
+    return newProjectContainer;
 }
