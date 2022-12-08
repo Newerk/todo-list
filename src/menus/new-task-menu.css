@@ -50,11 +50,15 @@ textarea {
 
 
 /*3 SECTION OF CONTAINERS*/
-.nt-top-container {
+.nt-top-container, .np-top-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr) auto;
     grid-template-rows: 1fr 1fr;
     padding-bottom: 5.4rem;
+}
+
+.np-top-container{
+    padding-bottom: 0;
 }
 
 #priority-date-wrapper {

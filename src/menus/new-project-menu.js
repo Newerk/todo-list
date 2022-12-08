@@ -11,7 +11,7 @@ export const buildNewProjectWindow = () => {
 
 
     const topContainer = document.createElement('div');
-    topContainer.className = 'nt-top-container';
+    topContainer.className = 'np-top-container';
 
     const middleContainer = document.createElement('div');
     middleContainer.className = 'middle-container';
@@ -99,7 +99,7 @@ export const buildNewProjectWindow = () => {
     })
 
     topContainer.appendChild(titleInput);
-    topContainer.appendChild(prioDateWrapper);
+    // topContainer.appendChild(prioDateWrapper);
     topContainer.appendChild(exitBtn);
 
 
@@ -154,7 +154,7 @@ export const buildNewProjectWindow = () => {
     bottomContainer.appendChild(addProjectBtn);
 
     newProjectContainer.appendChild(topContainer)
-    // newTaskContainer.appendChild(middleContainer)
+    newProjectContainer.appendChild(middleContainer)
     newProjectContainer.appendChild(bottomContainer)
 
     return newProjectContainer;
