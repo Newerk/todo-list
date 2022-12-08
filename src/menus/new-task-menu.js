@@ -160,7 +160,6 @@ export const buildNewTaskWindow = () => {
     bottomContainer.appendChild(addTaskBtn);
 
     newTaskContainer.appendChild(topContainer)
-    // newTaskContainer.appendChild(middleContainer)
     newTaskContainer.appendChild(bottomContainer)
 
     return newTaskContainer;

@@ -2,14 +2,18 @@ import { updateInfo } from "./update-info";
 
 //using  an if statment to check if a localstorage key is existing allows you to keep values after referesh. Other wise it will always reset the localstorage and remake every key to its default values
 (() => {
-    if (!localStorage.getItem('todo_list')) {
-        localStorage.setItem('todo_list', '[]')
-    }
+    // if (!localStorage.getItem('todo_list')) {
+    //     localStorage.setItem('todo_list', '[]')
+    // }
     if (!localStorage.getItem('current_theme')) {
         localStorage.setItem('current_theme', 'light')
     }
     if (!localStorage.getItem('rows')) {
         localStorage.setItem('rows', '[]')
+        updateInfo();
+    }
+    if (!localStorage.getItem('projects')) {
+        localStorage.setItem('projects', '[]')
         updateInfo();
     }
 

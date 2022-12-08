@@ -1,8 +1,6 @@
 import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
-import { buildPopUpMenu } from './priority-popup-menu';
 import { updateInfo } from '../update-info';
-import { dueDateValue, priorityChecker } from './new-task-menu';
 
 
 export const buildNewProjectWindow = () => {
@@ -21,71 +19,11 @@ export const buildNewProjectWindow = () => {
     bottomContainer.className = 'bottom-container';
 
 
-
     const titleInput = document.createElement('input');
     titleInput.id = 'title-input';
     titleInput.type = 'text';
     titleInput.textContent = 'USER ENTERED TITLE';
 
-    const prioDateWrapper = document.createElement('div');
-    prioDateWrapper.id = 'priority-date-wrapper';
-
-    const priorityBtn = document.createElement('button');
-    priorityBtn.id = 'priority-btn';
-    priorityBtn.textContent = 'PRIORITY';
-    priorityBtn.addEventListener('click', (e) => {
-        const priorityMenu = document.createElement('div');
-        priorityMenu.id = 'priority-menu';
-
-
-        if (storageManagement.priorityMenuActive.value === false) {
-            priorityMenu.appendChild(buildPopUpMenu());
-            priorityMenu.setAttribute('style', 'position: absolute; width: width: 6rem;')
-
-            priorityBtn.appendChild(priorityMenu);
-
-            storageManagement.priorityMenuActive.value = true;
-
-        } else {
-            document.getElementById('priority-menu').remove();
-            storageManagement.priorityMenuActive.value = false;
-        }
-
-        switch (e.target.id) {
-            case 'normal-priority-btn':
-                priorityBtn.textContent = 'NORMAL';
-                priorityBtn.setAttribute('style', 'background-color: skyblue;');
-                priorityMenu.hidden = true;
-                storageManagement.priorityMenuActive.value = false;
-
-                break;
-
-            case 'high-priority-btn':
-                priorityBtn.textContent = 'HIGH';
-                priorityBtn.setAttribute('style', 'background-color: yellow;');
-                priorityMenu.hidden = true;
-                storageManagement.priorityMenuActive.value = false;
-
-                break;
-
-            case 'urgent-priority-btn':
-                priorityBtn.textContent = 'URGENT';
-                priorityBtn.setAttribute('style', 'background-color: red;');
-                priorityMenu.hidden = true;
-                storageManagement.priorityMenuActive.value = false;
-
-                break;
-
-        }
-    })
-
-    const dueDateBtn = document.createElement('input');
-    dueDateBtn.id = 'due-date-btn';
-    dueDateBtn.type = 'date';
-    dueDateBtn.textContent = 'Due Date';
-
-    prioDateWrapper.appendChild(priorityBtn);
-    prioDateWrapper.appendChild(dueDateBtn);
 
     const exitBtn = document.createElement('button');
     exitBtn.id = 'exit-btn';
@@ -99,7 +37,6 @@ export const buildNewProjectWindow = () => {
     })
 
     topContainer.appendChild(titleInput);
-    // topContainer.appendChild(prioDateWrapper);
     topContainer.appendChild(exitBtn);
 
 
@@ -118,37 +55,38 @@ export const buildNewProjectWindow = () => {
     addProjectBtn.id = 'add-project-btn';
     addProjectBtn.textContent = '+ADD PROJECT';
     addProjectBtn.addEventListener('click', () => {
-        /*when this module becomes more fleshed out, it will take to account the filters that a todo will have. right now this button will just
-        paste a todo onto the homepage*/
         const todoObj = {};
 
-        if (storageManagement.newProjectMenuActive.value === true) {
-            // let newRow = 
-            todoObj.title = titleInput.value;
-            todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
-            todoObj.description = descriptionInput.value;
-            todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
-            todoObj.status = 'Incomplete';
+        if (titleInput.value === '') {
+            console.log('please enter a title');
+            titleInput.setAttribute('style', 'background-color: rgb(246,166,166, .1) ')
+            titleInput.addEventListener('input', () => titleInput.setAttribute('style', 'background-color: none;'))
+            return;
+
+        } else
+
+            if (storageManagement.newProjectMenuActive.value === true) {
+                const uniqueID = "id" + Math.random().toString(16).slice(2);
+
+                todoObj.title = titleInput.value;
+                todoObj.description = descriptionInput.value;
+                todoObj.id = uniqueID;
+
+                newProjectContainer.remove();
+                storageManagement.newProjectMenuActive.value = false;
 
 
-            // todoFilterLogic(todoObj);
+                let projects = JSON.parse(localStorage.getItem('projects'));
+                projects.push(todoObj);
+
+                localStorage.setItem('projects', JSON.stringify(projects));
+
+                console.log(JSON.parse(localStorage.getItem('projects')))
+
+                // updateInfo(); //need to update this function to take account for projects and their very own list of tasks to generate HTML for
 
 
-            newProjectContainer.remove();
-            storageManagement.newProjectMenuActive.value = false;
-
-
-            let rows = JSON.parse(localStorage.getItem('rows'));
-            rows.push(todoObj);
-
-            localStorage.setItem('rows', JSON.stringify(rows));
-            
-            console.log(JSON.parse(localStorage.getItem('rows')))
-
-            updateInfo();
-
-
-        }
+            }
     })
 
     bottomContainer.appendChild(addProjectBtn);

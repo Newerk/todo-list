@@ -88,23 +88,6 @@ export const updateInfo = () => {
     }
 
 
-    /*
-A WAY TO GET THE EXACT OBJECT THROUGH PROPERY VALUES WITHOUT A FOR LOOP
-
-    const jsObjects = [
-        {a: 1, b: 2}, 
-        {a: 3, b: 4}, 
-        {a: 5, b: 6}, 
-        {a: 7, b: 8}
-    ]
-
-    let result = jsObjects.filter(obj => {
-    return obj.b === 6
-    })
-
-    console.log(result) 
-    */
-
 }
 
 function wipe() {
