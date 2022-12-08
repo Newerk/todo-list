@@ -71,6 +71,26 @@ export const buildNewProjectWindow = () => {
                 todoObj.title = titleInput.value;
                 todoObj.description = descriptionInput.value;
                 todoObj.id = uniqueID;
+                todoObj.tasks = [
+                    {
+                        title: 'test1',
+                        status: 'Incomplete',
+                        id: 'id6gkhFG94yoee',
+                        priority: 'Normal'
+                    },
+                    {
+                        title: 'test2',
+                        status: 'Complete',
+                        id: 'id6gkhFG9452342',
+                        priority: 'High'
+                    }, {
+                        title: 'test3',
+                        status: 'Incomplete',
+                        id: 'id6gnjksdfyo43',
+                        priority: 'Urgent'
+                    },
+
+                ]
 
                 newProjectContainer.remove();
                 storageManagement.newProjectMenuActive.value = false;
