@@ -7,7 +7,7 @@
     grid-template-rows: auto auto 1fr;
 }
 
-#todo-list-container {
+#todo-list-container, .projects-content {
     overflow-y: auto;
     width: 100%;
     height: calc(100vh - (var(--menu_padding)*2) - var(--header_height) - 4rem);
@@ -15,7 +15,9 @@
 
 .projects-wrapper {
     display: grid;
-    grid-template-rows: 2rem 1fr;
+    /* grid-template-rows: 2rem 1fr; */
+
+    overflow-y: scroll;
 
     /* border: 2px solid black; */
 }
@@ -33,11 +35,18 @@
 }
 
 .projects-content {
+    padding: 1rem;
+
     grid-row: 2;
 
-    height: 100%;
-    width: 100%;
+    height: calc(100vh - (var(--menu_padding)*2) - var(--header_height) - 2rem);
     background-color: purple;
-        border: 1px solid black;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-rows: max-content;
+
+    /* grid-auto-flow: row; */
+    gap: 1rem;
 
 }

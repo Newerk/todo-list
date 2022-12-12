@@ -1,6 +1,7 @@
 import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
 import { updateInfo } from '../update-info';
+import { projectsCard } from '../projects-card';
 
 
 export const buildNewProjectWindow = () => {
@@ -107,6 +108,7 @@ export const buildNewProjectWindow = () => {
 
 
             }
+            document.querySelector('.projects-content').appendChild(projectsCard());
     })
 
     bottomContainer.appendChild(addProjectBtn);
