@@ -13,6 +13,7 @@ SIMPLY: A Module That Controls which Todos Show on the Screen
 
 import { todoListRows } from "./todo_row/todo";
 import { storageManagement } from "./local-storage";
+import { projectsCard } from "./projects-card";
 
 export const updateScreenTasksLS = () => {
     let rows = JSON.parse(localStorage.getItem('rows'));
@@ -50,7 +51,7 @@ export const updateScreenTasksLS = () => {
     switch (true) {
         case storageManagement.onHomePage.value:
             //build DOM for all todos
-            wipe();
+            wipe('.row');
 
             for (const iterator of rows) {
                 todoListRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status, iterator.id).build();
@@ -61,7 +62,7 @@ export const updateScreenTasksLS = () => {
 
         case storageManagement.onTodayPage.value:
             //build DOM for todos due today
-            wipe();
+            wipe('.row');
             showFromFilter('today');
             updateFilter(rows);
 
@@ -70,7 +71,7 @@ export const updateScreenTasksLS = () => {
 
         case storageManagement.onUpcomingPage.value:
             //build DOM for upcoming todos
-            wipe();
+            wipe('.row');
             showFromFilter('upcoming');
             updateFilter(rows);
 
@@ -79,7 +80,7 @@ export const updateScreenTasksLS = () => {
 
         case storageManagement.onPastDuePage.value:
             //build DOM for pastDue todos
-            wipe();
+            wipe('.row');
             showFromFilter('pastdue');
             updateFilter(rows);
 
@@ -90,6 +91,58 @@ export const updateScreenTasksLS = () => {
 
 }
 
-function wipe() {
-    document.body.querySelectorAll('.row').forEach(el => el.remove());
+export const updateScreenProjectsLS = () => {
+    let projects = JSON.parse(localStorage.getItem('projects'));
+
+    const showFromFilter = (filter) => {
+        for (const iterator of projects) {
+            if (iterator.filter === filter) {
+                todoListRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status, iterator.id).build();
+
+            }
+
+        }
+    }
+
+    //******************************** MAY USE THIS FOR THE TASKS STORED IN THE PROJECS **************************************
+    // //needs to update everyday, or every time the page is loaded so that once a project becomes past due, it will have its
+    // // filter changed, and then be visible in the past due tab w/o  manually changing it
+    // const updateFilter = (obj) => {
+    //     const today = new Date;
+    //     const todaysDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+
+    //     for (const iterator of rows) {
+    //         let dueDateArr = iterator.dueDate.split('/');
+    //         let dueDate = `${dueDateArr[2]}-${parseInt(dueDateArr[0])}-${parseInt(dueDateArr[1])}`
+
+    //         if (dueDate < todaysDate) {
+    //             iterator.filter = 'pastdue';
+
+    //         }
+    //     }
+
+    //     localStorage.setItem('rows', JSON.stringify(obj));
+
+    // }
+
+    switch (true) {
+        case storageManagement.onProjectsPage.value:
+            //build DOM for all todos
+            wipe('.projects-card-container');
+
+            for (const iterator of projects) {
+                projectsCard().build();
+                
+            }
+
+            break;
+    }
+
+
+
+
+}
+
+function wipe(className) {
+    document.body.querySelectorAll(className).forEach(el => el.remove());
 };

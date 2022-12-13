@@ -3,7 +3,7 @@ import { homePage } from "../pages/home";
 import { todayPage } from "../pages/today";
 import { upcomingPage } from "../pages/upcoming";
 import { pastDuePage } from "../pages/pastdue";
-import { updateScreenTasksLS } from "../update-info";
+import { updateScreenProjectsLS, updateScreenTasksLS } from "../update-info";
 import { storageManagement } from "../local-storage";
 import { activePageTracker } from "../active-page-tracker";
 import { projectsPage } from '../pages/projects';
@@ -72,6 +72,8 @@ export const fullSidebar = () => {
     projects.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
     projects.addEventListener('click', () => {
         wipeContent(projectsPage());
+        activePageTracker(storageManagement.onProjectsPage);
+        updateScreenProjectsLS();
     });
 
     const account = document.createElement('button');

@@ -17,6 +17,11 @@ export const projectsCard = () => {
 
     cardContainer.append(topContainer, middleContainer, bottomContainer)
 
-    return cardContainer;
 
+    const build = () => {
+        document.body.querySelector('.projects-content').appendChild(cardContainer);
+
+    }
+
+    return { build }
 }

@@ -1,7 +1,7 @@
 import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
 import { buildPopUpMenu } from './priority-popup-menu';
-import { updateScreenTasksLS } from '../update-info';
+import { updateScreenProjectsLS, updateScreenTasksLS } from '../update-info';
 import { dueDateValue, priorityChecker } from './new-task-menu';
 
 

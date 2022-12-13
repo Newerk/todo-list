@@ -8,7 +8,7 @@ import { pastDuePage } from '../pages/pastdue';
 import { wipeContent } from '../wipe-content';
 import { homePage } from '../pages/home';
 import { storageManagement } from '../local-storage';
-import { updateScreenTasksLS } from '../update-info';
+import { updateScreenProjectsLS, updateScreenTasksLS } from '../update-info';
 import { activePageTracker } from '../active-page-tracker'; 
 import { projectsPage } from '../pages/projects';
 import { accountPage } from '../pages/account';
@@ -92,6 +92,8 @@ export const compactSidebarContent = () => {
         projects.textContent = 'PROJECTS';
         projects.addEventListener('click', () => {
                 wipeContent(projectsPage());
+                activePageTracker(storageManagement.onProjectsPage);
+                updateScreenProjectsLS();
         });
         compactSidebarContentDiv.appendChild(projects);
 

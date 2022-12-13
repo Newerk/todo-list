@@ -1,4 +1,4 @@
-import { updateScreenTasksLS } from "./update-info";
+import { updateScreenProjectsLS, updateScreenTasksLS } from "./update-info";
 
 //using  an if statment to check if a localstorage key is existing allows you to keep values after referesh. Other wise it will always reset the localstorage and remake every key to its default values
 (() => {
@@ -14,7 +14,7 @@ import { updateScreenTasksLS } from "./update-info";
     }
     if (!localStorage.getItem('projects')) {
         localStorage.setItem('projects', '[]')
-        updateScreenTasksLS();
+        updateScreenProjectsLS();
     }
 
 })();
@@ -30,6 +30,7 @@ export const storageManagement = {
     onTodayPage: { value: false },
     onUpcomingPage: { value: false },
     onPastDuePage: { value: false },
+    onProjectsPage: {value: false},
 
     titleOfActiveRow: null,
     priorityOfActiveRow: null,

@@ -1,7 +1,10 @@
+import { storageManagement } from '../local-storage';
 import { newProjectBtn } from './new-project-btn';
 import './page-styling.css'
 
 export const projectsPage = () => {
+storageManagement.onProjectsPage.value = true;
+
     const container = document.createElement('div');
     container.setAttribute('style', 'height: 100%; width: 100%');
     container.className = 'projects-wrapper';
