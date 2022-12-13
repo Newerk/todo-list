@@ -97,7 +97,7 @@ export const updateScreenProjectsLS = () => {
     const showFromFilter = (filter) => {
         for (const iterator of projects) {
             if (iterator.filter === filter) {
-                todoListRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status, iterator.id).build();
+                projectsCard(iterator.title, iterator.description, iterator.id).build();
 
             }
 
@@ -131,7 +131,7 @@ export const updateScreenProjectsLS = () => {
             wipe('.projects-card-container');
 
             for (const iterator of projects) {
-                projectsCard().build();
+                projectsCard(iterator.title, iterator.description, iterator.id).build();
                 
             }
 

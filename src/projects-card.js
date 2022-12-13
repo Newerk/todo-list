@@ -1,16 +1,26 @@
 import './projects-card.css'
 // the cards that will be build when a user creates a new project
 
-export const projectsCard = () => {
+export const projectsCard = (ls_Title, ls_Description,ls_ID) => {
 
     const cardContainer = document.createElement('div');
-    cardContainer.className = 'projects-card-container'
+    cardContainer.className = 'projects-card-container';
+    cardContainer.id = ls_ID;
 
     const topContainer = document.createElement('div');
     topContainer.id = 'card-top-container';
+    const title = document.createElement('div');
+    title.className = 'project-title';
+    title.textContent = ls_Title;
+    topContainer.appendChild(title);
 
+    //start off being hidden, until the expand button is clicked. the user will know if the project will e
     const middleContainer = document.createElement('div');;
     middleContainer.id = 'card-middle-container';
+    const description = document.createElement('div');
+    description.className = 'project-description';
+    description.textContent = ls_Description;//perhaps I will add a character limit to the description
+    middleContainer.appendChild(description);
 
     const bottomContainer = document.createElement('div');;
     bottomContainer.id = 'card-bottom-container';
@@ -23,5 +33,5 @@ export const projectsCard = () => {
 
     }
 
-    return { build }
+    return { build };
 }

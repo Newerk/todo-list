@@ -108,7 +108,7 @@ export const buildNewProjectWindow = () => {
 
 
             }
-            document.querySelector('.projects-content').appendChild(projectsCard());
+            document.querySelector('.projects-content').appendChild(projectsCard(titleInput.value, ));
     })
 
     bottomContainer.appendChild(addProjectBtn);
