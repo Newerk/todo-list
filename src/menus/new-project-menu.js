@@ -1,6 +1,6 @@
 import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
-import { updateInfo } from '../update-info';
+import { updateScreenTasksLS } from '../update-info';
 import { projectsCard } from '../projects-card';
 
 
@@ -104,7 +104,7 @@ export const buildNewProjectWindow = () => {
 
                 console.log(JSON.parse(localStorage.getItem('projects')))
 
-                // updateInfo(); //need to update this function to take account for projects and their very own list of tasks to generate HTML for
+                // updateScreenTasksLS(); //need to update this function to take account for projects and their very own list of tasks to generate HTML for
 
 
             }

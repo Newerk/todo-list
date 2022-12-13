@@ -8,7 +8,7 @@ import { pastDuePage } from '../pages/pastdue';
 import { wipeContent } from '../wipe-content';
 import { homePage } from '../pages/home';
 import { storageManagement } from '../local-storage';
-import { updateInfo } from '../update-info';
+import { updateScreenTasksLS } from '../update-info';
 import { activePageTracker } from '../active-page-tracker'; 
 import { projectsPage } from '../pages/projects';
 import { accountPage } from '../pages/account';
@@ -49,7 +49,7 @@ export const compactSidebarContent = () => {
         home.addEventListener('click', () => {
                 wipeContent(homePage());
                 activePageTracker(storageManagement.onHomePage)
-                updateInfo();
+                updateScreenTasksLS();
 
 
         });
@@ -61,7 +61,7 @@ export const compactSidebarContent = () => {
         today.addEventListener('click', () => {
                 wipeContent(todayPage());
                 activePageTracker(storageManagement.onTodayPage)
-                updateInfo();
+                updateScreenTasksLS();
 
         });
         compactSidebarContentDiv.appendChild(today);
@@ -72,7 +72,7 @@ export const compactSidebarContent = () => {
         upcoming.addEventListener('click', () => {
                 wipeContent(upcomingPage());
                 activePageTracker(storageManagement.onUpcomingPage)
-                updateInfo();
+                updateScreenTasksLS();
 
         });
         compactSidebarContentDiv.appendChild(upcoming);
@@ -83,7 +83,7 @@ export const compactSidebarContent = () => {
         pastDue.addEventListener('click', () => {
                 wipeContent(pastDuePage());
                 activePageTracker(storageManagement.onPastDuePage)
-                updateInfo();
+                updateScreenTasksLS();
         });
         compactSidebarContentDiv.appendChild(pastDue);
 

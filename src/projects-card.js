@@ -6,7 +6,6 @@ export const projectsCard = () => {
     const cardContainer = document.createElement('div');
     cardContainer.className = 'projects-card-container'
 
-
     const topContainer = document.createElement('div');
     topContainer.id = 'card-top-container';
 

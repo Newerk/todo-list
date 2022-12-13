@@ -14,7 +14,7 @@ SIMPLY: A Module That Controls which Todos Show on the Screen
 import { todoListRows } from "./todo_row/todo";
 import { storageManagement } from "./local-storage";
 
-export const updateInfo = () => {
+export const updateScreenTasksLS = () => {
     let rows = JSON.parse(localStorage.getItem('rows'));
 
     const showFromFilter = (filter) => {

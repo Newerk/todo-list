@@ -1,5 +1,5 @@
 import { storageManagement } from '../local-storage';
-import { updateInfo } from '../update-info';
+import { updateScreenTasksLS } from '../update-info';
 import { editTaskWindow } from './edit-task-menu';
 import './three-dots-menu.css'
 
@@ -57,7 +57,7 @@ export const threeDotsMenu = () => {
         rows = selectedRowRemoved;
 
         localStorage.setItem('rows', JSON.stringify(rows));
-        updateInfo();
+        updateScreenTasksLS();
 
     });
 

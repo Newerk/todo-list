@@ -2,7 +2,7 @@ import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
 import { buildPopUpMenu } from './priority-popup-menu';
 import { todoFilterLogic } from '../todoFilterLogic';
-import { updateInfo } from '../update-info';
+import { updateScreenTasksLS } from '../update-info';
 
 
 export const buildNewTaskWindow = () => {
@@ -152,7 +152,7 @@ export const buildNewTaskWindow = () => {
 
                 console.log(JSON.parse(localStorage.getItem('rows')))
 
-                updateInfo();
+                updateScreenTasksLS();
 
             }
     })

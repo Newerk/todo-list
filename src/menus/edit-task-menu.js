@@ -1,7 +1,7 @@
 import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
 import { buildPopUpMenu } from './priority-popup-menu';
-import { updateInfo } from '../update-info';
+import { updateScreenTasksLS } from '../update-info';
 import { dueDateValue, priorityChecker } from './new-task-menu';
 
 
@@ -179,7 +179,7 @@ export const editTaskWindow = () => {
                 
                 newTaskContainer.remove();
                 storageManagement.editTaskMenuActive.value = false;
-                updateInfo();
+                updateScreenTasksLS();
             }
 
         console.log(`ID of active row: ${storageManagement.idOfActiveRow}`)

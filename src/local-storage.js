@@ -1,4 +1,4 @@
-import { updateInfo } from "./update-info";
+import { updateScreenTasksLS } from "./update-info";
 
 //using  an if statment to check if a localstorage key is existing allows you to keep values after referesh. Other wise it will always reset the localstorage and remake every key to its default values
 (() => {
@@ -10,11 +10,11 @@ import { updateInfo } from "./update-info";
     }
     if (!localStorage.getItem('rows')) {
         localStorage.setItem('rows', '[]')
-        updateInfo();
+        updateScreenTasksLS();
     }
     if (!localStorage.getItem('projects')) {
         localStorage.setItem('projects', '[]')
-        updateInfo();
+        updateScreenTasksLS();
     }
 
 })();

@@ -3,7 +3,7 @@ import { homePage } from "../pages/home";
 import { todayPage } from "../pages/today";
 import { upcomingPage } from "../pages/upcoming";
 import { pastDuePage } from "../pages/pastdue";
-import { updateInfo } from "../update-info";
+import { updateScreenTasksLS } from "../update-info";
 import { storageManagement } from "../local-storage";
 import { activePageTracker } from "../active-page-tracker";
 import { projectsPage } from '../pages/projects';
@@ -25,7 +25,7 @@ export const fullSidebar = () => {
     home.addEventListener('click', () => {
         wipeContent(homePage());
         activePageTracker(storageManagement.onHomePage)
-        updateInfo();
+        updateScreenTasksLS();
     });
 
     const today = document.createElement('button');
@@ -36,7 +36,7 @@ export const fullSidebar = () => {
     today.addEventListener('click', () => {
         wipeContent(todayPage());
         activePageTracker(storageManagement.onTodayPage)
-        updateInfo();
+        updateScreenTasksLS();
     });
 
 
@@ -48,7 +48,7 @@ export const fullSidebar = () => {
     upcoming.addEventListener('click', () => {
         wipeContent(upcomingPage());
         activePageTracker(storageManagement.onUpcomingPage)
-        updateInfo();
+        updateScreenTasksLS();
 
     });
 
@@ -60,7 +60,7 @@ export const fullSidebar = () => {
     pastDue.addEventListener('click', () => {
         wipeContent(pastDuePage());
         activePageTracker(storageManagement.onPastDuePage)
-        updateInfo();
+        updateScreenTasksLS();
 
     });
 
