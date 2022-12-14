@@ -24,18 +24,23 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     middleContainer.setAttribute('style', 'transition: hidden 2s')
     middleContainer.appendChild(description);
 
-    const bottomContainer = document.createElement('div');;
+    const bottomContainer = document.createElement('div');
     bottomContainer.id = 'card-bottom-container';
     const expandArrow = document.createElement('div');
     expandArrow.className = 'expand-arrow';
     expandArrow.textContent = 'v';
-    expandArrow.addEventListener('click', ()=> {
+    expandArrow.addEventListener('click', () => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
+            expandArrow.textContent = '^'
+
         } else {
             middleContainer.hidden = true;
+            expandArrow.textContent = 'v'
+
+
         }
-        
+
     })
 
     if (description.textContent !== '') {

@@ -5,19 +5,15 @@
 
     display: grid;
     grid-template-rows: repeat(3, auto);
-
 }
 
 .projects-card-container {
     padding: .5rem;
+    object-fit: cover;
 }
 
 #card-bottom-container {
     display: flex;
     justify-content: end;
     align-items: flex-end;
-}
-
-#card-middle-container {
-    /* height: auto; */
 }

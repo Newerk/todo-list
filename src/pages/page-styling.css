@@ -42,11 +42,14 @@
     height: calc(100vh - (var(--menu_padding)*2) - var(--header_height) - 2rem);
     background-color: purple;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    grid-template-rows: max-content;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
+    /* grid-template-rows: max-content; */
 
     /* grid-auto-flow: row; */
+
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 
 }
