@@ -5,6 +5,7 @@
 
     display: grid;
     grid-template-rows: repeat(3, auto);
+
 }
 
 .projects-card-container {
@@ -18,5 +19,5 @@
 }
 
 #card-middle-container {
-    height: auto;
+    /* height: auto; */
 }

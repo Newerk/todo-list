@@ -21,6 +21,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     description.className = 'project-description';
     description.textContent = ls_Description;//perhaps I will add a character limit to the description
     middleContainer.hidden = true;
+    middleContainer.setAttribute('style', 'transition: hidden 2s')
     middleContainer.appendChild(description);
 
     const bottomContainer = document.createElement('div');;
