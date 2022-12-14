@@ -1,7 +1,7 @@
 import './projects-card.css'
 // the cards that will be build when a user creates a new project
 
-export const projectsCard = (ls_Title, ls_Description,ls_ID) => {
+export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
 
     const cardContainer = document.createElement('div');
     cardContainer.className = 'projects-card-container';
@@ -20,6 +20,7 @@ export const projectsCard = (ls_Title, ls_Description,ls_ID) => {
     const description = document.createElement('div');
     description.className = 'project-description';
     description.textContent = ls_Description;//perhaps I will add a character limit to the description
+    middleContainer.hidden = true;
     middleContainer.appendChild(description);
 
     const bottomContainer = document.createElement('div');;
@@ -27,7 +28,19 @@ export const projectsCard = (ls_Title, ls_Description,ls_ID) => {
     const expandArrow = document.createElement('div');
     expandArrow.className = 'expand-arrow';
     expandArrow.textContent = 'v';
-    bottomContainer.appendChild(expandArrow);
+    expandArrow.addEventListener('click', ()=> {
+        if (middleContainer.hidden === true) {
+            middleContainer.hidden = false;
+        } else {
+            middleContainer.hidden = true;
+        }
+        
+    })
+
+    if (description.textContent !== '') {
+        bottomContainer.appendChild(expandArrow);
+
+    }
 
     cardContainer.append(topContainer, middleContainer, bottomContainer)
 

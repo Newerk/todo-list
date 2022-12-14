@@ -1,10 +1,10 @@
 .projects-card-container {
-    height: 10rem;
+    /* height: 10rem; */
     height: auto;
     background-color: dodgerblue;
 
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
 }
 
 .projects-card-container {
