@@ -5,12 +5,23 @@
 
     display: grid;
     grid-template-rows: repeat(3, auto);
+
+    color: white;
+
 }
 
 .projects-card-container {
     padding: .5rem;
     object-fit: cover;
 }
+
+#card-top-container, #card-bottom-container {
+
+    font-size: larger;
+    font-weight: 700;
+
+}
+
 
 #card-bottom-container {
     display: flex;

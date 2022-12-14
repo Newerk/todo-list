@@ -17,12 +17,14 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     //start off being hidden, until the expand button is clicked. the user will know if the project will e
     const middleContainer = document.createElement('div');;
     middleContainer.id = 'card-middle-container';
+    const midTitle = document.createElement('div');
+    midTitle.className = 'mid-title';
+    midTitle.textContent = 'Description:'
     const description = document.createElement('div');
     description.className = 'project-description';
     description.textContent = ls_Description;//perhaps I will add a character limit to the description
     middleContainer.hidden = true;
-    middleContainer.setAttribute('style', 'transition: hidden 2s')
-    middleContainer.appendChild(description);
+    middleContainer.append(midTitle, description);
 
     const bottomContainer = document.createElement('div');
     bottomContainer.id = 'card-bottom-container';
@@ -37,7 +39,6 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         } else {
             middleContainer.hidden = true;
             expandArrow.textContent = 'v'
-
 
         }
 
