@@ -22,6 +22,9 @@
 
 }
 
+.mid-title {
+    text-decoration: underline;
+}
 
 #card-bottom-container {
     display: flex;
