@@ -24,6 +24,10 @@ export const projectsCard = (ls_Title, ls_Description,ls_ID) => {
 
     const bottomContainer = document.createElement('div');;
     bottomContainer.id = 'card-bottom-container';
+    const expandArrow = document.createElement('div');
+    expandArrow.className = 'expand-arrow';
+    expandArrow.textContent = 'v';
+    bottomContainer.appendChild(expandArrow);
 
     cardContainer.append(topContainer, middleContainer, bottomContainer)
 

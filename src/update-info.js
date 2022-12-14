@@ -88,21 +88,24 @@ export const updateScreenTasksLS = () => {
             break;
     }
 
+    if (storageManagement.onProjectsPage.value === true) {
+        wipe('.projects-card-container');
+
+        for (const iterator of projects) {
+            projectsCard(iterator.title, iterator.description, iterator.id).build();
+
+        }
+
+
+    }
+
+
 
 }
 
 export const updateScreenProjectsLS = () => {
     let projects = JSON.parse(localStorage.getItem('projects'));
 
-    const showFromFilter = (filter) => {
-        for (const iterator of projects) {
-            if (iterator.filter === filter) {
-                projectsCard(iterator.title, iterator.description, iterator.id).build();
-
-            }
-
-        }
-    }
 
     //******************************** MAY USE THIS FOR THE TASKS STORED IN THE PROJECS **************************************
     // //needs to update everyday, or every time the page is loaded so that once a project becomes past due, it will have its
@@ -125,17 +128,15 @@ export const updateScreenProjectsLS = () => {
 
     // }
 
-    switch (true) {
-        case storageManagement.onProjectsPage.value:
-            //build DOM for all todos
-            wipe('.projects-card-container');
+    if (storageManagement.onProjectsPage.value === true) {
+        wipe('.projects-card-container');
 
-            for (const iterator of projects) {
-                projectsCard(iterator.title, iterator.description, iterator.id).build();
-                
-            }
+        for (const iterator of projects) {
+            projectsCard(iterator.title, iterator.description, iterator.id).build();
 
-            break;
+        }
+
+
     }
 
 

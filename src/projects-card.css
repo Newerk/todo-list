@@ -1,12 +1,22 @@
 .projects-card-container {
     height: 10rem;
+    height: auto;
     background-color: dodgerblue;
 
     display: grid;
     grid-template-rows: repeat(3, 1fr);
 }
 
-#card-top-container, #card-middle-container, #card-bottom-container {
-    height: 1rem;
+.projects-card-container {
+    padding: .5rem;
+}
 
+#card-bottom-container {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+#card-middle-container {
+    height: auto;
 }

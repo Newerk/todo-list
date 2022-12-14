@@ -180,6 +180,7 @@ export const editTaskWindow = () => {
                 newTaskContainer.remove();
                 storageManagement.editTaskMenuActive.value = false;
                 updateScreenTasksLS();
+                updateScreenProjectsLS();
             }
 
         console.log(`ID of active row: ${storageManagement.idOfActiveRow}`)

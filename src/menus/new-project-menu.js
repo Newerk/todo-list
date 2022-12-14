@@ -1,6 +1,6 @@
 import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
-import { updateScreenTasksLS } from '../update-info';
+import { updateScreenProjectsLS, updateScreenTasksLS } from '../update-info';
 import { projectsCard } from '../projects-card';
 
 
@@ -57,6 +57,8 @@ export const buildNewProjectWindow = () => {
     addProjectBtn.textContent = '+ADD PROJECT';
     addProjectBtn.addEventListener('click', () => {
         const todoObj = {};
+        const uniqueID = "id" + Math.random().toString(16).slice(2);
+
 
         if (titleInput.value === '') {
             console.log('please enter a title');
@@ -67,7 +69,6 @@ export const buildNewProjectWindow = () => {
         } else
 
             if (storageManagement.newProjectMenuActive.value === true) {
-                const uniqueID = "id" + Math.random().toString(16).slice(2);
 
                 todoObj.title = titleInput.value;
                 todoObj.description = descriptionInput.value;
@@ -104,11 +105,8 @@ export const buildNewProjectWindow = () => {
 
                 console.log(JSON.parse(localStorage.getItem('projects')))
 
-                // updateScreenTasksLS(); //need to update this function to take account for projects and their very own list of tasks to generate HTML for
-
-
+                updateScreenProjectsLS();
             }
-            document.querySelector('.projects-content').appendChild(projectsCard(titleInput.value, ));
     })
 
     bottomContainer.appendChild(addProjectBtn);
