@@ -1,4 +1,5 @@
 import './projects-card.css'
+import { projectPopOut } from './selected-project-popout';
 // the cards that will be build when a user creates a new project
 
 export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
@@ -76,6 +77,12 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         topContainer.setAttribute('style', 'color: white');
         middleContainer.setAttribute('style', 'color: white');
     })
+
+    topContainer.addEventListener('click', () => {
+        document.querySelector('.projects-content').appendChild(projectPopOut());
+        console.log('ACTIVATED?')
+    })
+
 
 
     topContainer.addEventListener('mouseover', () => {

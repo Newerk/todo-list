@@ -88,18 +88,6 @@ export const updateScreenTasksLS = () => {
             break;
     }
 
-    if (storageManagement.onProjectsPage.value === true) {
-        wipe('.projects-card-container');
-
-        for (const iterator of projects) {
-            projectsCard(iterator.title, iterator.description, iterator.id).build();
-
-        }
-
-
-    }
-
-
 
 }
 
