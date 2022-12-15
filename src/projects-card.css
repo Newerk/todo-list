@@ -10,12 +10,17 @@
 
 }
 
+.expand-arrow {
+    cursor: pointer;
+}
+
 .projects-card-container {
     padding: .5rem;
     object-fit: cover;
 }
 
-#card-top-container, #card-bottom-container {
+#card-top-container,
+#card-bottom-container {
 
     font-size: larger;
     font-weight: 700;
@@ -27,6 +32,8 @@
 }
 
 #card-bottom-container {
+    z-index: 1;
+
     display: flex;
     justify-content: end;
     align-items: flex-end;

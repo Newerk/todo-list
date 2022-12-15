@@ -7,6 +7,8 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     cardContainer.className = 'projects-card-container';
     cardContainer.id = ls_ID;
 
+
+
     const topContainer = document.createElement('div');
     topContainer.id = 'card-top-container';
     const title = document.createElement('div');
@@ -30,15 +32,15 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     bottomContainer.id = 'card-bottom-container';
     const expandArrow = document.createElement('div');
     expandArrow.className = 'expand-arrow';
-    expandArrow.textContent = 'v';
+    expandArrow.textContent = '▼';
     expandArrow.addEventListener('click', () => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
-            expandArrow.textContent = '^'
+            expandArrow.textContent = '▲'
 
         } else {
             middleContainer.hidden = true;
-            expandArrow.textContent = 'v'
+            expandArrow.textContent = '▼'
 
         }
 
@@ -48,6 +50,54 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         bottomContainer.appendChild(expandArrow);
 
     }
+
+    bottomContainer.addEventListener('mouseover', ()=> {
+        topContainer.setAttribute('style', 'color: white');
+        middleContainer.setAttribute('style', 'color: white');
+
+    })
+
+    // bottomContainer.addEventListener('mouseout', ()=> {
+    //     topContainer.setAttribute('style', 'color: white');
+    //     middleContainer.setAttribute('style', 'color: white');
+
+    // })
+
+    expandArrow.addEventListener('mouseover', () => {
+        expandArrow.setAttribute('style', 'color: yellow')
+        topContainer.setAttribute('style', 'color: white');
+        middleContainer.setAttribute('style', 'color: white');
+
+
+    })
+
+    expandArrow.addEventListener('mouseout', () => {
+        expandArrow.setAttribute('style', 'color: white')
+        topContainer.setAttribute('style', 'color: white');
+        middleContainer.setAttribute('style', 'color: white');
+    })
+
+
+    topContainer.addEventListener('mouseover', () => {
+        topContainer.setAttribute('style', 'color: yellow');
+        middleContainer.setAttribute('style', 'color: yellow');
+    })
+
+    topContainer.addEventListener('mouseout', () => {
+        topContainer.setAttribute('style', 'color: white');
+        middleContainer.setAttribute('style', 'color: white');
+    })
+
+    middleContainer.addEventListener('mouseover', () => {
+        topContainer.setAttribute('style', 'color: yellow');
+        middleContainer.setAttribute('style', 'color: yellow');
+    })
+
+    middleContainer.addEventListener('mouseout', () => {
+        topContainer.setAttribute('style', 'color: white');
+        middleContainer.setAttribute('style', 'color: white');
+    })
+
 
     cardContainer.append(topContainer, middleContainer, bottomContainer)
 
