@@ -1,9 +1,9 @@
 import './project-popout-style.css'
 
-export const projectPopOut = () => {
+export const projectPopOut = (p_Title, p_Description, p_ArrayOfTasks) => {
     const container = document.createElement('div');
     container.className = 'project-popout-container';
-    container.setAttribute('style', 'position: absolute; width: 60vw; height: 80vh; background-color: orange; z-index: 5; place-self: center; display: grid; grid-template-rows: auto 1fr auto')
+    container.setAttribute('style', 'position: absolute; width: 60vw; background-color: orange; z-index: 5; place-self: center; display: grid; grid-template-rows: auto 1fr auto')
 
     const top = document.createElement('div');
     top.setAttribute('style', 'display: flex; justify-content: space-between; border: 1px solid black;');
@@ -28,7 +28,7 @@ export const projectPopOut = () => {
     descriptionWrapper.append(descriptionTag, description);
 
     const tasksWrapper = document.createElement('div');
-    tasksWrapper.setAttribute('style', 'display: grid; grid-template-rows: auto 1fr; border: 3px dotted red; height: 1fr')
+    tasksWrapper.setAttribute('style', 'display: grid; grid-template-rows: auto 1fr; border: 3px dotted red; height: calc(100vh - 25.3rem)')
     const taskHeader = document.createElement('div');
     taskHeader.setAttribute('style', 'border: 1px solid black; display: flex; justify-content: space-between');
     const taskTag = document.createElement('div');
@@ -40,7 +40,7 @@ export const projectPopOut = () => {
 
 
     const taskContainer = document.createElement('div');
-    taskContainer.setAttribute('style', 'border: 1px solid black; background-color: white;')
+    taskContainer.setAttribute('style', 'border: 1px solid black; background-color: white; overflow-y: scroll;')
 
     tasksWrapper.append(taskHeader, taskContainer)
     middle.append(descriptionWrapper, tasksWrapper);

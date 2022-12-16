@@ -127,9 +127,6 @@ export const updateScreenProjectsLS = () => {
 
     }
 
-
-
-
 }
 
 function wipe(className) {
