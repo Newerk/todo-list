@@ -1,5 +1,6 @@
 import { storageManagement } from './local-storage';
 import './project-popout-style.css'
+import { updateProjectTasksLS } from './update-info';
 
 export const projectPopOut = () => {
     const projects = JSON.parse(localStorage.getItem("projects"));
@@ -27,7 +28,7 @@ export const projectPopOut = () => {
     const descriptionWrapper = document.createElement('div');
     descriptionWrapper.setAttribute('style', 'border: 1px solid black;')
     const descriptionTag = document.createElement('div');
-    descriptionTag.textContent = 'Description';
+    descriptionTag.textContent = 'Description:';
     const description = document.createElement('div');
     description.textContent = storageManagement.descriptionOfActiveProject;
 
@@ -48,6 +49,12 @@ export const projectPopOut = () => {
     const taskContainer = document.createElement('div');
     taskContainer.setAttribute('style', 'border: 1px solid black; background-color: white; overflow-y: scroll;')
     taskContainer.id = 'project-tasks-container';
+    const findMethod = projects.find(obj => {
+        return obj.id === storageManagement.idOfActiveProject;
+    })
+    updateProjectTasksLS();
+
+    console.log('find method: ' + JSON.stringify(findMethod.tasks));
 
     tasksWrapper.append(taskHeader, taskContainer)
     middle.append(descriptionWrapper, tasksWrapper);

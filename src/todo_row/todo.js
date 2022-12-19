@@ -139,6 +139,6 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls_ID
     }
 
 
-    return { build };
+    return { build, row };
 }
 
