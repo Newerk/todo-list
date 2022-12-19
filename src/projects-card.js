@@ -1,3 +1,4 @@
+import { storageManagement } from './local-storage';
 import './projects-card.css'
 import { projectPopOut } from './selected-project-popout';
 // the cards that will be build when a user creates a new project
@@ -52,7 +53,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
 
     }
 
-    bottomContainer.addEventListener('mouseover', ()=> {
+    bottomContainer.addEventListener('mouseover', () => {
         topContainer.setAttribute('style', 'color: white');
         middleContainer.setAttribute('style', 'color: white');
 
@@ -78,9 +79,23 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         middleContainer.setAttribute('style', 'color: white');
     })
 
-    topContainer.addEventListener('click', () => {
-        document.querySelector('.projects-content').appendChild(projectPopOut());
-        console.log('ACTIVATED?')
+    topContainer.addEventListener('click', (e) => {
+        const targetedProject = e.target.parentElement.parentElement;
+        storageManagement.idOfActiveProject = targetedProject.id;
+        storageManagement.titleOfActiveProject = targetedProject.querySelector('.project-title').textContent;
+        storageManagement.descriptionOfActiveProject = targetedProject.querySelector('.project-description').textContent
+
+        console.log('targeted Project: ' + targetedProject.id);
+        console.log('id stored in local storage: ' + storageManagement.idOfActiveProject);
+
+        console.log('targeted Project title: ' + targetedProject.querySelector('.project-title').textContent);
+        console.log('id stored in local storage: ' + storageManagement.titleOfActiveProject);
+
+        console.log('description of active project: '+ storageManagement.descriptionOfActiveProject)
+
+        document.querySelector('.projects-content').appendChild(projectPopOut().container);
+
+
     })
 
 

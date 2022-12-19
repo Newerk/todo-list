@@ -126,7 +126,6 @@ export const buildNewTaskWindow = () => {
             console.log('please enter a title');
             titleInput.setAttribute('style', 'background-color: rgb(246,166,166, .1) ')
             titleInput.addEventListener('input', () => titleInput.setAttribute('style', 'background-color: none;'))
-            return;
 
         } else
 

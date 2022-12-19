@@ -1,6 +1,9 @@
+import { storageManagement } from './local-storage';
 import './project-popout-style.css'
 
-export const projectPopOut = (p_Title, p_Description, p_ArrayOfTasks) => {
+export const projectPopOut = () => {
+    const projects = JSON.parse(localStorage.getItem("projects"));
+
     const container = document.createElement('div');
     container.className = 'project-popout-container';
     container.setAttribute('style', 'position: absolute; width: 60vw; background-color: orange; z-index: 5; place-self: center; display: grid; grid-template-rows: auto 1fr auto')
@@ -9,10 +12,13 @@ export const projectPopOut = (p_Title, p_Description, p_ArrayOfTasks) => {
     top.setAttribute('style', 'display: flex; justify-content: space-between; border: 1px solid black;');
     const title = document.createElement('div');
     title.className = 'popout-title';
-    title.textContent = 'PROJECT TITLE';
+    title.textContent = storageManagement.titleOfActiveProject;
     const exitBtn = document.createElement('button');
     exitBtn.className = 'popout-exit-btn';
     exitBtn.textContent = 'X';
+    exitBtn.addEventListener('click', () => {
+        document.querySelector('.project-popout-container').remove();
+    })
 
     top.append(title, exitBtn);
 
@@ -23,7 +29,7 @@ export const projectPopOut = (p_Title, p_Description, p_ArrayOfTasks) => {
     const descriptionTag = document.createElement('div');
     descriptionTag.textContent = 'Description';
     const description = document.createElement('div');
-    description.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis purus elit, at finibus turpis fermentum a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean quis sem pretium, posuere ante non, vestibulum eros. Ut mattis dictum neque, sed fringilla turpis imperdiet ut. Maecenas in ligula justo. Nulla vestibulum ligula non justo malesuada, quis auctor est placerat. In hac habitasse platea dictumst. Mauris imperdiet nisi hendrerit tincidunt volutpat. Nunc nisi dolor, rhoncus id tincidunt finibus, eleifend a metus. Pellentesque luctus odio sagittis, consectetur nisi a, sodales lacus. Pellentesque justo ligula, pellentesque quis blandit sed, sodales feugiat neque. Donec eget sapien iaculis sapien porttitor rutrum ut a felis.';
+    description.textContent = storageManagement.descriptionOfActiveProject;
 
     descriptionWrapper.append(descriptionTag, description);
 
@@ -41,6 +47,7 @@ export const projectPopOut = (p_Title, p_Description, p_ArrayOfTasks) => {
 
     const taskContainer = document.createElement('div');
     taskContainer.setAttribute('style', 'border: 1px solid black; background-color: white; overflow-y: scroll;')
+    taskContainer.id = 'project-tasks-container';
 
     tasksWrapper.append(taskHeader, taskContainer)
     middle.append(descriptionWrapper, tasksWrapper);
@@ -54,5 +61,12 @@ export const projectPopOut = (p_Title, p_Description, p_ArrayOfTasks) => {
 
     container.append(top, middle, bottom);
 
-    return container;
+    const build = () => {
+        document.body.querySelector('#project-tasks-container').appendChild(container);
+
+    }
+
+    return { container, build };
 }
+
+

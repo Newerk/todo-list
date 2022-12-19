@@ -37,5 +37,9 @@ export const storageManagement = {
     idOfActiveRow: null,
     dateOfActiveRow: null,
 
+    titleOfActiveProject: null,
+    idOfActiveProject: null,
+    descriptionOfActiveProject: null,
+
 
 }
