@@ -1,6 +1,7 @@
 import { storageManagement } from './local-storage';
 import './projects-card.css'
 import { projectPopOut } from './selected-project-popout';
+import { updateProjectTasksLS } from './update-info';
 // the cards that will be build when a user creates a new project
 
 export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
@@ -93,9 +94,8 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
 
         console.log('description of active project: '+ storageManagement.descriptionOfActiveProject)
 
-        document.querySelector('.projects-content').appendChild(projectPopOut().container);
-
-
+        document.querySelector('.projects-content').appendChild(projectPopOut());
+        updateProjectTasksLS();
     })
 
 

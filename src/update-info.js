@@ -14,6 +14,7 @@ SIMPLY: A Module That Controls which Todos Show on the Screen
 import { todoListRows } from "./todo_row/todo";
 import { storageManagement } from "./local-storage";
 import { projectsCard } from "./projects-card";
+import { todoProjectRows } from "./project-todo-row";
 
 export const updateScreenTasksLS = () => {
     let rows = JSON.parse(localStorage.getItem('rows'));
@@ -110,24 +111,21 @@ export const updateScreenProjectsLS = () => {
 export const updateProjectTasksLS = () => {
     let projects = JSON.parse(localStorage.getItem('projects'));
 
-    const build = (container) => {
-        document.body.querySelector('#project-tasks-container').appendChild(container);
 
-    }
-
-    wipe('.project-tasks-container');
+    // wipe('#project-tasks-container');
 
 
     let selectedProject = projects.find(obj => {
         return obj.id === storageManagement.idOfActiveProject;
     })
 
+    // console.log('selected project tasks: '+ selectedProject.tasks)
     for (const iterator of selectedProject.tasks) {
-
-        build(todoListRows(iterator.title, iterator.dueDate, iterator.status, iterator.id).row)
+        document.body.querySelector('#project-tasks-container').appendChild(todoProjectRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status, iterator.id))
+        
+        // console.log('does this element exist? ' + document.body.contains(test));
 
     }
-
 
 
 }

@@ -35,8 +35,10 @@ export const projectPopOut = () => {
     descriptionWrapper.append(descriptionTag, description);
 
     const tasksWrapper = document.createElement('div');
-    tasksWrapper.setAttribute('style', 'display: grid; grid-template-rows: auto 1fr; border: 3px dotted red; height: calc(100vh - 25.3rem)')
+    tasksWrapper.className = 'project-tasks-wrapper';
+    tasksWrapper.setAttribute('style', 'display: grid; grid-template-rows: auto 1fr; border: 3px dotted red; height: calc(100vh - 25.3rem)');
     const taskHeader = document.createElement('div');
+    taskHeader.id = 'project-tasks-header';
     taskHeader.setAttribute('style', 'border: 1px solid black; display: flex; justify-content: space-between');
     const taskTag = document.createElement('div');
     taskTag.textContent = 'Tasks';
@@ -47,14 +49,8 @@ export const projectPopOut = () => {
 
 
     const taskContainer = document.createElement('div');
-    taskContainer.setAttribute('style', 'border: 1px solid black; background-color: white; overflow-y: scroll;')
     taskContainer.id = 'project-tasks-container';
-    const findMethod = projects.find(obj => {
-        return obj.id === storageManagement.idOfActiveProject;
-    })
-    updateProjectTasksLS();
-
-    console.log('find method: ' + JSON.stringify(findMethod.tasks));
+    taskContainer.setAttribute('style', 'border: 1px solid black; background-color: white; overflow-y: scroll;');
 
     tasksWrapper.append(taskHeader, taskContainer)
     middle.append(descriptionWrapper, tasksWrapper);
@@ -68,12 +64,8 @@ export const projectPopOut = () => {
 
     container.append(top, middle, bottom);
 
-    const build = () => {
-        document.body.querySelector('#project-tasks-container').appendChild(container);
 
-    }
-
-    return { container, build };
+    return  container ;
 }
 
 

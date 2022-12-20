@@ -2,12 +2,12 @@
 build how the row of a the todo list will look like.
 
 */
-import { storageManagement } from '../local-storage';
-import { closeThreeDotMenu, threeDotsMenu, menuStatus } from '../menus/three-dots-menu';
-import './todo.css';
+import { storageManagement } from './local-storage';
+import { closeThreeDotMenu, threeDotsMenu, menuStatus } from './menus/three-dots-menu';
+import './todo_row/todo.css';
 
 
-export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls_ID) => {
+export const todoProjectRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls_ID) => {
 
     const row = document.createElement('div');
     row.className = 'row';
@@ -74,7 +74,7 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls_ID
     status.appendChild(statusCheckbox)
 
 
-    status.setAttribute('style', `display: flex; justify-content: center; width: ${(document.getElementById('header-status').offsetWidth)}px;`);
+    status.setAttribute('style', `display: flex; justify-content: center; width: 3rem;`);
     row.appendChild(status);
 
     const title = document.createElement('div');
@@ -92,14 +92,14 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls_ID
     const priority = document.createElement('div');
     priority.id = 'row-priority';
     priority.textContent = ls_Priority;
-    priority.setAttribute('style', ` width: ${(document.getElementById('header-priority').offsetWidth)}px;`);
+    priority.setAttribute('style', ` width: 3rem;`);
 
 
     row.appendChild(priority);
 
     const dueDateContainer = document.createElement('div');
     dueDateContainer.className = 'due-date-container';
-    dueDateContainer.setAttribute('style', ` width: ${(document.getElementById('header-due-date').offsetWidth)}px;`);
+    dueDateContainer.setAttribute('style', ` width: 3rem;`);
 
 
     const dueDate = document.createElement('div');
@@ -133,12 +133,7 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls_ID
 
     row.appendChild(dueDateContainer);
 
-    const build = () => {
-        document.body.querySelector('#todo-list-container').appendChild(row);
 
-    }
-
-
-    return { build };
+    return row;
 }
 

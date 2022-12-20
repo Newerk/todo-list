@@ -78,18 +78,22 @@ export const buildNewProjectWindow = () => {
                         title: 'test1',
                         status: 'Incomplete',
                         id: 'id6gkhFG94yoee',
-                        priority: 'Normal'
+                        priority: 'Normal',
+                        dueDate: '01/12/2023',
                     },
                     {
                         title: 'test2',
                         status: 'Complete',
                         id: 'id6gkhFG9452342',
-                        priority: 'High'
+                        priority: 'High', 
+                        dueDate: '08/22/2021',
+
                     }, {
                         title: 'test3',
                         status: 'Incomplete',
                         id: 'id6gnjksdfyo43',
-                        priority: 'Urgent'
+                        priority: 'Urgent', 
+                        dueDate: '12/04/2030',
                     },
 
                 ]
