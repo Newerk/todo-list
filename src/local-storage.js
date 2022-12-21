@@ -22,7 +22,7 @@ import { updateScreenProjectsLS, updateScreenTasksLS } from "./update-info";
 export const storageManagement = {
     sideBarIsExpanded: { value: false },
     newTaskMenuActive: { value: false },
-    newProjectMenuActive: {value: false},
+    newProjectMenuActive: { value: false },
     priorityMenuActive: { value: false },
     editTaskMenuActive: { value: false },
 
@@ -30,7 +30,10 @@ export const storageManagement = {
     onTodayPage: { value: false },
     onUpcomingPage: { value: false },
     onPastDuePage: { value: false },
-    onProjectsPage: {value: false},
+    onProjectsPage: { value: false },
+    onAccountPage: { value: false },
+    onSettingsPage: { value: false },
+
 
     titleOfActiveRow: null,
     priorityOfActiveRow: null,

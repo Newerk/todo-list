@@ -8,6 +8,10 @@ export const activePageTracker = (activePage) => {
         storageManagement.onTodayPage.value = false;
         storageManagement.onUpcomingPage.value = false;
         storageManagement.onPastDuePage.value = false;
+        storageManagement.onProjectsPage.value = false;
+        storageManagement.onAccountPage.value = false;
+        storageManagement.onSettingsPage.value = false;
+
 
     }
     if (activePage === storageManagement.onTodayPage) {
@@ -16,6 +20,10 @@ export const activePageTracker = (activePage) => {
         storageManagement.onHomePage.value = false;
         storageManagement.onUpcomingPage.value = false;
         storageManagement.onPastDuePage.value = false;
+        storageManagement.onProjectsPage.value = false;
+        storageManagement.onAccountPage.value = false;
+        storageManagement.onSettingsPage.value = false;
+
 
     }
     if (activePage === storageManagement.onUpcomingPage) {
@@ -24,6 +32,10 @@ export const activePageTracker = (activePage) => {
         storageManagement.onHomePage.value = false;
         storageManagement.onTodayPage.value = false;
         storageManagement.onPastDuePage.value = false;
+        storageManagement.onProjectsPage.value = false;
+        storageManagement.onAccountPage.value = false;
+        storageManagement.onSettingsPage.value = false;
+
 
     }
 
@@ -33,6 +45,50 @@ export const activePageTracker = (activePage) => {
         storageManagement.onHomePage.value = false;
         storageManagement.onTodayPage.value = false;
         storageManagement.onUpcomingPage.value = false;
+        storageManagement.onProjectsPage.value = false;
+        storageManagement.onAccountPage.value = false;
+        storageManagement.onSettingsPage.value = false;
+
+
+    }
+
+    if (activePage === storageManagement.onProjectsPage) {
+        storageManagement.onProjectsPage.value = true;
+
+        storageManagement.onHomePage.value = false;
+        storageManagement.onTodayPage.value = false;
+        storageManagement.onUpcomingPage.value = false;
+        storageManagement.onPastDuePage.value = false;
+        storageManagement.onAccountPage.value = false;
+        storageManagement.onSettingsPage.value = false;
+
+
+    }
+
+    //pages not added to this module yet: Account page, Settings Page
+    if (activePage === storageManagement.onAccountPage) {
+        storageManagement.onAccountPage.value = true;
+
+        storageManagement.onHomePage.value = false;
+        storageManagement.onTodayPage.value = false;
+        storageManagement.onUpcomingPage.value = false;
+        storageManagement.onPastDuePage.value = false;
+        storageManagement.onSettingsPage.value = false;
+        storageManagement.onProjectsPage.value = false;
+
+
+
+    }    if (activePage === storageManagement.onSettingsPage) {
+        storageManagement.onSettingsPage.value = true;
+
+        storageManagement.onHomePage.value = false;
+        storageManagement.onTodayPage.value = false;
+        storageManagement.onUpcomingPage.value = false;
+        storageManagement.onPastDuePage.value = false;
+        storageManagement.onAccountPage.value = false;
+        storageManagement.onProjectsPage.value = false;
+
+
 
     }
 

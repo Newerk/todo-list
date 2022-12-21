@@ -2,7 +2,7 @@ import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
 import { buildPopUpMenu } from './priority-popup-menu';
 import { todoFilterLogic } from '../todoFilterLogic';
-import { updateScreenTasksLS } from '../update-info';
+import { updateProjectTasksLS, updateScreenTasksLS } from '../update-info';
 
 
 export const buildNewTaskWindow = () => {
@@ -127,22 +127,21 @@ export const buildNewTaskWindow = () => {
             titleInput.setAttribute('style', 'background-color: rgb(246,166,166, .1) ')
             titleInput.addEventListener('input', () => titleInput.setAttribute('style', 'background-color: none;'))
 
-        } else
+        } else if (storageManagement.newTaskMenuActive.value === true) {
+            const uniqueID = "id" + Math.random().toString(16).slice(2);
 
-            if (storageManagement.newTaskMenuActive.value === true) {
-                const uniqueID = "id" + Math.random().toString(16).slice(2);
+            todoObj.title = titleInput.value;
+            todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
+            todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
+            todoObj.status = 'Incomplete';
+            todoObj.id = uniqueID;
 
-                todoObj.title = titleInput.value;
-                todoObj.dueDate = dueDateValue(todoObj, dueDateBtn.value);
-                todoObj.priority = priorityChecker(todoObj, priorityBtn.textContent);
-                todoObj.status = 'Incomplete';
-                todoObj.id = uniqueID;
+            todoFilterLogic(todoObj);
 
-                todoFilterLogic(todoObj);
+            newTaskContainer.remove();
+            storageManagement.newTaskMenuActive.value = false;
 
-                newTaskContainer.remove();
-                storageManagement.newTaskMenuActive.value = false;
-
+            if (storageManagement.onHomePage.value === true) {
 
                 let rows = JSON.parse(localStorage.getItem('rows'));
                 rows.push(todoObj);
@@ -153,13 +152,23 @@ export const buildNewTaskWindow = () => {
 
                 updateScreenTasksLS();
 
+            } else if (storageManagement.onProjectsPage.value === true) {
+                let projects = JSON.parse(localStorage.getItem('projects'));
+                updateProjectTasksLS();
+                console.log('SHOULDNT ADD TO HOMEPAGE');
+
+
             }
+
+        }
+
+
     })
 
     bottomContainer.appendChild(addTaskBtn);
 
-    newTaskContainer.appendChild(topContainer)
-    newTaskContainer.appendChild(bottomContainer)
+    newTaskContainer.appendChild(topContainer);
+    newTaskContainer.appendChild(bottomContainer);
 
     return newTaskContainer;
 }
