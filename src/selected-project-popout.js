@@ -1,6 +1,7 @@
 import { storageManagement } from './local-storage';
 import './project-popout-style.css'
 import { updateProjectTasksLS } from './update-info';
+import { newTaskBtn } from './pages/new-task-btn';
 
 export const projectPopOut = () => {
     const projects = JSON.parse(localStorage.getItem("projects"));
@@ -42,10 +43,11 @@ export const projectPopOut = () => {
     taskHeader.setAttribute('style', 'border: 1px solid black; display: flex; justify-content: space-between');
     const taskTag = document.createElement('div');
     taskTag.textContent = 'Tasks';
-    const newTaskBtn = document.createElement('button');
-    newTaskBtn.textContent = 'NEW TASK';
+    const newTask = document.createElement('div');
+    newTask.appendChild(newTaskBtn('#project-tasks-header'));
+    // newTask.textContent = 'NEW TASK';
 
-    taskHeader.append(taskTag, newTaskBtn)
+    taskHeader.append(taskTag, newTask)
 
 
     const taskContainer = document.createElement('div');
