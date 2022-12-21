@@ -112,13 +112,16 @@ export const updateProjectTasksLS = () => {
     let projects = JSON.parse(localStorage.getItem('projects'));
 
 
-    // wipe('#project-tasks-container');
-
-
     let selectedProject = projects.find(obj => {
         return obj.id === storageManagement.idOfActiveProject;
     })
 
+    const wipeTasks = (() => {
+        document.body.querySelector('#project-tasks-container').innerHTML = '';
+        console.log('wiped')
+
+    })();
+    
     // console.log('selected project tasks: '+ selectedProject.tasks)
     for (const iterator of selectedProject.tasks) {
         document.body.querySelector('#project-tasks-container').appendChild(todoProjectRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status, iterator.id))

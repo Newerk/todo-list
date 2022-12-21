@@ -38,7 +38,6 @@ export const activePageTracker = (activePage) => {
 
 
     }
-
     if (activePage === storageManagement.onPastDuePage) {
         storageManagement.onPastDuePage.value = true;
 
@@ -51,7 +50,6 @@ export const activePageTracker = (activePage) => {
 
 
     }
-
     if (activePage === storageManagement.onProjectsPage) {
         storageManagement.onProjectsPage.value = true;
 
@@ -64,8 +62,6 @@ export const activePageTracker = (activePage) => {
 
 
     }
-
-    //pages not added to this module yet: Account page, Settings Page
     if (activePage === storageManagement.onAccountPage) {
         storageManagement.onAccountPage.value = true;
 
@@ -77,8 +73,8 @@ export const activePageTracker = (activePage) => {
         storageManagement.onProjectsPage.value = false;
 
 
-
-    }    if (activePage === storageManagement.onSettingsPage) {
+    }
+    if (activePage === storageManagement.onSettingsPage) {
         storageManagement.onSettingsPage.value = true;
 
         storageManagement.onHomePage.value = false;
@@ -87,7 +83,6 @@ export const activePageTracker = (activePage) => {
         storageManagement.onPastDuePage.value = false;
         storageManagement.onAccountPage.value = false;
         storageManagement.onProjectsPage.value = false;
-
 
 
     }
