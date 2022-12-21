@@ -7,7 +7,7 @@ is able to currently add rows because its a quick way for me to see changes and 
 */
 
 
-export const newTaskBtn = () => {
+export const newTaskBtn = (querySelector) => {
     const btnContainer = document.createElement('div');
     btnContainer.setAttribute('style', 'display: flex; width: auto; height: 2rem');
     btnContainer.className = 'new-task-btn';
@@ -19,7 +19,7 @@ export const newTaskBtn = () => {
     symbol.addEventListener('click', () => {
         
         if (storageManagement.newTaskMenuActive.value === false) {
-            document.body.querySelector('.top-container').appendChild(buildNewTaskWindow());
+            document.body.querySelector(`${querySelector}`).appendChild(buildNewTaskWindow());
             storageManagement.newTaskMenuActive.value = true;
         } else {
             console.log('there is a window already opened')

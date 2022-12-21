@@ -12,7 +12,7 @@ export const homePage = () => {
     const newTask = document.createElement('div');
     newTask.className = 'top-container';
     newTask.setAttribute('style', 'display: flex; justify-content: end')
-    newTask.appendChild(newTaskBtn());
+    newTask.appendChild(newTaskBtn('.top-container'));
 
     container.appendChild(newTask);
 
