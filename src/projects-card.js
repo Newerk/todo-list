@@ -86,21 +86,12 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         storageManagement.titleOfActiveProject = targetedProject.querySelector('.project-title').textContent;
         storageManagement.descriptionOfActiveProject = targetedProject.querySelector('.project-description').textContent
 
-        console.log('targeted Project: ' + targetedProject.id);
-        console.log('id stored in local storage: ' + storageManagement.idOfActiveProject);
-
-        console.log('targeted Project title: ' + targetedProject.querySelector('.project-title').textContent);
-        console.log('id stored in local storage: ' + storageManagement.titleOfActiveProject);
-
-        console.log('description of active project: '+ storageManagement.descriptionOfActiveProject)
-
         if (storageManagement.projectPopOutActive.value === false) {
             document.querySelector('.projects-content').appendChild(projectPopOut());
 
         }
         updateProjectTasksLS();
     })
-
 
 
     topContainer.addEventListener('mouseover', () => {
