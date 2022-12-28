@@ -154,6 +154,21 @@ export const buildNewTaskWindow = () => {
 
             } else if (storageManagement.onProjectsPage.value === true) {
                 let projects = JSON.parse(localStorage.getItem('projects'));
+
+                let selectedProject = projects.find(obj => {
+                    return obj.id === storageManagement.idOfActiveProject;
+                })
+
+                selectedProject.tasks.push(todoObj);
+
+
+
+
+                //find the correct project, and then add the task to it
+
+                localStorage.setItem('projects', JSON.stringify(projects));
+
+
                 updateProjectTasksLS();
                 console.log('SHOULDNT ADD TO HOMEPAGE');
 

@@ -73,30 +73,7 @@ export const buildNewProjectWindow = () => {
                 todoObj.title = titleInput.value;
                 todoObj.description = descriptionInput.value;
                 todoObj.id = uniqueID;
-                todoObj.tasks = [
-                    {
-                        title: 'test1',
-                        status: 'Incomplete',
-                        id: 'id6gkhFG94yoee',
-                        priority: 'Normal',
-                        dueDate: '01/12/2023',
-                    },
-                    {
-                        title: 'test2',
-                        status: 'Complete',
-                        id: 'id6gkhFG9452342',
-                        priority: 'High', 
-                        dueDate: '08/22/2021',
-
-                    }, {
-                        title: 'test3',
-                        status: 'Incomplete',
-                        id: 'id6gnjksdfyo43',
-                        priority: 'Urgent', 
-                        dueDate: '12/04/2030',
-                    },
-
-                ]
+                todoObj.tasks = [];
 
                 newProjectContainer.remove();
                 storageManagement.newProjectMenuActive.value = false;
