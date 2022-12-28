@@ -25,6 +25,7 @@ export const storageManagement = {
     newProjectMenuActive: { value: false },
     priorityMenuActive: { value: false },
     editTaskMenuActive: { value: false },
+    projectPopOutActive: { value: false },
 
     onHomePage: { value: false },
     onTodayPage: { value: false },

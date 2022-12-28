@@ -94,7 +94,10 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
 
         console.log('description of active project: '+ storageManagement.descriptionOfActiveProject)
 
-        document.querySelector('.projects-content').appendChild(projectPopOut());
+        if (storageManagement.projectPopOutActive.value === false) {
+            document.querySelector('.projects-content').appendChild(projectPopOut());
+
+        }
         updateProjectTasksLS();
     })
 
@@ -108,6 +111,13 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     topContainer.addEventListener('mouseout', () => {
         topContainer.setAttribute('style', 'color: white');
         middleContainer.setAttribute('style', 'color: white');
+    })
+
+    middleContainer.addEventListener('click', ()=> {
+        if (storageManagement.projectPopOutActive.value === false) {
+            document.querySelector('.projects-content').appendChild(projectPopOut());
+
+        }
     })
 
     middleContainer.addEventListener('mouseover', () => {
