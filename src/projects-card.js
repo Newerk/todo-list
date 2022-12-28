@@ -116,8 +116,9 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     middleContainer.addEventListener('click', ()=> {
         if (storageManagement.projectPopOutActive.value === false) {
             document.querySelector('.projects-content').appendChild(projectPopOut());
-
         }
+        updateProjectTasksLS();
+
     })
 
     middleContainer.addEventListener('mouseover', () => {

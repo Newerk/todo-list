@@ -116,6 +116,8 @@ export const updateProjectTasksLS = () => {
         return obj.id === storageManagement.idOfActiveProject;
     })
 
+
+    //this needs to be updated. This breaks after swapping pages when the expanded project view is open
     const wipeTasks = (() => {
         document.body.querySelector('#project-tasks-container').innerHTML = '';
         console.log('wiped')

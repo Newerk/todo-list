@@ -40,7 +40,7 @@ export const projectPopOut = () => {
 
         const tasksWrapper = document.createElement('div');
         tasksWrapper.className = 'project-tasks-wrapper';
-        tasksWrapper.setAttribute('style', 'display: grid; grid-template-rows: auto 1fr; border: 3px dotted red; height: calc(100vh - 25.3rem)');
+        tasksWrapper.setAttribute('style', 'display: grid; grid-template-rows: auto 1fr; border: 3px dotted red; height: calc(100vh - 25.3rem);');
         const taskHeader = document.createElement('div');
         taskHeader.id = 'project-tasks-header';
         taskHeader.setAttribute('style', 'border: 1px solid black; display: flex; justify-content: space-between');

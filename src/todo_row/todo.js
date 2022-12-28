@@ -22,11 +22,7 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls_ID
     statusCheckbox.type = 'checkbox';
 
     let getStatus = () => {
-        if (ls_Status === 'Complete') {
-            return true;
-        } else {
-            return false;
-        }
+            return ls_Status === 'Complete';
     }
 
     statusCheckbox.checked = getStatus();

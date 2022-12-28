@@ -12,7 +12,7 @@ export const todoProjectRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls
     const row = document.createElement('div');
     row.className = 'row';
     row.id = ls_ID;
-    row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white;border: grey 1px solid');
+    row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white; border: grey 1px solid');
 
     const status = document.createElement('div');
     status.id = 'row-status';
@@ -22,51 +22,58 @@ export const todoProjectRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls
     statusCheckbox.type = 'checkbox';
 
     let getStatus = () => {
-        if (ls_Status === 'Complete') {
-            return true;
-        } else {
-            return false;
-        }
+        return ls_Status === 'Complete';
     }
 
     statusCheckbox.checked = getStatus();
 
 
     statusCheckbox.addEventListener('change', (e) => {
-        let lsRows = JSON.parse(localStorage.getItem('rows'));
+        let lsProjects = JSON.parse(localStorage.getItem('projects'));
 
+        let selectedProject = lsProjects.find(obj => {
+            return obj.id === storageManagement.idOfActiveProject;
+        })
+
+        let selectedRow = selectedProject.tasks.find(obj => {
+            return obj.id === e.target.parentElement.parentElement.id
+        })
 
         if (e.target.checked) {
 
-            let result = lsRows.filter(obj => {
-                if (obj.title === e.target.parentElement.parentElement.querySelector('#row-title').textContent) {
-                    obj.status = 'Complete';
+            console.log(`id of project: ${selectedRow.id}---need to find the id of the row inside the project instead`);
+            console.log(`e.target row id: ${e.target.parentElement.parentElement.id}`)
 
-                    e.target.parentElement.parentElement.querySelector('#row-title').style.setProperty('text-decoration', 'line-through');
 
-                    return localStorage.setItem('rows', JSON.stringify(lsRows))
-                }
+            if (selectedRow.id === e.target.parentElement.parentElement.id) {
+                selectedRow.status = 'Complete';
 
-            })
+                e.target.parentElement.parentElement.querySelector('#row-title').style.setProperty('text-decoration', 'line-through');
 
-            console.log(JSON.parse(localStorage.getItem('rows')))
+                console.log(`selected project status updated`);
+
+                return localStorage.setItem('projects', JSON.stringify(lsProjects))
+            }
+
+
+            console.log(JSON.parse(localStorage.getItem('projects')))
 
 
 
         } else {
-            let result = lsRows.filter(obj => {
-                if (obj.title === e.target.parentElement.parentElement.querySelector('#row-title').textContent) {
-                    obj.status = 'Incomplete';
+            // let result = lsProjects.filter(obj => {
+                if (selectedRow.title === e.target.parentElement.parentElement.querySelector('#row-title').textContent) {
+                    selectedRow.status = 'Incomplete';
 
                     e.target.parentElement.parentElement.querySelector('#row-title').style.textDecoration = null;
 
 
-                    return localStorage.setItem('rows', JSON.stringify(lsRows))
+                    return localStorage.setItem('projects', JSON.stringify(lsProjects))
                 }
 
-            })
+            // })
 
-            console.log(JSON.parse(localStorage.getItem('rows')))
+            console.log(JSON.parse(localStorage.getItem('projects')))
         }
 
     })
