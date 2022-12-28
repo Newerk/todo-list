@@ -80,6 +80,17 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         middleContainer.setAttribute('style', 'color: white');
     })
 
+
+    topContainer.addEventListener('mouseover', () => {
+        topContainer.setAttribute('style', 'color: yellow');
+        middleContainer.setAttribute('style', 'color: yellow');
+    })
+
+    topContainer.addEventListener('mouseout', () => {
+        topContainer.setAttribute('style', 'color: white');
+        middleContainer.setAttribute('style', 'color: white');
+    })
+
     topContainer.addEventListener('click', (e) => {
         const targetedProject = e.target.parentElement.parentElement;
         storageManagement.idOfActiveProject = targetedProject.id;
@@ -93,25 +104,6 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         updateProjectTasksLS();
     })
 
-
-    topContainer.addEventListener('mouseover', () => {
-        topContainer.setAttribute('style', 'color: yellow');
-        middleContainer.setAttribute('style', 'color: yellow');
-    })
-
-    topContainer.addEventListener('mouseout', () => {
-        topContainer.setAttribute('style', 'color: white');
-        middleContainer.setAttribute('style', 'color: white');
-    })
-
-    middleContainer.addEventListener('click', ()=> {
-        if (storageManagement.projectPopOutActive.value === false) {
-            document.querySelector('.projects-content').appendChild(projectPopOut());
-        }
-        updateProjectTasksLS();
-
-    })
-
     middleContainer.addEventListener('mouseover', () => {
         topContainer.setAttribute('style', 'color: yellow');
         middleContainer.setAttribute('style', 'color: yellow');
@@ -122,6 +114,18 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         middleContainer.setAttribute('style', 'color: white');
     })
 
+    middleContainer.addEventListener('click', (e)=> {
+        const targetedProject = e.target.parentElement.parentElement;
+        storageManagement.idOfActiveProject = targetedProject.id;
+        storageManagement.titleOfActiveProject = targetedProject.querySelector('.project-title').textContent;
+        storageManagement.descriptionOfActiveProject = targetedProject.querySelector('.project-description').textContent
+
+        if (storageManagement.projectPopOutActive.value === false) {
+            document.querySelector('.projects-content').appendChild(projectPopOut());
+        }
+        updateProjectTasksLS();
+
+    })
 
     cardContainer.append(topContainer, middleContainer, bottomContainer)
 
