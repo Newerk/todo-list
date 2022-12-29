@@ -48,16 +48,40 @@ export const threeDotsMenu = () => {
     deleteBtn.textContent = 'DELETE';
     deleteBtn.id = 'delete-td-btn';
     deleteBtn.addEventListener('click', (e) => {
-        let rows = JSON.parse(localStorage.getItem('rows'));
-        const targetedRow = e.target.parentElement.parentElement.parentElement;
-        closeThreeDotMenu();
 
-        //returns a new array of objs that DONT have the targeted id
-        let selectedRowRemoved = rows.filter(obj => obj.id != targetedRow.id);
-        rows = selectedRowRemoved;
 
-        localStorage.setItem('rows', JSON.stringify(rows));
-        updateScreenTasksLS();
+        if (storageManagement.onProjectsPage.value === true) {
+            let projects = JSON.parse(localStorage.getItem('projects'));
+            const targetedRow = e.target.parentElement.parentElement.parentElement;
+            closeThreeDotMenu();
+
+            //returns a new array of objs that DONT have the targeted id
+
+            let selectedProject = projects.find(obj => {
+                return obj.id === storageManagement.idOfActiveProject;
+            })
+        
+
+            let selectedRowRemoved = selectedProject.tasks.filter(obj => obj.id != targetedRow.id);
+            rows = selectedRowRemoved;
+
+            localStorage.setItem('projects', JSON.stringify(projects));
+            updateScreenTasksLS();
+
+
+        } else {
+
+            let rows = JSON.parse(localStorage.getItem('rows'));
+            const targetedRow = e.target.parentElement.parentElement.parentElement;
+            closeThreeDotMenu();
+
+            //returns a new array of objs that DONT have the targeted id
+            let selectedRowRemoved = rows.filter(obj => obj.id != targetedRow.id);
+            rows = selectedRowRemoved;
+
+            localStorage.setItem('rows', JSON.stringify(rows));
+            updateScreenTasksLS();
+        }
 
     });
 

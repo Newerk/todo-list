@@ -47,6 +47,7 @@ export const projectPopOut = () => {
         tasksWrapper.setAttribute('style', 'display: grid; grid-template-rows: auto 1fr; border: 3px dotted red; height: calc(100vh - 25.3rem);');
         const taskHeader = document.createElement('div');
         taskHeader.id = 'project-tasks-header';
+        taskHeader.className = 'top-container';//added a class to allow the 3dotsmenu to appear
         taskHeader.setAttribute('style', 'border: 1px solid black; display: flex; justify-content: space-between');
         const taskTag = document.createElement('div');
         taskTag.textContent = 'Tasks';

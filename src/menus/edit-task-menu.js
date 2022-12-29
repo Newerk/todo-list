@@ -1,7 +1,7 @@
 import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
 import { buildPopUpMenu } from './priority-popup-menu';
-import { updateScreenProjectsLS, updateScreenTasksLS } from '../update-info';
+import { updateProjectTasksLS, updateScreenProjectsLS, updateScreenTasksLS } from '../update-info';
 import { dueDateValue, priorityChecker } from './new-task-menu';
 
 
@@ -162,25 +162,54 @@ export const editTaskWindow = () => {
         } else
 
             if (storageManagement.editTaskMenuActive.value === true) {
-                let row = JSON.parse(localStorage.getItem('rows'));
 
-                targetedRow.querySelector('#row-title').textContent = titleInput.value;
+                if (storageManagement.onProjectsPage.value === true) {
+                    let projects = JSON.parse(localStorage.getItem('projects'));
 
-                let matchingRow = row.find(obj => obj.id === targetedRow.id);
+                    targetedRow.querySelector('#row-title').textContent = titleInput.value;
 
-                //new values that will be updated by the user changes
-                matchingRow.title = titleInput.value;
-                matchingRow.dueDate = dueDateValue(matchingRow, dueDateBtn.value); 
-                matchingRow.priority = priorityChecker(matchingRow, priorityBtn.textContent); // not working for some reason
+                    let selectedProject = projects.find(obj => {
+                        return obj.id === storageManagement.idOfActiveProject;
+                    })
+        
+
+                    let matchingRow = selectedProject.tasks.find(obj => obj.id === targetedRow.id);
+
+                    //new values that will be updated by the user changes
+                    matchingRow.title = titleInput.value;
+                    matchingRow.dueDate = dueDateValue(matchingRow, dueDateBtn.value);
+                    matchingRow.priority = priorityChecker(matchingRow, priorityBtn.textContent); // not working for some reason
 
 
-                localStorage.setItem('rows', JSON.stringify(row));
-                console.log(JSON.parse(localStorage.getItem('rows')))
-                
-                newTaskContainer.remove();
-                storageManagement.editTaskMenuActive.value = false;
-                updateScreenTasksLS();
-                updateScreenProjectsLS();
+                    localStorage.setItem('projects', JSON.stringify(projects));
+                    console.log(JSON.parse(localStorage.getItem('projects')))
+
+                    newTaskContainer.remove();
+                    storageManagement.editTaskMenuActive.value = false;
+                    updateProjectTasksLS();
+
+
+                } else {
+                    let row = JSON.parse(localStorage.getItem('rows'));
+
+                    targetedRow.querySelector('#row-title').textContent = titleInput.value;
+
+                    let matchingRow = row.find(obj => obj.id === targetedRow.id);
+
+                    //new values that will be updated by the user changes
+                    matchingRow.title = titleInput.value;
+                    matchingRow.dueDate = dueDateValue(matchingRow, dueDateBtn.value);
+                    matchingRow.priority = priorityChecker(matchingRow, priorityBtn.textContent); // not working for some reason
+
+
+                    localStorage.setItem('rows', JSON.stringify(row));
+                    console.log(JSON.parse(localStorage.getItem('rows')))
+
+                    newTaskContainer.remove();
+                    storageManagement.editTaskMenuActive.value = false;
+                    updateScreenTasksLS();
+                    updateScreenProjectsLS();
+                }
             }
 
         console.log(`ID of active row: ${storageManagement.idOfActiveRow}`)
