@@ -47,6 +47,7 @@ export const buildNewProjectWindow = () => {
 
     const descriptionInput = document.createElement('textarea');
     descriptionInput.id = 'description-input';
+    descriptionInput.maxLength = '420';
 
     middleContainer.appendChild(descriptionTopText);
     middleContainer.appendChild(descriptionInput);
