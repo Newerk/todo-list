@@ -35,6 +35,10 @@ export const projectPopOut = () => {
         descriptionTag.textContent = 'Description:';
         const description = document.createElement('div');
         description.textContent = storageManagement.descriptionOfActiveProject;
+        description.setAttribute('style', ` -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;`);
 
         descriptionWrapper.append(descriptionTag, description);
 

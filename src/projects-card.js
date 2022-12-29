@@ -28,6 +28,10 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     const description = document.createElement('div');
     description.className = 'project-description';
     description.textContent = ls_Description;//perhaps I will add a character limit to the description
+    description.setAttribute('style', ` -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;`);
     middleContainer.hidden = true;
     middleContainer.append(midTitle, description);
 
@@ -114,7 +118,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         middleContainer.setAttribute('style', 'color: white');
     })
 
-    middleContainer.addEventListener('click', (e)=> {
+    middleContainer.addEventListener('click', (e) => {
         const targetedProject = e.target.parentElement.parentElement;
         storageManagement.idOfActiveProject = targetedProject.id;
         storageManagement.titleOfActiveProject = targetedProject.querySelector('.project-title').textContent;
