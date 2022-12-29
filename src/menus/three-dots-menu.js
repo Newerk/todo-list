@@ -1,5 +1,5 @@
 import { storageManagement } from '../local-storage';
-import { updateScreenTasksLS } from '../update-info';
+import { updateProjectTasksLS, updateScreenTasksLS } from '../update-info';
 import { editTaskWindow } from './edit-task-menu';
 import './three-dots-menu.css'
 
@@ -53,6 +53,7 @@ export const threeDotsMenu = () => {
         if (storageManagement.onProjectsPage.value === true) {
             let projects = JSON.parse(localStorage.getItem('projects'));
             const targetedRow = e.target.parentElement.parentElement.parentElement;
+            console.log('targeted row: ' + targetedRow.id)
             closeThreeDotMenu();
 
             //returns a new array of objs that DONT have the targeted id
@@ -60,13 +61,16 @@ export const threeDotsMenu = () => {
             let selectedProject = projects.find(obj => {
                 return obj.id === storageManagement.idOfActiveProject;
             })
-        
 
-            let selectedRowRemoved = selectedProject.tasks.filter(obj => obj.id != targetedRow.id);
-            rows = selectedRowRemoved;
+
+            let rows = selectedProject.tasks;
+            console.log('number of tasks in targeted Project: ' + rows.length);
+
+            let selectedRowRemoved = rows.filter(obj => obj.id != targetedRow.id);
+            selectedProject.tasks = rows = selectedRowRemoved;
 
             localStorage.setItem('projects', JSON.stringify(projects));
-            updateScreenTasksLS();
+            updateProjectTasksLS();
 
 
         } else {
