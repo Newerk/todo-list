@@ -34,6 +34,7 @@ export const projectPopOut = () => {
         const descriptionTag = document.createElement('div');
         descriptionTag.textContent = 'Description:';
         const description = document.createElement('div');
+        description.className = 'description';
         description.textContent = storageManagement.descriptionOfActiveProject;
         description.setAttribute('style', ` -webkit-hyphens: auto;
         -moz-hyphens: auto;
@@ -69,6 +70,21 @@ export const projectPopOut = () => {
         bottom.setAttribute('style', 'height: auto; width: 100%; border: 1px solid black; display: flex; justify-content: flex-end;');
         const editBtn = document.createElement('button');
         editBtn.textContent = 'EDIT';
+        editBtn.addEventListener('click', () => {
+            editBtn.textContent = 'SAVE CHANGES';
+            makeInput(title);
+            makeInput(description)
+
+            // editBtn.addEventListener('click', ()=> {
+            //     editBtn.textContent = 'EDIT';
+
+            //     makeDiv(title);
+            //     makeDiv(description)
+
+            // })
+
+        })
+         
 
         bottom.append(editBtn);
 
@@ -80,3 +96,20 @@ export const projectPopOut = () => {
 }
 
 
+function makeInput(element) {
+    // element.innerHTML = '<input value="'+element.innerText+'" style="width:100%">';
+
+
+        element.innerHTML = '<div contenteditable="true" style="width:100%; min-width: 5rem;"> <p>'+element.innerText+'</p></div>';
+
+    
+ }
+
+//  function makeDiv(element) {
+//     // element.innerHTML = '<div value="'+element.innerText+'">';
+
+//     var text = element.querySelector('textarea').value;
+//     element.innerHTML = text;
+  
+
+//  }
