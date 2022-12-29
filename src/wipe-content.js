@@ -9,4 +9,7 @@ export const wipeContent = (page) => {
     storageManagement.editTaskMenuActive.value = false;
     storageManagement.newTaskMenuActive.value = false;
     storageManagement.priorityMenuActive.value = false;
+    storageManagement.projectPopOutActive.value = false;
+    storageManagement.newProjectMenuActive.value = false;
+    storageManagement.sideBarIsExpanded.value = false;
 }

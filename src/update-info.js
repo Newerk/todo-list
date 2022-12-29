@@ -15,6 +15,7 @@ import { todoListRows } from "./todo_row/todo";
 import { storageManagement } from "./local-storage";
 import { projectsCard } from "./projects-card";
 import { todoProjectRows } from "./project-todo-row";
+import { projectPopOut } from "./selected-project-popout";
 
 export const updateScreenTasksLS = () => {
     let rows = JSON.parse(localStorage.getItem('rows'));
@@ -120,14 +121,15 @@ export const updateProjectTasksLS = () => {
     //this needs to be updated. This breaks after swapping pages when the expanded project view is open
     const wipeTasks = (() => {
         document.body.querySelector('#project-tasks-container').innerHTML = '';
+
         console.log('wiped')
 
     })();
-    
+
     // console.log('selected project tasks: '+ selectedProject.tasks)
     for (const iterator of selectedProject.tasks) {
         document.body.querySelector('#project-tasks-container').appendChild(todoProjectRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status, iterator.id))
-        
+
         // console.log('does this element exist? ' + document.body.contains(test));
 
     }
