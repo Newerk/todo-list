@@ -11,5 +11,4 @@ export const wipeContent = (page) => {
     storageManagement.priorityMenuActive.value = false;
     storageManagement.projectPopOutActive.value = false;
     storageManagement.newProjectMenuActive.value = false;
-    storageManagement.sideBarIsExpanded.value = false;
 }

@@ -21,11 +21,7 @@ export const todoHeader = () => {
     statusContainer.id = 'header-status';
     const statusText = document.createElement('span');
     statusText.textContent = "Status";
-    const statusFilter = document.createElement('div');
-    statusFilter.setAttribute('style', 'padding-left: .5rem;');
-    statusFilter.textContent = '↑';
     statusContainer.appendChild(statusText);
-    statusContainer.appendChild(statusFilter);
 
 
     const titleContainer = document.createElement('div');
@@ -33,11 +29,7 @@ export const todoHeader = () => {
     titleContainer.id = 'header-title';
     const titleText = document.createElement('span');
     titleText.textContent = 'Title';
-    const titleFilter = document.createElement('div');
-    titleFilter.setAttribute('style', 'padding-left: .5rem;');
-    titleFilter.textContent = '↑';
     titleContainer.appendChild(titleText);
-    titleContainer.appendChild(titleFilter);
 
 
     const priorityContainer = document.createElement('div');
@@ -45,11 +37,7 @@ export const todoHeader = () => {
     priorityContainer.id = 'header-priority';
     const priorityText = document.createElement('span');
     priorityText.textContent = 'Priority';
-    const priorityFilter = document.createElement('div');
-    priorityFilter.setAttribute('style', 'padding-left: .5rem;');
-    priorityFilter.textContent = '↑';
     priorityContainer.appendChild(priorityText);
-    priorityContainer.appendChild(priorityFilter);
 
 
     const dueDateContainer = document.createElement('div');
@@ -57,11 +45,7 @@ export const todoHeader = () => {
     dueDateContainer.id = 'header-due-date';
     const dueDateText = document.createElement('span');
     dueDateText.textContent = 'Due Date'
-    const dueDateFilter = document.createElement('div');
-    dueDateFilter.setAttribute('style', 'padding-left: .5rem;');
-    dueDateFilter.textContent = '↑';
     dueDateContainer.appendChild(dueDateText);
-    dueDateContainer.appendChild(dueDateFilter);
 
     header.appendChild(statusContainer);
     header.appendChild(titleContainer);
