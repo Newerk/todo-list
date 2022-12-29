@@ -75,14 +75,6 @@ export const projectPopOut = () => {
             makeInput(title);
             makeInput(description)
 
-            // editBtn.addEventListener('click', ()=> {
-            //     editBtn.textContent = 'EDIT';
-
-            //     makeDiv(title);
-            //     makeDiv(description)
-
-            // })
-
         })
          
 
@@ -95,21 +87,8 @@ export const projectPopOut = () => {
         return container;
 }
 
-
+//update this function so that when the divs are editable, the background visisbily changes
 function makeInput(element) {
-    // element.innerHTML = '<input value="'+element.innerText+'" style="width:100%">';
-
-
         element.innerHTML = '<div contenteditable="true" style="width:100%; min-width: 5rem;"> <p>'+element.innerText+'</p></div>';
 
-    
  }
-
-//  function makeDiv(element) {
-//     // element.innerHTML = '<div value="'+element.innerText+'">';
-
-//     var text = element.querySelector('textarea').value;
-//     element.innerHTML = text;
-  
-
-//  }
