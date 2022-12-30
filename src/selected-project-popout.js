@@ -1,6 +1,6 @@
 import { storageManagement } from './local-storage';
 import './project-popout-style.css'
-import { updateProjectTasksLS } from './update-info';
+import { updateProjectTasksLS, updateScreenProjectsLS } from './update-info';
 import { newTaskBtn } from './pages/new-task-btn';
 
 export const projectPopOut = () => {
@@ -73,7 +73,31 @@ export const projectPopOut = () => {
         editBtn.addEventListener('click', () => {
             editBtn.textContent = 'SAVE CHANGES';
             makeInput(title);
-            makeInput(description)
+            makeInput(description);
+
+            editBtn.addEventListener('click', ()=> {
+                editBtn.textContent = 'EDIT';
+
+                storageManagement.titleOfActiveProject = title.textContent;
+                storageManagement.descriptionOfActiveProject = description.textContent;
+
+                //get the project based on the ID and update the local storage
+                let projects = JSON.parse(localStorage.getItem('projects'));
+
+                let selectedProject = projects.find(obj => {
+                    return obj.id === storageManagement.idOfActiveProject;
+                })
+
+                selectedProject.title = storageManagement.titleOfActiveProject;
+                selectedProject.description = storageManagement.descriptionOfActiveProject;
+
+                console.log('title of active project updated to: ' + selectedProject.title)
+                console.log('description of active project updated to: ' + selectedProject.description)
+
+                localStorage.setItem('projects', JSON.stringify(projects));
+                updateScreenProjectsLS();
+
+            })
 
         })
          
@@ -87,7 +111,7 @@ export const projectPopOut = () => {
         return container;
 }
 
-//update this function so that when the divs are editable, the background visisbily changes
+//update this function so that when the divs are editable, the background visisbily changes. also need to add a maxlength of 420
 function makeInput(element) {
         element.innerHTML = '<div contenteditable="true" style="width:100%; min-width: 5rem;"> <p>'+element.innerText+'</p></div>';
 
