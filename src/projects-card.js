@@ -53,7 +53,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
 
     })
 
-    if (description.textContent !== '') {
+    if (description.textContent !== '' || storageManagement.descriptionOfActiveProject !== '') {
         bottomContainer.appendChild(expandArrow);
 
     }
@@ -64,11 +64,6 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
 
     })
 
-    // bottomContainer.addEventListener('mouseout', ()=> {
-    //     topContainer.setAttribute('style', 'color: white');
-    //     middleContainer.setAttribute('style', 'color: white');
-
-    // })
 
     expandArrow.addEventListener('mouseover', () => {
         expandArrow.setAttribute('style', 'color: yellow')
