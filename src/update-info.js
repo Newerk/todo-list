@@ -103,10 +103,7 @@ export const updateScreenProjectsLS = () => {
             projectsCard(iterator.title, iterator.description, iterator.id).build();
 
         }
-
-
     }
-
 }
 
 export const updateProjectTasksLS = () => {

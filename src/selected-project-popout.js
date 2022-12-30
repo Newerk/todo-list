@@ -88,8 +88,8 @@ export const projectPopOut = () => {
                     return obj.id === storageManagement.idOfActiveProject;
                 })
 
-                selectedProject.title = storageManagement.titleOfActiveProject;
-                selectedProject.description = storageManagement.descriptionOfActiveProject;
+                selectedProject.title = storageManagement.titleOfActiveProject.trim();
+                selectedProject.description = storageManagement.descriptionOfActiveProject.trim();
 
                 console.log('title of active project updated to: ' + selectedProject.title)
                 console.log('description of active project updated to: ' + selectedProject.description)
@@ -113,6 +113,6 @@ export const projectPopOut = () => {
 
 //update this function so that when the divs are editable, the background visisbily changes. also need to add a maxlength of 420
 function makeInput(element) {
-        element.innerHTML = '<div contenteditable="true" style="width:100%; min-width: 5rem;"> <p>'+element.innerText+'</p></div>';
+        element.innerHTML = '<div contenteditable="true" style="width:100%; min-width: 5rem;min-height: 1.5rem;"> <p>'+element.textContent+'</p></div>';
 
  }
