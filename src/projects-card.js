@@ -53,7 +53,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
 
     })
 
-    if (description.textContent !== '' || storageManagement.descriptionOfActiveProject !== '') {
+    if (description.textContent !== '' || ls_Description !== '') {
         bottomContainer.appendChild(expandArrow);
 
     }

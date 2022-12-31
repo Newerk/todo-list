@@ -1,7 +1,7 @@
 import { storageManagement } from '../local-storage';
 import { updateProjectTasksLS, updateScreenTasksLS } from '../update-info';
 import { editTaskWindow } from './edit-task-menu';
-import './three-dots-menu.css'
+import './three-dots-menu.css';
 
 export let menuStatus = {
     value: false,
