@@ -12,8 +12,6 @@ export const todoProjectRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls
     const row = document.createElement('div');
     row.className = 'row';
     row.id = ls_ID;
-    row.setAttribute('style', `display: grid; grid-template-columns: auto 1fr auto auto; 
-    width: 100%; height: 2rem; background-color: white; border: grey 1px solid`);
 
     const status = document.createElement('div');
     status.id = 'row-status';
@@ -80,13 +78,11 @@ export const todoProjectRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls
     status.appendChild(statusCheckbox)
 
 
-    status.setAttribute('style', `display: flex; justify-content: center; width: 3rem;`);
     row.appendChild(status);
 
     const title = document.createElement('div');
     title.id = 'row-title';
     title.textContent = ls_Title;
-    title.setAttribute('style', `text-overflow: ellipsis;`);
 
     if (ls_Status === 'Complete') {
         title.setAttribute('style', `text-decoration: line-through`);
@@ -98,14 +94,12 @@ export const todoProjectRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls
     const priority = document.createElement('div');
     priority.id = 'row-priority';
     priority.textContent = ls_Priority;
-    priority.setAttribute('style', ` width: 4rem;`);
 
 
     row.appendChild(priority);
 
     const dueDateContainer = document.createElement('div');
     dueDateContainer.className = 'due-date-container';
-    dueDateContainer.setAttribute('style', ` width: 8rem;`);
 
 
     const dueDate = document.createElement('div');
