@@ -40,7 +40,8 @@
     display: grid;
     grid-template-rows: auto 1fr;
     border: 3px dotted red;
-    height: calc(100vh - 25.3rem);
+    min-height: 30rem;
+    max-height: calc(100vh - 19rem);
 
 }
 
