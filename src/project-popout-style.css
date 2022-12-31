@@ -1,0 +1,67 @@
+.project-popout-container {
+    position: absolute;
+    width: 60vw;
+    background-color: orange;
+    z-index: 5;
+    place-self: center;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+
+}
+
+.middle {
+    border: 1px solid black;
+    background-color: cyan;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+}
+
+.description-wrapper {
+    border: 1px solid black;
+
+}
+
+.description {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+}
+
+.project-tasks-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border: 3px dotted red;
+    height: calc(100vh - 25.3rem);
+
+}
+
+.project-task-header {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between
+}
+
+#project-tasks-container {
+    border: 1px solid black;
+    background-color: white;
+    overflow-y: scroll;
+
+}
+
+.bottom {
+    height: auto;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+
+}
