@@ -28,10 +28,6 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     const description = document.createElement('div');
     description.className = 'project-description';
     description.textContent = ls_Description;//perhaps I will add a character limit to the description
-    description.setAttribute('style', ` -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;`);
     middleContainer.hidden = true;
     middleContainer.append(midTitle, description);
 

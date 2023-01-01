@@ -1,3 +1,11 @@
+.project-description {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+}
+
 .projects-card-container {
     /* height: 10rem; */
     height: auto;
