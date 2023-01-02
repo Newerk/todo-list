@@ -1,7 +1,6 @@
 import './new-task-menu.css';
 import { storageManagement } from '../local-storage';
-import { updateScreenProjectsLS, updateScreenTasksLS } from '../update-info';
-import { projectsCard } from '../projects-card';
+import { updateScreenProjectsLS } from '../update-info';
 
 
 export const buildNewProjectWindow = () => {

@@ -47,13 +47,25 @@ export const projectPopOut = () => {
     const newTask = document.createElement('div');
     newTask.appendChild(newTaskBtn('#project-tasks-header'));
 
-    taskHeader.append(taskTag, newTask)
+    const rowHeaderWrapper = document.createElement('div');
+    rowHeaderWrapper.id = 'row-header';
+    const rowStatus = document.createElement('div');
+    rowStatus.textContent = 'Status';
+    const rowTitle = document.createElement('div');
+    rowTitle.textContent = 'Title';
+    const rowPriority = document.createElement('div');
+    rowPriority.textContent = 'Priority';
+    const rowDate = document.createElement('div');
+    rowDate.textContent = 'Due Date';
+    rowHeaderWrapper.append(rowStatus,rowTitle,rowPriority,rowDate)
+
+    taskHeader.append(taskTag,newTask)
 
 
     const taskContainer = document.createElement('div');
     taskContainer.id = 'project-tasks-container';
 
-    tasksWrapper.append(taskHeader, taskContainer)
+    tasksWrapper.append(taskHeader, rowHeaderWrapper,taskContainer)
     middle.append(descriptionWrapper, tasksWrapper);
 
     const bottom = document.createElement('div');

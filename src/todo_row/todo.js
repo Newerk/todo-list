@@ -2,7 +2,6 @@
 build how the row of a the todo list will look like.
 
 */
-import { storageManagement } from '../local-storage';
 import { closeThreeDotMenu, threeDotsMenu, menuStatus } from '../menus/three-dots-menu';
 import './todo.css';
 
