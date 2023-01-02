@@ -57,15 +57,15 @@ export const projectPopOut = () => {
     rowPriority.textContent = 'Priority';
     const rowDate = document.createElement('div');
     rowDate.textContent = 'Due Date';
-    rowHeaderWrapper.append(rowStatus,rowTitle,rowPriority,rowDate)
+    rowHeaderWrapper.append(rowStatus, rowTitle, rowPriority, rowDate)
 
-    taskHeader.append(taskTag,newTask)
+    taskHeader.append(taskTag, newTask)
 
 
     const taskContainer = document.createElement('div');
     taskContainer.id = 'project-tasks-container';
 
-    tasksWrapper.append(taskHeader, rowHeaderWrapper,taskContainer)
+    tasksWrapper.append(taskHeader, rowHeaderWrapper, taskContainer)
     middle.append(descriptionWrapper, tasksWrapper);
 
     const bottom = document.createElement('div');
@@ -73,11 +73,13 @@ export const projectPopOut = () => {
     const editBtn = document.createElement('button');
     editBtn.textContent = 'EDIT';
     editBtn.addEventListener('click', () => {
-        editBtn.textContent = 'SAVE CHANGES';
-        makeInput(title);
-        makeInput(description);
 
-        editBtn.addEventListener('click', () => {
+        if (editBtn.textContent === 'EDIT') {
+            editBtn.textContent = 'SAVE CHANGES';
+            makeInput(title);
+            makeInput(description);
+
+        } else {
             editBtn.textContent = 'EDIT';
 
             storageManagement.titleOfActiveProject = title.textContent;
@@ -98,8 +100,11 @@ export const projectPopOut = () => {
 
             localStorage.setItem('projects', JSON.stringify(projects));
             updateScreenProjectsLS();
+            makeDiv(title);
+            makeDiv(description);
 
-        })
+
+        }
 
     })
 
@@ -117,4 +122,10 @@ export const projectPopOut = () => {
 function makeInput(element) {
     element.innerHTML = '<div contenteditable="true" style="width:100%; min-width: 5rem;min-height: 1.5rem;"> <p>' + element.textContent + '</p></div>';
 
+}
+
+function makeDiv(element) {
+    element.innerHTML = '<div contenteditable="false" style="width:100%; min-width: 5rem;min-height: 1.5rem;"> <p>' + element.textContent + '</p></div>';
+
+    
 }
