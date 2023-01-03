@@ -15,7 +15,7 @@ export const headerContent = () => {
 
         const userName = document.createElement('div');
         userName.id = 'header-username';
-        userName.textContent = 'USERNAME---';
+        userName.textContent = localStorage.getItem('username');
         userName.setAttribute('style', 'grid-column: 3 / 4; color: white');
         headerDiv.appendChild(userName);
 
