@@ -7,7 +7,8 @@
     grid-template-rows: auto auto 1fr;
 }
 
-#todo-list-container, .projects-content {
+#todo-list-container,
+.projects-content {
     overflow-y: auto;
     width: 100%;
     height: calc(100vh - (var(--menu_padding)*2) - var(--header_height) - 4rem);
@@ -54,4 +55,21 @@
 
 }
 
+/* #top-row-one-wrapper {
 
+} */
+
+#ap-profile-pic {
+    width: 15rem;
+    height: 15rem;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#profile-edit-btn {
+    width: 2rem;
+    height: 2rem;
+    background-color: hotpink;
+    border-radius: 50%;
+
+}
