@@ -43,7 +43,33 @@ export const accountPage = () => {
 
 
     const bottom = document.createElement('div');
-    bottom.setAttribute('style', 'background-color: red; width: 100%; height: 100%; grid-row: 2')
+    bottom.setAttribute('style', 'background-color: red; width: 100%; height: 100%; grid-row: 2; display: grid; grid-template-rows: auto 1fr');
+    const bottomRowOneWrapper = document.createElement('div');
+    bottomRowOneWrapper.id = 'bottom-row-one-wrapper';
+    const saveBtn = document.createElement('button');
+    saveBtn.textContent = 'SAVE';
+
+    bottomRowOneWrapper.appendChild(saveBtn);
+
+    const bottomRowTwoWrapper = document.createElement('div');
+    bottomRowTwoWrapper.id = 'bottom-row-two-wrapper;'
+    const profilePicCollection = document.createElement('div');
+
+    profilePicCollection.id = 'profile-pic-collection';
+
+    for (let i = 0; i < 15; i++) {
+        const test = document.createElement('div');
+        test.setAttribute('style', 'height: 5rem; width: 5rem; background-color: orange; border-radius: 50%')
+        profilePicCollection.appendChild(test);
+
+        
+    }
+
+    bottomRowTwoWrapper.appendChild(profilePicCollection);
+
+    bottom.append(bottomRowOneWrapper, bottomRowTwoWrapper);
+
+
 
     accountContent.append(top, bottom);
 

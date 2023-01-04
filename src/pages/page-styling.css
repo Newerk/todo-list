@@ -68,8 +68,8 @@
 
 #profile-edit-btn,
 #username-edit-btn {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: hotpink;
     border-radius: 50%;
 
@@ -82,4 +82,21 @@
 #top-row-two-wrapper {
     display: flex;
     justify-content: center;
+}
+
+#bottom-row-one-wrapper {
+    display: flex;
+    justify-content: end;
+}
+
+#bottom-row-two-wrapper {
+}
+
+#profile-pic-collection {
+    display: grid;
+    grid-template-columns: repeat(5, 5rem);
+    grid-template-rows: repeat(3, auto);
+    gap: .5rem;
+
+    place-content: center;
 }
