@@ -68,10 +68,24 @@
 
 #profile-edit-btn,
 #username-edit-btn {
-    width: 1.5rem;
-    height: 1.5rem;
     background-color: hotpink;
     border-radius: 50%;
+
+}
+
+#profile-edit-btn {
+    position: relative;
+    left: 80%;
+    top: 10%;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+}
+
+#username-edit-btn {
+    width: 1.5rem;
+    height: 1.5rem;
 
 }
 

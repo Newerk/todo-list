@@ -20,7 +20,9 @@ export const accountPage = () => {
     profilePicEditBtn.className = 'ap-edit-btn';
     profilePicEditBtn.id = 'profile-edit-btn';
 
-    topRowOneWrapper.append(profilePic, profilePicEditBtn);
+    profilePic.appendChild(profilePicEditBtn)
+
+    topRowOneWrapper.append(profilePic);
 
 
 
@@ -57,12 +59,18 @@ export const accountPage = () => {
 
     profilePicCollection.id = 'profile-pic-collection';
 
+    const picsArr = []//directories to different pfp images. I will interate through this in the for loop below
+
     for (let i = 0; i < 15; i++) {
         const test = document.createElement('div');
-        test.setAttribute('style', 'height: 5rem; width: 5rem; background-color: orange; border-radius: 50%')
+        test.setAttribute('style', 'height: 5rem; width: 5rem; background-color: orange; border-radius: 50%');
+        test.addEventListener('click', () => {
+            //apply selected picture to profile and header
+            console.log('click!');
+        })
         profilePicCollection.appendChild(test);
 
-        
+
     }
 
     bottomRowTwoWrapper.appendChild(profilePicCollection);
