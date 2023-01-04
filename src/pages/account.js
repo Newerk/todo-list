@@ -32,7 +32,7 @@ export const accountPage = () => {
     hello.id = 'hello';
     hello.textContent = 'Hello, ';
     const username = document.createElement('div');
-    username.textContent = '______________________'
+    username.textContent = localStorage.getItem('username');
     const usernameEditBtn = document.createElement('button');
     usernameEditBtn.className = 'ap-edit-btn';
     usernameEditBtn.id = 'username-edit-btn';
