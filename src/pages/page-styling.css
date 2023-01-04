@@ -66,10 +66,20 @@
     border-radius: 50%;
 }
 
-#profile-edit-btn {
+#profile-edit-btn,
+#username-edit-btn {
     width: 2rem;
     height: 2rem;
     background-color: hotpink;
     border-radius: 50%;
 
+}
+
+#top-row-one-wrapper {
+    place-self: center;
+}
+
+#top-row-two-wrapper {
+    display: flex;
+    justify-content: center;
 }

@@ -29,7 +29,10 @@ export const accountPage = () => {
     const hello = document.createElement('div');
     hello.textContent = 'Hello, ';
     const username = document.createElement('div');
+    username.textContent = '______________________'
     const usernameEditBtn = document.createElement('div');
+    usernameEditBtn.className = 'ap-edit-btn';
+    usernameEditBtn.id = 'username-edit-btn';
 
     topRowTwoWrapper.append(hello, username, usernameEditBtn);
 
