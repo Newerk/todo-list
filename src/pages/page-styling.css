@@ -68,12 +68,14 @@
 
 }
 
+
 #username-edit-btn {
     width: 1.5rem;
     height: 1.5rem;
 
     position: relative;
     top: -1rem;
+
 
 }
 
@@ -82,10 +84,13 @@
 }
 
 #top-row-two-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    /* justify-content: center; */
+    /* align-items: center; */
     font-size: 2rem;
+
+    grid-template-columns: 1fr repeat(2, auto) 1fr;
+
 
 }
 
@@ -111,4 +116,9 @@
 
 #hello {
     margin-right: .5rem;
+    grid-column: 2;
 }
+
+/* #btn-wrapper {
+    width: 100%;
+} */

@@ -1,3 +1,4 @@
+import { storageManagement } from '../local-storage';
 import './page-styling.css'
 
 export const accountPage = () => {
@@ -32,12 +33,31 @@ export const accountPage = () => {
     hello.id = 'hello';
     hello.textContent = 'Hello, ';
     const username = document.createElement('div');
+    username.id = 'ap-username';
     username.textContent = localStorage.getItem('username');
+
+    const btnWrapper = document.createElement('div');
+    btnWrapper.id = 'btn-wrapper';
     const usernameEditBtn = document.createElement('button');
     usernameEditBtn.className = 'ap-edit-btn';
     usernameEditBtn.id = 'username-edit-btn';
+    usernameEditBtn.addEventListener('click', ()=> {
+        usernameEditBtn.setAttribute('style', 'width: 5rem; border-radius: 1rem; font-size: 1rem;');
+        usernameEditBtn.textContent = 'SAVE';
 
-    topRowTwoWrapper.append(hello, username, usernameEditBtn);
+        username.contentEditable = true;
+        let ls_username = localStorage.getItem('username');
+        ls_username = username.textContent;
+        localStorage.setItem('username', ls_username);
+
+        document.querySelector('#header-username').textContent = localStorage.getItem('username');
+
+    })
+
+    btnWrapper.appendChild(usernameEditBtn)
+    
+
+    topRowTwoWrapper.append(hello, username, btnWrapper);
 
     top.append(topRowOneWrapper, topRowTwoWrapper);
 
@@ -51,6 +71,8 @@ export const accountPage = () => {
     bottomRowOneWrapper.id = 'bottom-row-one-wrapper';
     const saveBtn = document.createElement('button');
     saveBtn.textContent = 'SAVE';
+    saveBtn.addEventListener('click', ()=> {
+    })
 
     bottomRowOneWrapper.appendChild(saveBtn);
 
