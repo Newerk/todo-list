@@ -1,4 +1,3 @@
-import { storageManagement } from '../local-storage';
 import './page-styling.css'
 
 export const accountPage = () => {
@@ -17,6 +16,7 @@ export const accountPage = () => {
     topRowOneWrapper.id = 'top-row-one-wrapper';
     const profilePic = document.createElement('div');
     profilePic.id = 'ap-profile-pic';
+    profilePic.setAttribute('style', `background-image: url(${localStorage.getItem('pfp')})`);
     const profilePicEditBtn = document.createElement('button');
     profilePicEditBtn.className = 'ap-edit-btn';
     profilePicEditBtn.id = 'profile-edit-btn';
@@ -41,12 +41,13 @@ export const accountPage = () => {
     const usernameEditBtn = document.createElement('button');
     usernameEditBtn.className = 'ap-edit-btn';
     usernameEditBtn.id = 'username-edit-btn';
+    usernameEditBtn.textContent = '';
     usernameEditBtn.addEventListener('click', () => {
         let ls_username = localStorage.getItem('username');
 
 
         if (usernameEditBtn.textContent !== 'SAVE') {
-            usernameEditBtn.setAttribute('style', 'width: 5rem; border-radius: 1rem; font-size: 1rem;');
+            usernameEditBtn.setAttribute('style', 'width: 5rem; border-radius: 1rem; font-size: 1rem; color: black;');
             usernameEditBtn.textContent = 'SAVE';
             username.contentEditable = true;
 
@@ -60,22 +61,14 @@ export const accountPage = () => {
 
             document.querySelector('#header-username').textContent = localStorage.getItem('username');
 
-            
         }
-
-
-
-
     })
 
     btnWrapper.appendChild(usernameEditBtn)
 
-
     topRowTwoWrapper.append(hello, username, btnWrapper);
 
     top.append(topRowOneWrapper, topRowTwoWrapper);
-
-
 
 
 
@@ -96,11 +89,11 @@ export const accountPage = () => {
 
     profilePicCollection.id = 'profile-pic-collection';
 
-
-    const picsArr = []//directories to different pfp images. I will interate through this in the for loop below
+    //directories to different pfp images. I will interate through this in the for loop below
+    const picsArr = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
 
     //will be updated to: for (let i = 0; i < picsArr.length; i++) 
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < picsArr.length; i++) {
         const test = document.createElement('div');
         test.setAttribute('style', 'height: 5rem; width: 5rem; background-color: orange; border-radius: 50%; cursor: pointer;');
         test.addEventListener('click', () => {

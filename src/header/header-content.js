@@ -19,9 +19,9 @@ export const headerContent = () => {
         userName.setAttribute('style', 'grid-column: 3 / 4; color: white');
         headerDiv.appendChild(userName);
 
-        const pfp = document.createElement('div');
+        const pfp = document.createElement('img');
         pfp.id = 'header-pfp';
-        pfp.textContent = 'PFP';
-        pfp.setAttribute('style', 'grid-column: 4 / 5; color: white');
+        pfp.src = localStorage.getItem('pfp');
+        pfp.setAttribute('style', 'grid-column: 4 / 5; color: white; height: 3rem; width: 3rem; background-color: white; border-radius: 3rem');
         headerDiv.appendChild(pfp);
 }
