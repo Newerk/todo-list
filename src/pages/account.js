@@ -11,20 +11,29 @@ export const accountPage = () => {
     accountContent.setAttribute('style', 'display: grid; grid-template-rows: 1fr 1fr; width: 100%; height: 100%;');
 
     const top = document.createElement('div');
-    top.setAttribute('style', 'background-color: blue; width: 100%; height: 100%; grid-row: 1; display: grid; grid-template-rows: auto 1fr')
+    top.setAttribute('style', 'background-color: blue; width: 100%; height: 100%; grid-row: 1; display: grid; grid-template-rows: auto 1fr');
+    top.className = 'ap-top';
 
     const topRowOneWrapper = document.createElement('div');
     topRowOneWrapper.id = 'top-row-one-wrapper';
     const profilePic = document.createElement('img');
     profilePic.id = 'ap-profile-pic';
     profilePic.src = localStorage.getItem('pfp');
+    const pfpBtnWrapper = document.createElement('div');
+    pfpBtnWrapper.setAttribute('style', 'width: 0');
+
     const profilePicEditBtn = document.createElement('button');
     profilePicEditBtn.className = 'ap-edit-btn';
     profilePicEditBtn.id = 'profile-edit-btn';
+    profilePicEditBtn.addEventListener('click', () => {
+        console.log('click!')
+    })
 
-    profilePic.appendChild(profilePicEditBtn)
+    pfpBtnWrapper.appendChild(profilePicEditBtn)
 
-    topRowOneWrapper.append(profilePic);
+    // profilePic.appendChild(profilePicEditBtn)//for some reason, the button appends to the HTML, but it doesnt appear visually
+
+    topRowOneWrapper.append(profilePic, pfpBtnWrapper);
 
 
 
@@ -75,6 +84,7 @@ export const accountPage = () => {
 
     const bottom = document.createElement('div');
     bottom.setAttribute('style', 'background-color: red; width: 100%; height: 100%; grid-row: 2; display: grid; grid-template-rows: auto 1fr');
+    bottom.className = 'ap-bottom';
     const bottomRowOneWrapper = document.createElement('div');
     bottomRowOneWrapper.id = 'bottom-row-one-wrapper';
     const saveBtn = document.createElement('button');
@@ -109,16 +119,13 @@ export const accountPage = () => {
 
             console.log('click!');
         })
+
         profilePicCollection.appendChild(element);
-
-
     }
 
     bottomRowTwoWrapper.appendChild(profilePicCollection);
 
     bottom.append(bottomRowOneWrapper, bottomRowTwoWrapper);
-
-
 
     accountContent.append(top, bottom);
 
