@@ -31,8 +31,6 @@ export const accountPage = () => {
 
     pfpBtnWrapper.appendChild(profilePicEditBtn)
 
-    // profilePic.appendChild(profilePicEditBtn)//for some reason, the button appends to the HTML, but it doesnt appear visually
-
     topRowOneWrapper.append(profilePic, pfpBtnWrapper);
 
 
