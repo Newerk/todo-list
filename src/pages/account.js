@@ -41,21 +41,35 @@ export const accountPage = () => {
     const usernameEditBtn = document.createElement('button');
     usernameEditBtn.className = 'ap-edit-btn';
     usernameEditBtn.id = 'username-edit-btn';
-    usernameEditBtn.addEventListener('click', ()=> {
-        usernameEditBtn.setAttribute('style', 'width: 5rem; border-radius: 1rem; font-size: 1rem;');
-        usernameEditBtn.textContent = 'SAVE';
-
-        username.contentEditable = true;
+    usernameEditBtn.addEventListener('click', () => {
         let ls_username = localStorage.getItem('username');
-        ls_username = username.textContent;
-        localStorage.setItem('username', ls_username);
 
-        document.querySelector('#header-username').textContent = localStorage.getItem('username');
+
+        if (usernameEditBtn.textContent !== 'SAVE') {
+            usernameEditBtn.setAttribute('style', 'width: 5rem; border-radius: 1rem; font-size: 1rem;');
+            usernameEditBtn.textContent = 'SAVE';
+            username.contentEditable = true;
+
+        } else {
+            usernameEditBtn.textContent = '';
+            usernameEditBtn.setAttribute('style', 'width: 1.5rem; height: 1.5rem; position: relative; top: -1rem;');
+            username.contentEditable = false;
+
+            ls_username = username.textContent;
+            localStorage.setItem('username', ls_username);
+
+            document.querySelector('#header-username').textContent = localStorage.getItem('username');
+
+            
+        }
+
+
+
 
     })
 
     btnWrapper.appendChild(usernameEditBtn)
-    
+
 
     topRowTwoWrapper.append(hello, username, btnWrapper);
 
@@ -71,7 +85,7 @@ export const accountPage = () => {
     bottomRowOneWrapper.id = 'bottom-row-one-wrapper';
     const saveBtn = document.createElement('button');
     saveBtn.textContent = 'SAVE';
-    saveBtn.addEventListener('click', ()=> {
+    saveBtn.addEventListener('click', () => {
     })
 
     bottomRowOneWrapper.appendChild(saveBtn);
