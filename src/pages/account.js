@@ -1,4 +1,5 @@
 import './page-styling.css'
+import { pfpLinks } from '../images/profile-pics/links-to-pfp-pics';
 
 export const accountPage = () => {
     const container = document.createElement('div');
@@ -90,12 +91,13 @@ export const accountPage = () => {
     profilePicCollection.id = 'profile-pic-collection';
 
     //directories to different pfp images. I will interate through this in the for loop below
-    const picsArr = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
+    const picsArr = [pfpLinks.one,pfpLinks.two, pfpLinks.three, pfpLinks.four, pfpLinks.five, pfpLinks.six, pfpLinks.seven, pfpLinks.eight, pfpLinks.nine, pfpLinks.ten, pfpLinks.eleven, pfpLinks.twelve, pfpLinks.thirteen, pfpLinks.fourteen, pfpLinks.fifteen];
 
-    //will be updated to: for (let i = 0; i < picsArr.length; i++) 
     for (let i = 0; i < picsArr.length; i++) {
-        const test = document.createElement('div');
-        test.setAttribute('style', 'height: 5rem; width: 5rem; background-color: orange; border-radius: 50%; cursor: pointer;');
+        const test = document.createElement('img');
+        test.src = picsArr[i];
+
+        test.setAttribute('style', 'height: 5rem; width: 5rem; background-color: orange; border-radius: 50%; cursor: pointer; background-size: contain;');
         test.addEventListener('click', () => {
             //apply selected picture to profile and header
             console.log('click!');

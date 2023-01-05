@@ -1,11 +1,11 @@
 import { updateScreenProjectsLS, updateScreenTasksLS } from "./update-info";
+import { pfpLinks } from "./images/profile-pics/links-to-pfp-pics";
 
 //using  an if statment to check if a localstorage key is existing allows you to keep values after referesh. Other wise it will always reset the localstorage and remake every key to its default values
 (() => {
     if (!localStorage.getItem('pfp')) {
-        localStorage.setItem('pfp', '../src/images/profile-pics/tears_Kung_Fu_Kendrick_Lamar_c7b7c929-cba6-415e-a5b3-e7e0d2c279e3.png')
+        localStorage.setItem('pfp', pfpLinks.one)
     }
-
     if (!localStorage.getItem('username')) {
         localStorage.setItem('username', 'Guest')
     }
