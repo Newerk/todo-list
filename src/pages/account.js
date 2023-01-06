@@ -11,7 +11,7 @@ export const accountPage = () => {
     accountContent.setAttribute('style', 'display: grid; grid-template-rows: 1fr 1fr; width: 100%; height: 100%;');
 
     const top = document.createElement('div');
-    top.setAttribute('style', 'background-color: blue; width: 100%; height: 100%; grid-row: 1; display: grid; grid-template-rows: auto 1fr');
+    top.setAttribute('style', ' width: 100%; height: 100%; grid-row: 1; display: grid; grid-template-rows: auto 1fr; z-index: 1; background-color: red');
     top.className = 'ap-top';
 
     const topRowOneWrapper = document.createElement('div');
@@ -26,7 +26,7 @@ export const accountPage = () => {
     profilePicEditBtn.className = 'ap-edit-btn';
     profilePicEditBtn.id = 'profile-edit-btn';
     profilePicEditBtn.addEventListener('click', () => {
-        console.log('click!')
+        document.querySelector('.ap-bottom').setAttribute('style', 'position: relative; top: 0; z-index: 0; background-color: #323233;opacity: 100;');
     })
 
     pfpBtnWrapper.appendChild(profilePicEditBtn)
@@ -81,7 +81,7 @@ export const accountPage = () => {
 
 
     const bottom = document.createElement('div');
-    bottom.setAttribute('style', 'background-color: red; width: 100%; height: 100%; grid-row: 2; display: grid; grid-template-rows: auto 1fr');
+    bottom.setAttribute('style', ' width: 100%; height: 100%; grid-row: 2; display: grid; grid-template-rows: auto 1fr');
     bottom.className = 'ap-bottom';
     const bottomRowOneWrapper = document.createElement('div');
     bottomRowOneWrapper.id = 'bottom-row-one-wrapper';
@@ -92,6 +92,9 @@ export const accountPage = () => {
 
         let headerPfp = document.querySelector('#header-pfp');
         headerPfp.src = localStorage.getItem('pfp');
+
+        document.querySelector('.ap-bottom').setAttribute('style', 'position: relative; top: -20.3rem;');
+
 
 
     })
@@ -111,7 +114,7 @@ export const accountPage = () => {
         const element = document.createElement('img');
         element.src = picsArr[i];
 
-        element.setAttribute('style', 'height: 5rem; width: 5rem; background-color: orange; border-radius: 50%; cursor: pointer; background-size: contain;');
+        element.setAttribute('style', 'height: 5rem; width: 5rem; border-radius: 50%; cursor: pointer; background-size: contain;');
         element.addEventListener('click', () => {
             profilePic.src = picsArr[i];
 

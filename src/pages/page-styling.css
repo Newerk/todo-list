@@ -132,3 +132,14 @@
 [contenteditable="false"] {
     border-bottom: none;
 }
+
+.ap-bottom {
+    position: relative;
+    top: -20.3rem;
+    z-index: 0;
+    opacity: 0;
+    background-color: #323233;
+
+    transition: .4s;
+
+}
