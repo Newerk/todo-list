@@ -10,18 +10,18 @@ export const headerContent = () => {
         const logo = document.createElement('div');
         logo.id = 'header-logo';
         logo.textContent = 'LOGO';
-        logo.setAttribute('style', 'grid-column: 1 / 2; color: white');
+        logo.setAttribute('style', 'grid-column: 1 / 2; color: white; place-self: center');
         headerDiv.appendChild(logo);
 
         const userName = document.createElement('div');
         userName.id = 'header-username';
         userName.textContent = localStorage.getItem('username');
-        userName.setAttribute('style', 'grid-column: 3 / 4; color: white');
+        userName.setAttribute('style', 'grid-column: 3 / 4; color: white; place-self: center');
         headerDiv.appendChild(userName);
 
         const pfp = document.createElement('img');
         pfp.id = 'header-pfp';
         pfp.src = localStorage.getItem('pfp');
-        pfp.setAttribute('style', 'grid-column: 4 / 5; color: white; height: 3rem; width: 3rem; background-color: white; border-radius: 3rem');
+        pfp.setAttribute('style', 'grid-column: 4 / 5; color: white; height: 3rem; width: 3rem; background-color: white; border-radius: 3rem; place-self: center');
         headerDiv.appendChild(pfp);
 }
