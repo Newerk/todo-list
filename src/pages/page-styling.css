@@ -89,6 +89,7 @@
 #top-row-two-wrapper {
     display: grid;
     font-size: 2rem;
+    height: 2.8rem;
 
     grid-template-columns: 1fr repeat(2, auto) 1fr;
 
@@ -117,4 +118,17 @@
 #hello {
     margin-right: .5rem;
     grid-column: 2;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+    border-bottom: 1px solid white;
+}
+
+#ap-username {
+    height: 2.5rem;
+}
+
+[contenteditable="false"] {
+    border-bottom: none;
 }
