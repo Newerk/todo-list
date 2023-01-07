@@ -42,7 +42,7 @@ export const accountPage = () => {
     hello.textContent = 'Hello, ';
     const username = document.createElement('div');
     username.id = 'ap-username';
-    username.textContent = localStorage.getItem('username');
+    username.textContent = localStorage.getItem('username').trim();
 
     const btnWrapper = document.createElement('div');
     btnWrapper.id = 'btn-wrapper';
@@ -52,7 +52,6 @@ export const accountPage = () => {
     usernameEditBtn.textContent = '';
     usernameEditBtn.addEventListener('click', () => {
         let ls_username = localStorage.getItem('username');
-
 
         if (usernameEditBtn.textContent !== 'SAVE') {
             usernameEditBtn.setAttribute('style', 'width: 5rem; border-radius: 1rem; font-size: 1rem; color: black;');
@@ -64,10 +63,19 @@ export const accountPage = () => {
             usernameEditBtn.setAttribute('style', 'width: 1.5rem; height: 1.5rem; position: relative; top: -1rem;');
             username.contentEditable = false;
 
-            ls_username = username.textContent;
-            localStorage.setItem('username', ls_username);
+            if (!username.textContent.trim().length) {
+                username.textContent = ls_username;
 
-            document.querySelector('#header-username').textContent = localStorage.getItem('username');
+            }
+
+            if (/\s{2,}/.test(username.textContent) === true) {
+                let newStr = username.textContent.replace(/\s{2,}/, ' ');
+                username.textContent = newStr;
+            }
+            ls_username = username.textContent;
+            localStorage.setItem('username', ls_username.trim());
+
+            document.querySelector('#header-username').textContent = localStorage.getItem('username').trim();
 
         }
     })
