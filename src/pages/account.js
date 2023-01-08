@@ -80,6 +80,7 @@ export const accountPage = () => {
         }
     })
 
+
     btnWrapper.appendChild(usernameEditBtn)
 
     topRowTwoWrapper.append(hello, username, btnWrapper);
