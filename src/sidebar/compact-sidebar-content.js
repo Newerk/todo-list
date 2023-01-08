@@ -27,7 +27,7 @@ export const compactSidebarContent = () => {
         const expand = document.createElement('img');
         expand.id = 'expand-btn';
         // expand.textContent = '>';
-        expand.src = '../src/images/icons/expand-sidebar.svg'    ;    
+        expand.src = '../src/images/icons/expand-sidebar.svg';    
         expand.addEventListener('click', function () {
                 if (storageManagement.sideBarIsExpanded.value === true) {
                         // expand.textContent = '>';
