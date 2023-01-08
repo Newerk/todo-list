@@ -17,7 +17,7 @@ export const todoHeader = () => {
     })
 
     const statusContainer = document.createElement('div');
-    statusContainer.setAttribute('style', 'padding: 0 .5rem 0 .5rem; display: flex;');
+    statusContainer.setAttribute('style', 'border-right: 1px solid black; padding: 0 .5rem 0 .5rem; display: flex;');
     statusContainer.id = 'header-status';
     const statusText = document.createElement('span');
     statusText.textContent = "Status";
@@ -25,7 +25,7 @@ export const todoHeader = () => {
 
 
     const titleContainer = document.createElement('div');
-    titleContainer.setAttribute('style', 'border-left: 1px solid black; padding-left: .5rem; display: flex;');
+    titleContainer.setAttribute('style', 'border-right: 1px solid black; padding: 0 .5rem 0 .5rem; display: flex;');
     titleContainer.id = 'header-title';
     const titleText = document.createElement('span');
     titleText.textContent = 'Title';
@@ -33,7 +33,7 @@ export const todoHeader = () => {
 
 
     const priorityContainer = document.createElement('div');
-    priorityContainer.setAttribute('style', 'border-left: 1px solid black; padding: 0 .5rem 0 .5rem; display: flex;');
+    priorityContainer.setAttribute('style', 'padding: 0 .5rem 0 .5rem; display: flex;');
     priorityContainer.id = 'header-priority';
     const priorityText = document.createElement('span');
     priorityText.textContent = 'Priority';

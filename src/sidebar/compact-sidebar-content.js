@@ -128,6 +128,8 @@ export const compactSidebarContent = () => {
         // account.textContent = 'ACCOUNT';
         account.addEventListener('click', () => {
                 wipeContent(accountPage());
+                activePageTracker(storageManagement.onAccountPage);
+
                 changeBtnBg();
 
         });
@@ -139,6 +141,7 @@ export const compactSidebarContent = () => {
         // settings.textContent = 'SETTINGS';
         settings.addEventListener('click', () => {
                 wipeContent(settingsPage());
+                activePageTracker(storageManagement.onSettingsPage);
                 changeBtnBg();
 
         });

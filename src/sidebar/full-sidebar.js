@@ -91,6 +91,7 @@ export const fullSidebar = () => {
     account.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
     account.addEventListener('click', () => {
         wipeContent(accountPage());
+        activePageTracker(storageManagement.onAccountPage);
         changeBtnBg();
 
     });
@@ -102,6 +103,7 @@ export const fullSidebar = () => {
     settings.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
     settings.addEventListener('click', () => {
         wipeContent(settingsPage());
+        activePageTracker(storageManagement.onSettingsPage);
         changeBtnBg();
 
     });
