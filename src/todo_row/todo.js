@@ -11,7 +11,7 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls_ID
     const row = document.createElement('div');
     row.className = 'row';
     row.id = ls_ID;
-    row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white;border: grey 1px solid');
+    row.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: white;border: grey 1px solid; color: black');
 
     const status = document.createElement('div');
     status.id = 'row-status';

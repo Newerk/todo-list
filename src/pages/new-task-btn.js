@@ -14,7 +14,7 @@ export const newTaskBtn = (querySelector) => {
     const symbol = document.createElement('div');//when adding the assets, perhaps I will remove this and use ::before in CSS. I will keep this variable here for reference
     symbol.textContent = '+';
     symbol.id = 'symbol';
-    symbol.setAttribute('style', 'background-color: orange; border-radius: 50%; width: 1.5rem; height: 1.5rem ;text-align: center;');
+    symbol.setAttribute('style', 'background-color: orange; border-radius: 50%; width: 1.5rem; height: 1.5rem ;text-align: center; color: black;');
 
     symbol.addEventListener('click', () => {
         
@@ -30,6 +30,7 @@ export const newTaskBtn = (querySelector) => {
 
     const newTask = document.createElement('div');
     newTask.textContent = 'New Task';
+    newTask.setAttribute('style', 'color: white')
 
     btnContainer.appendChild(symbol);
     btnContainer.appendChild(newTask);
