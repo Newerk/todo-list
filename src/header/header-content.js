@@ -13,11 +13,18 @@ export const headerContent = () => {
         logo.setAttribute('style', 'grid-column: 1 / 2; color: white; place-self: center');
         headerDiv.appendChild(logo);
 
+        const websiteNameWrapper = document.createElement('div');
+        websiteNameWrapper.textContent = 'Todo';
+        websiteNameWrapper.setAttribute('style', 'position: relative; top: -.35rem; display: flex; grid-column: 2 / 3; color: white; place-self: center; font-size: 1.8rem;')
+
         const websiteName = document.createElement('div');
         websiteName.id = 'website-name';
-        websiteName.textContent = 'WebsiteName';
-        websiteName.setAttribute('style', 'grid-column: 2 / 3; color: white; place-self: center; font-size: 1.8rem')
-        headerDiv.appendChild(websiteName);
+        websiteName.textContent = 'Project';
+        websiteName.setAttribute('style', 'position: relative; top: .8rem; margin-left: -.18rem; color: orange; place-self: center; font-size: 1.8rem')
+
+        websiteNameWrapper.appendChild(websiteName)
+
+        headerDiv.appendChild(websiteNameWrapper);
 
 
         const userName = document.createElement('div');
