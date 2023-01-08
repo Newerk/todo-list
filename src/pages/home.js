@@ -11,7 +11,8 @@ export const homePage = () => {
 
     const newTask = document.createElement('div');
     newTask.className = 'top-container';
-    newTask.setAttribute('style', 'display: flex; justify-content: end')
+    newTask.textContent = 'Home';
+    newTask.setAttribute('style', 'display: flex; justify-content: space-between; color: white')
     newTask.appendChild(newTaskBtn('.top-container'));
 
     container.appendChild(newTask);

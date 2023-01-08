@@ -9,12 +9,12 @@ is able to currently add rows because its a quick way for me to see changes and 
 
 export const newTaskBtn = (querySelector) => {
     const btnContainer = document.createElement('div');
-    btnContainer.setAttribute('style', 'display: flex; width: auto; height: 2rem');
+    btnContainer.setAttribute('style', 'display: flex; width: auto; height: 2rem;');
     btnContainer.className = 'new-task-btn';
-    const symbol = document.createElement('div');//when adding the assets, perhaps I will remove this and use ::before in CSS. I will keep this variable here for reference
-    symbol.textContent = '+';
+    const symbol = document.createElement('button');//when adding the assets, perhaps I will remove this and use ::before in CSS. I will keep this variable here for reference
+    // symbol.textContent = '+';
     symbol.id = 'symbol';
-    symbol.setAttribute('style', 'background-color: orange; border-radius: 50%; width: 1.5rem; height: 1.5rem ;text-align: center; color: black;');
+    symbol.setAttribute('style', 'background-color: orange; border-radius: 50%; width: 1.5rem; height: 1.5rem ;text-align: center; color: black;background-image: url(../src/images/icons/plus.svg); background-size: contain;');
 
     symbol.addEventListener('click', () => {
         
