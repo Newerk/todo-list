@@ -7,9 +7,10 @@ export const headerContent = () => {
         headerDiv.className = 'header';
         document.body.appendChild(headerDiv);
 
-        const logo = document.createElement('div');
+        const logo = document.createElement('img');
         logo.id = 'header-logo';
-        logo.textContent = 'LOGO';
+        // logo.textContent = 'LOGO';
+        logo.src = '../src/images/icons/logo.svg'
         logo.setAttribute('style', 'grid-column: 1 / 2; color: white; place-self: center');
         headerDiv.appendChild(logo);
 
