@@ -10,17 +10,25 @@
 
 [id $='side-btn'] {
     height: 2rem;
-    color: white;
     place-self: center;
+    opacity: .4;
 }
+
+[id $='side-btn']:hover {
+    opacity: 1;
+}
+
 
 #expand-btn {
     grid-row: 1 / 2;
-    color: white;
     height: 2rem;
     place-self: center;
+    opacity: .4;
 
+}
 
+#expand-btn:hover {
+    opacity: 1;
 }
 
 #home-btn {
