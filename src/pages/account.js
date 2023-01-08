@@ -49,7 +49,7 @@ export const accountPage = () => {
     const usernameEditBtn = document.createElement('button');
     usernameEditBtn.className = 'ap-edit-btn';
     usernameEditBtn.id = 'username-edit-btn';
-    usernameEditBtn.textContent = '';
+    // usernameEditBtn.textContent = '';
     usernameEditBtn.addEventListener('click', () => {
         let ls_username = localStorage.getItem('username');
 

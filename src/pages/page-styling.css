@@ -143,3 +143,8 @@
     transition: .4s;
 
 }
+
+.ap-edit-btn {
+    background-image: url(../images/icons/edit.svg);
+    background-size: contain;
+}
