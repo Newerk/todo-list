@@ -6,6 +6,10 @@
     background-color: white;
     border: grey 1px solid;
 
+    font-weight: 300;
+    align-items: center;
+
+
 }
 
 #row-status {

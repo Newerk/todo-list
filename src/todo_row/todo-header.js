@@ -10,14 +10,14 @@ NOTE: The arrows on the header will instead appear on hover, it clicked once, it
 export const todoHeader = () => {
     const header = document.createElement('div');
     header.id = 'todo-header';
-    header.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: grey; ');
+    header.setAttribute('style', 'display: grid; grid-template-columns: auto 1fr auto auto; width: 100%; height: 2rem; background-color: grey; align-items: center ');
     header.addEventListener('resize', function() {
         header.setAttribute('style', 'width: 1fr;');
 
     })
 
     const statusContainer = document.createElement('div');
-    statusContainer.setAttribute('style', 'border: 1px solid black; padding: 0 .5rem 0 .5rem; display: flex;');
+    statusContainer.setAttribute('style', 'padding: 0 .5rem 0 .5rem; display: flex;');
     statusContainer.id = 'header-status';
     const statusText = document.createElement('span');
     statusText.textContent = "Status";
@@ -25,7 +25,7 @@ export const todoHeader = () => {
 
 
     const titleContainer = document.createElement('div');
-    titleContainer.setAttribute('style', 'border: 1px solid black; padding-left: .5rem; display: flex;');
+    titleContainer.setAttribute('style', 'border-left: 1px solid black; padding-left: .5rem; display: flex;');
     titleContainer.id = 'header-title';
     const titleText = document.createElement('span');
     titleText.textContent = 'Title';
@@ -33,7 +33,7 @@ export const todoHeader = () => {
 
 
     const priorityContainer = document.createElement('div');
-    priorityContainer.setAttribute('style', 'border: 1px solid black; padding: 0 .5rem 0 .5rem; display: flex;');
+    priorityContainer.setAttribute('style', 'border-left: 1px solid black; padding: 0 .5rem 0 .5rem; display: flex;');
     priorityContainer.id = 'header-priority';
     const priorityText = document.createElement('span');
     priorityText.textContent = 'Priority';
@@ -41,7 +41,7 @@ export const todoHeader = () => {
 
 
     const dueDateContainer = document.createElement('div');
-    dueDateContainer.setAttribute('style', 'border: 1px solid black; width: 13rem; padding-left: .5rem; display: flex;');
+    dueDateContainer.setAttribute('style', 'border-left: 1px solid black; width: 13rem; padding-left: .5rem; display: flex;');
     dueDateContainer.id = 'header-due-date';
     const dueDateText = document.createElement('span');
     dueDateText.textContent = 'Due Date'
