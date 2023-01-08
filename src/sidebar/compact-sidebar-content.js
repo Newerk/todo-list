@@ -13,6 +13,7 @@ import { activePageTracker } from '../active-page-tracker';
 import { projectsPage } from '../pages/projects';
 import { accountPage } from '../pages/account';
 import { settingsPage } from '../pages/settings';
+import { changeBtnBg } from './sidebar-active-page-colors';
 
 
 //the dot notation 'textContent' are placeholder values for the content that will be assigned to the page sidebar
@@ -29,6 +30,8 @@ export const compactSidebarContent = () => {
         // expand.textContent = '>';
         expand.src = '../src/images/icons/expand-sidebar.svg';    
         expand.addEventListener('click', function () {
+                changeBtnBg();
+
                 if (storageManagement.sideBarIsExpanded.value === true) {
                         // expand.textContent = '>';
                         expand.src = '../src/images/icons/expand-sidebar.svg'    ;    
@@ -40,6 +43,8 @@ export const compactSidebarContent = () => {
 
                 } else {
                         expandSidebar();
+                        changeBtnBg();
+
                         // expand.textContent = '<';
                         expand.src = '../src/images/icons/collapse-sidebar.svg'    ;    
 
@@ -55,6 +60,7 @@ export const compactSidebarContent = () => {
                 wipeContent(homePage());
                 activePageTracker(storageManagement.onHomePage)
                 updateScreenTasksLS();
+                changeBtnBg();
 
 
         });
@@ -68,6 +74,7 @@ export const compactSidebarContent = () => {
                 wipeContent(todayPage());
                 activePageTracker(storageManagement.onTodayPage)
                 updateScreenTasksLS();
+                changeBtnBg();
 
         });
         compactSidebarContentDiv.appendChild(today);
@@ -80,6 +87,7 @@ export const compactSidebarContent = () => {
                 wipeContent(upcomingPage());
                 activePageTracker(storageManagement.onUpcomingPage)
                 updateScreenTasksLS();
+                changeBtnBg();
 
         });
         compactSidebarContentDiv.appendChild(upcoming);
@@ -92,6 +100,8 @@ export const compactSidebarContent = () => {
                 wipeContent(pastDuePage());
                 activePageTracker(storageManagement.onPastDuePage)
                 updateScreenTasksLS();
+                changeBtnBg();
+
         });
         compactSidebarContentDiv.appendChild(pastDue);
 
@@ -103,6 +113,8 @@ export const compactSidebarContent = () => {
                 wipeContent(projectsPage());
                 activePageTracker(storageManagement.onProjectsPage);
                 updateScreenProjectsLS();
+                changeBtnBg();
+
         });
         compactSidebarContentDiv.appendChild(projects);
 
@@ -116,6 +128,8 @@ export const compactSidebarContent = () => {
         // account.textContent = 'ACCOUNT';
         account.addEventListener('click', () => {
                 wipeContent(accountPage());
+                changeBtnBg();
+
         });
         compactSidebarContentDiv.appendChild(account);
 
@@ -125,6 +139,8 @@ export const compactSidebarContent = () => {
         // settings.textContent = 'SETTINGS';
         settings.addEventListener('click', () => {
                 wipeContent(settingsPage());
+                changeBtnBg();
+
         });
         compactSidebarContentDiv.appendChild(settings);
 

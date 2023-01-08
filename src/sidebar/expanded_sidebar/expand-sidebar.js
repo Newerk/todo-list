@@ -11,5 +11,6 @@ export const expandSidebar = () => {
         const container = document.querySelector('.expanded-container');
         container.setAttribute('style', 'width: 15rem');
         container.childNodes.forEach(el => el.setAttribute('style', 'width: 15rem'));
+
     }
 }

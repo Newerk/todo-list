@@ -18,4 +18,5 @@ function checkSize() {
         storageManagement.sideBarIsExpanded.value = false;
 
     }
+
 }

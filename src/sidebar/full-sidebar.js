@@ -9,6 +9,7 @@ import { activePageTracker } from "../active-page-tracker";
 import { projectsPage } from '../pages/projects';
 import { settingsPage } from "../pages/settings";
 import { accountPage } from "../pages/account";
+import { changeBtnBg } from "./sidebar-active-page-colors";
 
 
 export const fullSidebar = () => {
@@ -26,6 +27,7 @@ export const fullSidebar = () => {
         wipeContent(homePage());
         activePageTracker(storageManagement.onHomePage)
         updateScreenTasksLS();
+        changeBtnBg();
     });
 
     const today = document.createElement('button');
@@ -37,6 +39,8 @@ export const fullSidebar = () => {
         wipeContent(todayPage());
         activePageTracker(storageManagement.onTodayPage)
         updateScreenTasksLS();
+        changeBtnBg();
+
     });
 
 
@@ -49,6 +53,7 @@ export const fullSidebar = () => {
         wipeContent(upcomingPage());
         activePageTracker(storageManagement.onUpcomingPage)
         updateScreenTasksLS();
+        changeBtnBg();
 
     });
 
@@ -61,6 +66,7 @@ export const fullSidebar = () => {
         wipeContent(pastDuePage());
         activePageTracker(storageManagement.onPastDuePage)
         updateScreenTasksLS();
+        changeBtnBg();
 
     });
 
@@ -74,6 +80,8 @@ export const fullSidebar = () => {
         wipeContent(projectsPage());
         activePageTracker(storageManagement.onProjectsPage);
         updateScreenProjectsLS();
+        changeBtnBg();
+
     });
 
     const account = document.createElement('button');
@@ -83,6 +91,8 @@ export const fullSidebar = () => {
     account.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
     account.addEventListener('click', () => {
         wipeContent(accountPage());
+        changeBtnBg();
+
     });
 
     const settings = document.createElement('button');
@@ -92,6 +102,8 @@ export const fullSidebar = () => {
     settings.setAttribute('style', 'width: 0rem; padding: 0rem; border: none;font-size: 0');
     settings.addEventListener('click', () => {
         wipeContent(settingsPage());
+        changeBtnBg();
+
     });
 
     expandedContainer.appendChild(home);
