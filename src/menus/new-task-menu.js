@@ -40,7 +40,7 @@ export const buildNewTaskWindow = () => {
 
         if (storageManagement.priorityMenuActive.value === false) {
             priorityMenu.appendChild(buildPopUpMenu());
-            priorityMenu.setAttribute('style', 'position: absolute; width: width: 6rem;')
+            priorityMenu.setAttribute('style', 'position: absolute; width: 6rem;')
 
             priorityBtn.appendChild(priorityMenu);
 
@@ -54,7 +54,7 @@ export const buildNewTaskWindow = () => {
         switch (e.target.id) {
             case 'normal-priority-btn':
                 priorityBtn.textContent = 'Normal';
-                priorityBtn.setAttribute('style', 'background-color: skyblue;');
+                priorityBtn.setAttribute('style', 'background-color: #58CFFE;');
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
 
@@ -62,7 +62,7 @@ export const buildNewTaskWindow = () => {
 
             case 'high-priority-btn':
                 priorityBtn.textContent = 'High';
-                priorityBtn.setAttribute('style', 'background-color: yellow;');
+                priorityBtn.setAttribute('style', 'background-color: #FEEA00;');
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
 
@@ -70,7 +70,7 @@ export const buildNewTaskWindow = () => {
 
             case 'urgent-priority-btn':
                 priorityBtn.textContent = 'Urgent';
-                priorityBtn.setAttribute('style', 'background-color: red;');
+                priorityBtn.setAttribute('style', 'background-color: #FF1337;');
                 priorityMenu.hidden = true;
                 storageManagement.priorityMenuActive.value = false;
 
