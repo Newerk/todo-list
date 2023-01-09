@@ -89,7 +89,7 @@ export const buildNewTaskWindow = () => {
 
     const exitBtn = document.createElement('button');
     exitBtn.id = 'exit-btn';
-    exitBtn.textContent = 'X'
+    // exitBtn.textContent = 'X'
     exitBtn.addEventListener('click', () => {
         if (storageManagement.newTaskMenuActive.value === true) {
             newTaskContainer.remove();

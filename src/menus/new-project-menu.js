@@ -27,7 +27,6 @@ export const buildNewProjectWindow = () => {
 
     const exitBtn = document.createElement('button');
     exitBtn.id = 'exit-btn';
-    exitBtn.textContent = 'X'
     exitBtn.addEventListener('click', () => {
         if (storageManagement.newProjectMenuActive.value === true) {
             newProjectContainer.remove();
