@@ -120,7 +120,9 @@ button:hover {
     text-align: center;
     color: black;
     background-image: url(../src/images/icons/plus.svg);
-    background-size: contain;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: center;
 
     border: none;
 
