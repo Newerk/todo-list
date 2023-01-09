@@ -169,7 +169,8 @@
 }
 
 #ap-save-btn {
-    background-color: #37E03C;
+    background-color: #24D18B;
     border: none;
     border-radius: 0 0 0 .2rem;
+    padding: 0 1rem 0 1rem;
 }
