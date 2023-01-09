@@ -11,7 +11,6 @@ export const accountPage = () => {
     accountContent.setAttribute('style', 'display: grid; grid-template-rows: 1fr 1fr; width: 100%; height: 100%;');
 
     const top = document.createElement('div');
-    top.setAttribute('style', ' width: 100%; height: 100%; grid-row: 1; display: grid; grid-template-rows: auto 1fr; z-index: 1; background-color: red');
     top.className = 'ap-top';
 
     const topRowOneWrapper = document.createElement('div');
@@ -96,6 +95,7 @@ export const accountPage = () => {
     bottomRowOneWrapper.id = 'bottom-row-one-wrapper';
     const saveBtn = document.createElement('button');
     saveBtn.textContent = 'SAVE';
+    saveBtn.id = 'ap-save-btn';
     saveBtn.addEventListener('click', () => {
         let pfp = localStorage.setItem('pfp', profilePic.src);
 

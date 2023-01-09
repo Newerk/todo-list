@@ -133,6 +133,16 @@
     border-bottom: none;
 }
 
+.ap-top {
+    width: 100%;
+    height: 100%;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    z-index: 1;
+    background-color: #1E1E1E;
+}
+
 .ap-bottom {
     position: relative;
     top: -20.3rem;
@@ -147,4 +157,10 @@
 .ap-edit-btn {
     background-image: url(../images/icons/edit.svg);
     background-size: contain;
+}
+
+#ap-save-btn {
+    background-color: #37E03C;
+    border: none;
+    border-radius: 0 0 0 .2rem;
 }
