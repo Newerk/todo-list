@@ -8,10 +8,21 @@
     border-right: 1px solid grey;
     border-bottom: 1px solid grey;
 
+ 
 }
 
 [id $='td-btn'] {
     /* color: black; */
     width: 100%;
 
+}
+
+.positioner {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    z-index: 1;
+    top: .3rem;
+    left: .05rem;
+    grid-column: 4;
 }

@@ -112,7 +112,7 @@ export const todoListRows = (ls_Title, ls_Priority, ls_DueDate, ls_Status, ls_ID
         if (menu === false) {
             const positioner = document.createElement('div');
             positioner.className = 'positioner';
-            positioner.setAttribute('style', 'display: flex; justify-content: end; position: relative; z-index: 1; top: .3rem; left: .05rem; grid-column: 4')
+            // positioner.setAttribute('style', 'display: flex; justify-content: end; position: relative; z-index: 1; top: .3rem; left: .05rem; grid-column: 4')
             positioner.appendChild(threeDotsMenu());
             row.appendChild(positioner);
             menuStatus.setValue = true;

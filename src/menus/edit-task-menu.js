@@ -63,7 +63,7 @@ export const editTaskWindow = () => {
 
         if (storageManagement.priorityMenuActive.value === false) {
             priorityMenu.appendChild(buildPopUpMenu());
-            priorityMenu.setAttribute('style', 'position: absolute; width: width: 6rem;')
+            priorityMenu.setAttribute('style', 'position: absolute; width: 6rem;')
 
             priorityBtn.appendChild(priorityMenu);
 

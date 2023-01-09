@@ -19,11 +19,6 @@
 
 }
 
-#row-title {
-    text-overflow: ellipsis;
-
-}
-
 #row-priority {
     width: 4rem;
 
@@ -51,6 +46,9 @@
     grid-column: 2;
     place-self: end;
     position: relative;
+
+    align-self: center;
+    justify-self: right;
 }
 
 #row-title {
@@ -60,6 +58,8 @@
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+    text-overflow: ellipsis;
+
 
 }
 
