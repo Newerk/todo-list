@@ -34,16 +34,38 @@ export const updateScreenTasksLS = () => {
     // filter changed, and then be visible in the past due tab w/o  manually changing it
     const updateFilter = (obj) => {
         const today = new Date;
-        const todaysDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+
+        let year = today.getFullYear();
+        let month = today.getMonth() + 1;
+        let day = today.getDate();
+    
+        if (day < 10) {
+            console.log('day is less than 10')
+    
+            day = '0' + day;
+            console.log(day)
+            
+        }
+    
+        if (month < 10) {
+            console.log('month is less than 10')
+    
+            month = '0' + month;
+            console.log(month)
+            
+        }
+        const todaysDate = `${year}-${month}-${day}`;
+
 
         for (const iterator of rows) {
             let dueDateArr = iterator.dueDate.split('/');
-            let dueDate = `${dueDateArr[2]}-${parseInt(dueDateArr[0])}-${parseInt(dueDateArr[1])}`
+            let dueDate = `${dueDateArr[2]}-${dueDateArr[0]}-${dueDateArr[1]}`;
 
             if (dueDate < todaysDate) {
                 iterator.filter = 'pastdue';
 
             }
+
         }
 
         localStorage.setItem('rows', JSON.stringify(obj));
