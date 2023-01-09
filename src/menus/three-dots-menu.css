@@ -22,7 +22,7 @@
     justify-content: end;
     position: relative;
     z-index: 1;
-    top: .3rem;
+    top: -.01rem;
     left: .05rem;
     grid-column: 4;
 }
