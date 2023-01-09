@@ -112,3 +112,17 @@ button:hover {
     cursor: pointer;
 }
 
+#symbol {
+    background-color: orange;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    color: black;
+    background-image: url(../src/images/icons/plus.svg);
+    background-size: contain;
+
+    border: none;
+
+    margin-right: .2rem;
+}
