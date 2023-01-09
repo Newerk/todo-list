@@ -45,6 +45,7 @@ export const accountPage = () => {
 
     const btnWrapper = document.createElement('div');
     btnWrapper.id = 'btn-wrapper';
+    btnWrapper.style.paddingLeft = '.5rem'
     const usernameEditBtn = document.createElement('button');
     usernameEditBtn.className = 'ap-edit-btn';
     usernameEditBtn.id = 'username-edit-btn';
@@ -53,7 +54,7 @@ export const accountPage = () => {
         let ls_username = localStorage.getItem('username');
 
         if (usernameEditBtn.textContent !== 'SAVE') {
-            usernameEditBtn.setAttribute('style', 'width: 5rem; border-radius: 1rem; font-size: 1rem; color: black;');
+            usernameEditBtn.setAttribute('style', 'width: 5rem; border-radius: 1rem; font-size: 1rem; color: #838485; text-align: center; background-image: none');
             usernameEditBtn.textContent = 'SAVE';
             username.contentEditable = true;
 

@@ -4,7 +4,7 @@ import { pfpLinks } from "./images/profile-pics/links-to-pfp-pics";
 //using  an if statment to check if a localstorage key is existing allows you to keep values after referesh. Other wise it will always reset the localstorage and remake every key to its default values
 (() => {
     if (!localStorage.getItem('pfp')) {
-        localStorage.setItem('pfp', pfpLinks.one)
+        localStorage.setItem('pfp', pfpLinks.five)
     }
     if (!localStorage.getItem('username')) {
         localStorage.setItem('username', 'Guest')

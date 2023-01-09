@@ -36,6 +36,6 @@ export const headerContent = () => {
         const pfp = document.createElement('img');
         pfp.id = 'header-pfp';
         pfp.src = localStorage.getItem('pfp');
-        pfp.setAttribute('style', 'grid-column: 5 / 6; color: white; height: 3rem; width: 3rem; background-color: white; border-radius: 3rem; place-self: center');
+        pfp.setAttribute('style', 'grid-column: 5 / 6; color: white; height: 3rem; width: 3rem; background-color: white; border-radius: 3rem; place-self: center; border: 1px solid orange');
         headerDiv.appendChild(pfp);
 }
