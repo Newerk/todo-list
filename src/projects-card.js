@@ -33,17 +33,17 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
 
     const bottomContainer = document.createElement('div');
     bottomContainer.id = 'card-bottom-container';
-    const expandArrow = document.createElement('div');
+    const expandArrow = document.createElement('img');
     expandArrow.className = 'expand-arrow';
-    expandArrow.textContent = '▼';
+    expandArrow.src = '../src/images/icons/expand-project.svg';
     expandArrow.addEventListener('click', () => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
-            expandArrow.textContent = '▲'
+            expandArrow.src = '../src/images/icons/collapse-project.svg';
 
         } else {
             middleContainer.hidden = true;
-            expandArrow.textContent = '▼'
+            expandArrow.src = '../src/images/icons/expand-project.svg';
 
         }
 
