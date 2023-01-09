@@ -128,3 +128,7 @@ button:hover {
 
     margin-right: .2rem;
 }
+
+[type="checkbox"] {
+    accent-color: #A074C4;
+}
