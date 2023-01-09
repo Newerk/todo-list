@@ -20,7 +20,7 @@ export const headerContent = () => {
         const websiteName = document.createElement('div');
         websiteName.id = 'website-name';
         websiteName.textContent = 'Project';
-        websiteName.setAttribute('style', 'position: relative; top: .8rem; margin-left: -.18rem; color: orange; place-self: center; font-size: 1.8rem')
+        websiteName.setAttribute('style', 'position: relative; top: .8rem; margin-left: -.18rem; color: #EC9E27; place-self: center; font-size: 1.8rem')
 
         websiteNameWrapper.appendChild(websiteName)
 
@@ -36,6 +36,6 @@ export const headerContent = () => {
         const pfp = document.createElement('img');
         pfp.id = 'header-pfp';
         pfp.src = localStorage.getItem('pfp');
-        pfp.setAttribute('style', 'grid-column: 5 / 6; color: white; height: 3rem; width: 3rem; background-color: white; border-radius: 3rem; place-self: center; border: 1px solid orange');
+        pfp.setAttribute('style', 'grid-column: 5 / 6; color: white; height: 3rem; width: 3rem; background-color: white; border-radius: 3rem; place-self: center; border: 1px solid #EC9E27');
         headerDiv.appendChild(pfp);
 }

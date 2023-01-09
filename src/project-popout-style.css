@@ -1,7 +1,7 @@
 .project-popout-container {
     position: absolute;
     width: 60vw;
-    background-color: orange;
+    background-color: #EC9E27;
     z-index: 5;
     place-self: center;
     display: grid;

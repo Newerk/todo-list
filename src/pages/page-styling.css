@@ -136,7 +136,7 @@
 
 [contenteditable] {
     outline: 0px solid transparent;
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid #EC9E27;
 }
 
 #ap-username {
