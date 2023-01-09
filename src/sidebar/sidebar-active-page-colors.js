@@ -1,5 +1,4 @@
 import { storageManagement } from "../local-storage";
-
 export const changeBtnBg = () => {
     if (storageManagement.sideBarIsExpanded.value === true) {
 

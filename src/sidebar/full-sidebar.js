@@ -30,6 +30,7 @@ export const fullSidebar = () => {
         changeBtnBg();
     });
 
+
     const today = document.createElement('button');
     today.className = 'extended-btns';
     today.id = 'today-btn-ex';

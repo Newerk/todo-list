@@ -33,7 +33,6 @@ export const compactSidebarContent = () => {
                 changeBtnBg();
 
                 if (storageManagement.sideBarIsExpanded.value === true) {
-                        // expand.textContent = '>';
                         expand.src = '../src/images/icons/expand-sidebar.svg'    ;    
 
                         const container = document.querySelector('.expanded-container');
@@ -44,9 +43,7 @@ export const compactSidebarContent = () => {
                 } else {
                         expandSidebar();
                         changeBtnBg();
-
-                        // expand.textContent = '<';
-                        expand.src = '../src/images/icons/collapse-sidebar.svg'    ;    
+                        expand.src = '../src/images/icons/collapse-sidebar.svg';    
 
                 }
         })

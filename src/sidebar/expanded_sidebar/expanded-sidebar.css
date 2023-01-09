@@ -3,7 +3,7 @@
     background-color: #252526;
 
     display: grid;
-    grid-template-rows: 2rem repeat(5, auto) 1fr repeat(2, auto);
+    grid-template-rows: 3rem repeat(5, auto) 1fr repeat(2, auto);
     transition: .2s;
 
 }
@@ -12,7 +12,7 @@
     text-align: center;
     background-color: #252526;
 
-    height: 2rem;
+    height: 3rem;
     font-size: 1rem;
     transition: .2s;
 
@@ -27,9 +27,6 @@
     background-color: #37373C;
 }
 
-/* [id $= '-btn-ex']:focus {
-    background-color: #37373C;
-} */
 
 
 
@@ -37,6 +34,7 @@
     grid-row: 2 / 3;
 
 }
+
 
 #today-btn-ex {
     grid-row: 3 / 4;
