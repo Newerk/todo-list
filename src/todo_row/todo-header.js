@@ -39,7 +39,6 @@ export const todoHeader = () => {
     priorityText.textContent = 'Priority';
     priorityContainer.appendChild(priorityText);
 
-
     const dueDateContainer = document.createElement('div');
     dueDateContainer.setAttribute('style', 'border-left: 1px solid black; width: 13rem; padding-left: .5rem; display: flex;');
     dueDateContainer.id = 'header-due-date';
