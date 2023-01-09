@@ -53,7 +53,9 @@ textarea {
     resize: none;
 }
 
-
+#add-task-btn, #add-project-btn {
+    background-color: #24D18B;
+}
 
 
 /*3 SECTION OF CONTAINERS*/
