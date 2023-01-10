@@ -56,8 +56,7 @@
 .project-tasks-wrapper {
     display: grid;
     grid-template-rows: auto auto 1fr;
-    min-height: 30rem;
-    max-height: calc(100vh - 19rem);
+    height: calc(100vh - 19rem);
 
 }
 
