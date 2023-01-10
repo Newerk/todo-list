@@ -54,7 +54,7 @@ export const accountPage = () => {
         let ls_username = localStorage.getItem('username');
 
         if (usernameEditBtn.textContent !== 'SAVE') {
-            usernameEditBtn.setAttribute('style', 'width: 5rem; border-radius: 1rem; font-size: 1rem; color: #838485; text-align: center; background-image: none');
+            usernameEditBtn.setAttribute('style', 'width: 5rem; border-radius: 1rem; font-size: 1rem; color: #EC9E27; text-align: center; background-image: none');
             usernameEditBtn.textContent = 'SAVE';
             username.contentEditable = true;
 
