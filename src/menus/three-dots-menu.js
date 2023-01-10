@@ -34,7 +34,12 @@ export const threeDotsMenu = () => {
         closeThreeDotMenu();
 
         if (storageManagement.editTaskMenuActive.value === false) {
-            document.body.querySelector('.top-container').appendChild(editTaskWindow());
+            if (storageManagement.onProjectsPage.value === true) {
+                document.body.querySelector('#project-tasks-container').appendChild(editTaskWindow());
+
+            } else {
+                document.body.querySelector('.top-container').appendChild(editTaskWindow());
+            }
             storageManagement.editTaskMenuActive.value = true;
         } else {
             console.log('there is a window already opened')
