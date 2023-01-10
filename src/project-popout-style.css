@@ -1,18 +1,26 @@
 .project-popout-container {
     position: absolute;
     width: 60vw;
-    background-color: #323233;
+    background-color: #252526;
     z-index: 5;
     place-self: center;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    padding: 0 1rem 0 1rem;
+    padding: 1rem;
+    padding-top: 0;
+
 }
 
 .top {
     display: flex;
     justify-content: space-between;
+    height: 2rem;
 
+}
+
+.popout-title {
+    display: flex;
+    align-items: center;
 }
 
 .popout-exit-btn {
@@ -20,10 +28,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
+    width: 1rem;
 }
 
 .middle {
-    background-color: #323233;
+    background-color: #252526;
     display: grid;
     grid-template-rows: auto 1fr;
 
@@ -55,6 +64,8 @@
 .project-task-header {
     display: flex;
     justify-content: space-between;
+    align-content: center;
+    padding-top: .5rem;
 }
 
 #project-tasks-container {
@@ -71,6 +82,13 @@
 
 }
 
+#popout-edit-btn {
+    background-color: #313233;
+    color: #EC9E27;
+    border: 1px solid #838485;
+    padding: 0 1rem 0 1rem;;
+}
+
 #row-header {
     display: grid;
     grid-template-columns: 3rem 1fr 4rem 8rem;
@@ -80,6 +98,6 @@
     /* height: 2rem; */
 }
 
-#row-header > div {
+#row-header>div {
     padding: 0 .5rem 0 .5rem;
 }

@@ -44,6 +44,7 @@ export const projectPopOut = () => {
     const taskTag = document.createElement('div');
     taskTag.textContent = 'Tasks';
     const newTask = document.createElement('div');
+    newTask.id = 'new-task-wrapper';
     newTask.appendChild(newTaskBtn('#project-tasks-header'));
 
     const rowHeaderWrapper = document.createElement('div');
@@ -70,6 +71,7 @@ export const projectPopOut = () => {
     const bottom = document.createElement('div');
     bottom.className = 'bottom';
     const editBtn = document.createElement('button');
+    editBtn.id ='popout-edit-btn';
     editBtn.textContent = 'EDIT';
     editBtn.addEventListener('click', () => {
 
