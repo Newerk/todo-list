@@ -5,6 +5,7 @@ import { compactSidebarContent } from './sidebar/compact-sidebar-content';
 import { updateScreenTasksLS } from './update-info';
 import { activePageTracker } from './active-page-tracker';
 import { storageManagement } from './local-storage';
+import { changeBtnBg } from './sidebar/sidebar-active-page-colors';
 
 
 
@@ -27,3 +28,4 @@ contentContainer.appendChild(content);
 
 activePageTracker(storageManagement.onHomePage);
 updateScreenTasksLS();
+changeBtnBg();
