@@ -61,24 +61,9 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     })
 
 
-    expandArrow.addEventListener('mouseover', () => {
-        expandArrow.setAttribute('style', 'color: yellow')
-        topContainer.setAttribute('style', 'color: white');
-        middleContainer.setAttribute('style', 'color: white');
-
-
-    })
-
-    expandArrow.addEventListener('mouseout', () => {
-        expandArrow.setAttribute('style', 'color: white')
-        topContainer.setAttribute('style', 'color: white');
-        middleContainer.setAttribute('style', 'color: white');
-    })
-
-
     topContainer.addEventListener('mouseover', () => {
-        topContainer.setAttribute('style', 'color: yellow');
-        middleContainer.setAttribute('style', 'color: yellow');
+        topContainer.setAttribute('style', 'color: #F5F543');
+        middleContainer.setAttribute('style', 'color: #F5F543');
     })
 
     topContainer.addEventListener('mouseout', () => {
@@ -100,8 +85,8 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     })
 
     middleContainer.addEventListener('mouseover', () => {
-        topContainer.setAttribute('style', 'color: yellow');
-        middleContainer.setAttribute('style', 'color: yellow');
+        topContainer.setAttribute('style', 'color: #F5F543');
+        middleContainer.setAttribute('style', 'color: #F5F543');
     })
 
     middleContainer.addEventListener('mouseout', () => {

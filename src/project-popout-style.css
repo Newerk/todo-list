@@ -1,7 +1,7 @@
 .project-popout-container {
     position: absolute;
     width: 60vw;
-    background-color: #252526;
+    background-color: #323233;
     z-index: 5;
     place-self: center;
     display: grid;
@@ -32,7 +32,7 @@
 }
 
 .middle {
-    background-color: #252526;
+    background-color: #323233;
     display: grid;
     grid-template-rows: auto 1fr;
 
