@@ -36,19 +36,19 @@ export const editTaskWindow = () => {
     priorityBtn.textContent = storageManagement.priorityOfActiveRow;
     switch (priorityBtn.textContent) {
         case 'Normal':
-            priorityBtn.setAttribute('style', 'background-color: skyblue;');
+            priorityBtn.setAttribute('style', 'background-color: #58CFFE;');
             storageManagement.priorityMenuActive.value = false;
 
             break;
 
         case 'High':
-            priorityBtn.setAttribute('style', 'background-color: yellow;');
+            priorityBtn.setAttribute('style', 'background-color: #FEEA00;');
             storageManagement.priorityMenuActive.value = false;
 
             break;
 
         case 'Urgent':
-            priorityBtn.setAttribute('style', 'background-color: red;');
+            priorityBtn.setAttribute('style', 'background-color: #FF1337;');
             storageManagement.priorityMenuActive.value = false;
 
             break;
@@ -115,7 +115,6 @@ export const editTaskWindow = () => {
 
     const exitBtn = document.createElement('button');
     exitBtn.id = 'exit-btn';
-    exitBtn.textContent = 'X'
     exitBtn.addEventListener('click', () => {
         if (storageManagement.editTaskMenuActive.value === true) {
             newTaskContainer.remove();

@@ -17,7 +17,6 @@ export const projectPopOut = () => {
     title.textContent = storageManagement.titleOfActiveProject;
     const exitBtn = document.createElement('button');
     exitBtn.className = 'popout-exit-btn';
-    exitBtn.textContent = 'X';
     exitBtn.addEventListener('click', () => {
         document.querySelector('.project-popout-container').remove();
         storageManagement.projectPopOutActive.value = false;
