@@ -136,7 +136,8 @@
 
 [contenteditable] {
     outline: 0px solid transparent;
-    border-bottom: 1px solid #EC9E27;
+    /* border-bottom: 1px solid #EC9E27; */
+    background-color: #ec9d2762;
 }
 
 #ap-username {
@@ -144,7 +145,7 @@
 }
 
 [contenteditable="false"] {
-    border-bottom: none;
+    background-color: #00000000;
 }
 
 .ap-top {
