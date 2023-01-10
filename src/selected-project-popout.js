@@ -121,7 +121,7 @@ export const projectPopOut = () => {
 
 //update this function so that when the divs are editable, the background visisbily changes. also need to add a maxlength of 420
 function makeInput(element) {
-    element.innerHTML = '<div contenteditable="true" style="width:100%; min-width: 5rem;min-height: 1.5rem;"> <p>' + element.textContent + '</p></div>';
+    element.innerHTML = '<div onkeypress="return (this.innerText.length <= 74)" contenteditable="true" style="width:100%; min-width: 5rem;min-height: 1.5rem;"> <p>' + element.textContent + '</p></div>';
 
 }
 

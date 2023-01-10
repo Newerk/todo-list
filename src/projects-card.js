@@ -60,7 +60,6 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
 
     })
 
-
     topContainer.addEventListener('mouseover', () => {
         topContainer.setAttribute('style', 'color: #F5F543');
         middleContainer.setAttribute('style', 'color: #F5F543');
