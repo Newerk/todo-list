@@ -59,17 +59,17 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     bottomContainer.id = 'card-bottom-container';
     const expandArrow = document.createElement('button');
     expandArrow.id = 'expand-arrow';
-    expandArrow.src = '../src/images/icons/expand-project.svg';
+    // expandArrow.src = '../src/images/icons/expand-project.svg';
     expandArrow.addEventListener('click', () => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
             // expandArrow.src = '../src/images/icons/collapse-project.svg';
-            expandArrow.style.backgroundImage = 'url(images/icons/collapse-project.svg)'
+            expandArrow.style.backgroundImage = 'url(../src/images/icons/collapse-project.svg)'
 
         } else {
             middleContainer.hidden = true;
             // expandArrow.src = '../src/images/icons/expand-project.svg';
-            expandArrow.style.backgroundImage = 'url(images/icons/expand-project.svg)'
+            expandArrow.style.backgroundImage = 'url(../src/images/icons/expand-project.svg)'
 
 
         }
