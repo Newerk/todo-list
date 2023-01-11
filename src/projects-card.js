@@ -59,7 +59,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     bottomContainer.id = 'card-bottom-container';
     const expandArrow = document.createElement('img');
     expandArrow.className = 'expand-arrow';
-    expandArrow.src = '../src/images/icons/expand-project.svg';
+    expandArrow.src = '../images/icons/expand-project.svg';
     expandArrow.addEventListener('click', () => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
