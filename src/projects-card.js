@@ -1,7 +1,7 @@
 import { storageManagement } from './local-storage';
 import './projects-card.css'
 import { projectPopOut } from './selected-project-popout';
-import { updateProjectTasksLS } from './update-info';
+import { updateProjectTasksLS, updateScreenProjectsLS } from './update-info';
 // the cards that will be build when a user creates a new project
 
 export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
@@ -9,8 +9,6 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     const cardContainer = document.createElement('div');
     cardContainer.className = 'projects-card-container';
     cardContainer.id = ls_ID;
-
-
 
     const topContainer = document.createElement('div');
     topContainer.id = 'card-top-container';
@@ -21,6 +19,28 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     const trashBtn = document.createElement('img');
     trashBtn.id = 'trash-btn';
     trashBtn.src = '../src/images/icons/trash.svg';
+    trashBtn.addEventListener('click', (e)=> {
+        //get id of clicked project
+        const targetedProject = e.target.parentElement.parentElement.id;
+        console.log('id of clicked project: '+ targetedProject)
+
+        storageManagement.idOfActiveProject = targetedProject;
+
+        console.log('id of active project pulled from local stoage: '+ storageManagement.idOfActiveProject);
+
+        let projects = JSON.parse(localStorage.getItem('projects'));
+
+        const removeSelected = projects.filter(obj => {
+            return obj.id !== storageManagement.idOfActiveProject
+        })
+
+        projects = removeSelected;
+
+        localStorage.setItem('projects', JSON.stringify(projects));
+        updateScreenProjectsLS();
+
+    });
+
     topContainer.appendChild(trashBtn);
 
     //start off being hidden, until the expand button is clicked. the user will know if the project will e
