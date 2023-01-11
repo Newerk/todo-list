@@ -18,7 +18,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     topContainer.appendChild(title);
     const trashBtn = document.createElement('img');
     trashBtn.id = 'trash-btn';
-    trashBtn.src = '../../src/images/icons/trash.svg';
+    trashBtn.src = 'src/images/icons/trash.svg';
     trashBtn.addEventListener('click', (e)=> {
         //get id of clicked project
         const targetedProject = e.target.parentElement.parentElement.id;
@@ -59,7 +59,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     bottomContainer.id = 'card-bottom-container';
     const expandArrow = document.createElement('img');
     expandArrow.className = 'expand-arrow';
-    expandArrow.src = '../images/icons/expand-project.svg';
+    expandArrow.src = '../src/images/icons/expand-project.svg';
     expandArrow.addEventListener('click', () => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
