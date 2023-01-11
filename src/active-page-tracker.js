@@ -1,4 +1,5 @@
 import { storageManagement } from "./local-storage";
+import { updateScreenTasksLS } from "./update-info";
 
 export const activePageTracker = (activePage) => {
 
@@ -86,6 +87,8 @@ export const activePageTracker = (activePage) => {
 
 
     }
+
+    // updateScreenTasksLS();
 
     return activePage.value;
 }

@@ -37,15 +37,15 @@ export const updateScreenTasksLS = () => {
         let year = today.getFullYear();
         let month = today.getMonth() + 1;
         let day = today.getDate();
-    
+
         if (day < 10) {
             day = '0' + day;
-            
+
         }
-    
+
         if (month < 10) {
             month = '0' + month;
-            
+
         }
         const todaysDate = `${year}-${month}-${day}`;
 
@@ -68,6 +68,7 @@ export const updateScreenTasksLS = () => {
                 iterator.filter = 'today';
 
             }
+
 
         }
 
@@ -115,7 +116,7 @@ export const updateScreenTasksLS = () => {
 
             break;
     }
-
+    console.log('updateScreenTasksLS() ran');
 
 }
 
