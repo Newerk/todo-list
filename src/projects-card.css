@@ -28,6 +28,16 @@
     object-fit: cover;
 }
 
+#card-top-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+#trash-btn {
+    place-self: center;
+    cursor: pointer;
+}
+
 #card-top-container,
 #card-bottom-container {
 

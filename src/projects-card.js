@@ -18,6 +18,10 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     title.className = 'project-title';
     title.textContent = ls_Title;
     topContainer.appendChild(title);
+    const trashBtn = document.createElement('img');
+    trashBtn.id = 'trash-btn';
+    trashBtn.src = '../src/images/icons/trash.svg';
+    topContainer.appendChild(trashBtn);
 
     //start off being hidden, until the expand button is clicked. the user will know if the project will e
     const middleContainer = document.createElement('div');;
@@ -55,22 +59,22 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     }
 
     bottomContainer.addEventListener('mouseover', () => {
-        topContainer.setAttribute('style', 'color: white');
+        title.setAttribute('style', 'color: white');
         middleContainer.setAttribute('style', 'color: white');
 
     })
 
-    topContainer.addEventListener('mouseover', () => {
-        topContainer.setAttribute('style', 'color: #F5F543');
+    title.addEventListener('mouseover', () => {
+        title.setAttribute('style', 'color: #F5F543');
         middleContainer.setAttribute('style', 'color: #F5F543');
     })
 
-    topContainer.addEventListener('mouseout', () => {
-        topContainer.setAttribute('style', 'color: white');
+    title.addEventListener('mouseout', () => {
+        title.setAttribute('style', 'color: white');
         middleContainer.setAttribute('style', 'color: white');
     })
 
-    topContainer.addEventListener('click', (e) => {
+    title.addEventListener('click', (e) => {
         const targetedProject = e.target.parentElement.parentElement;
         storageManagement.idOfActiveProject = targetedProject.id;
         storageManagement.titleOfActiveProject = targetedProject.querySelector('.project-title').textContent;
@@ -84,12 +88,12 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     })
 
     middleContainer.addEventListener('mouseover', () => {
-        topContainer.setAttribute('style', 'color: #F5F543');
+        title.setAttribute('style', 'color: #F5F543');
         middleContainer.setAttribute('style', 'color: #F5F543');
     })
 
     middleContainer.addEventListener('mouseout', () => {
-        topContainer.setAttribute('style', 'color: white');
+        title.setAttribute('style', 'color: white');
         middleContainer.setAttribute('style', 'color: white');
     })
 
