@@ -19,14 +19,14 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     const trashBtn = document.createElement('button');
     trashBtn.id = 'trash-btn';
 
-    trashBtn.addEventListener('click', (e)=> {
+    trashBtn.addEventListener('click', (e) => {
         //get id of clicked project
         const targetedProject = e.target.parentElement.parentElement.id;
-        console.log('id of clicked project: '+ targetedProject)
+        console.log('id of clicked project: ' + targetedProject)
 
         storageManagement.idOfActiveProject = targetedProject;
 
-        console.log('id of active project pulled from local stoage: '+ storageManagement.idOfActiveProject);
+        console.log('id of active project pulled from local stoage: ' + storageManagement.idOfActiveProject);
 
         let projects = JSON.parse(localStorage.getItem('projects'));
 
@@ -64,12 +64,12 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
             // expandArrow.src = '../src/images/icons/collapse-project.svg';
-            expandArrow.style.backgroundImage = 'url(../src/images/icons/collapse-project.svg)'
+            expandArrow.style.backgroundImage = "url(../src/images/icons/collapse-project.svg)";
 
         } else {
             middleContainer.hidden = true;
             // expandArrow.src = '../src/images/icons/expand-project.svg';
-            expandArrow.style.backgroundImage = 'url(../src/images/icons/expand-project.svg)'
+            expandArrow.style.backgroundImage = "url(../src/images/icons/expand-project.svg)";
 
 
         }
