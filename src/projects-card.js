@@ -57,7 +57,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
 
     const bottomContainer = document.createElement('div');
     bottomContainer.id = 'card-bottom-container';
-    const expandArrow = document.createElement('img');
+    const expandArrow = document.createElement('button');
     expandArrow.id = 'expand-arrow';
     expandArrow.src = '../src/images/icons/expand-project.svg';
     expandArrow.addEventListener('click', () => {
