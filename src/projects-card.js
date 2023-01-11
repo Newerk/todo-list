@@ -18,7 +18,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     topContainer.appendChild(title);
     const trashBtn = document.createElement('img');
     trashBtn.id = 'trash-btn';
-    trashBtn.src = './src/images/icons/trash.svg';
+    trashBtn.src = './images/icons/trash.svg';
     trashBtn.addEventListener('click', (e)=> {
         //get id of clicked project
         const targetedProject = e.target.parentElement.parentElement.id;
