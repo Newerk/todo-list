@@ -1,5 +1,6 @@
 import './page-styling.css'
 import { todoHeader } from '../todo_row/todo-header';
+import { updateScreenTasksLS } from '../update-info';
 
 export const todayPage = () => {
     // will be used as argument for appending child to the proper div
