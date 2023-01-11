@@ -16,7 +16,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     title.className = 'project-title';
     title.textContent = ls_Title;
     topContainer.appendChild(title);
-    const trashBtn = document.createElement('img');
+    const trashBtn = document.createElement('button');
     trashBtn.id = 'trash-btn';
     // trashBtn.src = '../src/images/icons/trash.svg';
 

@@ -37,7 +37,10 @@
     place-self: center;
     cursor: pointer;
 
-    background-image: url(../src/images/icons/trash.svg);
+    background-image: url(images/icons/trash.svg);
+    height: 20px;
+    width: 20px;
+    background-color: #A074C4;
 }
 
 #card-top-container,
