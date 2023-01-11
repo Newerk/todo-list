@@ -18,7 +18,6 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     topContainer.appendChild(title);
     const trashBtn = document.createElement('button');
     trashBtn.id = 'trash-btn';
-    // trashBtn.src = '../src/images/icons/trash.svg';
 
     trashBtn.addEventListener('click', (e)=> {
         //get id of clicked project
@@ -59,16 +58,19 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
     const bottomContainer = document.createElement('div');
     bottomContainer.id = 'card-bottom-container';
     const expandArrow = document.createElement('img');
-    expandArrow.className = 'expand-arrow';
+    expandArrow.id = 'expand-arrow';
     expandArrow.src = '../src/images/icons/expand-project.svg';
     expandArrow.addEventListener('click', () => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
-            expandArrow.src = '../src/images/icons/collapse-project.svg';
+            // expandArrow.src = '../src/images/icons/collapse-project.svg';
+            expandArrow.style.backgroundImage = 'url(images/icons/collapse-project.svg)'
 
         } else {
             middleContainer.hidden = true;
-            expandArrow.src = '../src/images/icons/expand-project.svg';
+            // expandArrow.src = '../src/images/icons/expand-project.svg';
+            expandArrow.style.backgroundImage = 'url(images/icons/expand-project.svg)'
+
 
         }
 
