@@ -15,7 +15,6 @@ import { todoListRows } from "./todo_row/todo";
 import { storageManagement } from "./local-storage";
 import { projectsCard } from "./projects-card";
 import { todoProjectRows } from "./project-todo-row";
-import { projectPopOut } from "./selected-project-popout";
 
 export const updateScreenTasksLS = () => {
     let rows = JSON.parse(localStorage.getItem('rows'));
@@ -30,7 +29,7 @@ export const updateScreenTasksLS = () => {
         }
     }
 
-    //needs to update everyday, or every time the page is loaded so that once a project becomes past due, it will have its
+    //needs to update every time a page is loaded so that once a project becomes past due, it will have its
     // filter changed, and then be visible in the past due tab w/o  manually changing it
     const updateFilter = (obj) => {
         const today = new Date;
@@ -40,18 +39,14 @@ export const updateScreenTasksLS = () => {
         let day = today.getDate();
     
         if (day < 10) {
-            console.log('day is less than 10')
     
             day = '0' + day;
-            console.log(day)
             
         }
     
         if (month < 10) {
-            console.log('month is less than 10')
     
             month = '0' + month;
-            console.log(month)
             
         }
         const todaysDate = `${year}-${month}-${day}`;
@@ -63,6 +58,16 @@ export const updateScreenTasksLS = () => {
 
             if (dueDate < todaysDate) {
                 iterator.filter = 'pastdue';
+
+            }
+
+            if (dueDate > todaysDate) {
+                iterator.filter = 'upcoming';
+
+            }
+
+            if (dueDate === todaysDate) {
+                iterator.filter = 'today';
 
             }
 
@@ -141,15 +146,12 @@ export const updateProjectTasksLS = () => {
     const wipeTasks = (() => {
         document.body.querySelector('#project-tasks-container').innerHTML = '';
 
-        console.log('wiped')
 
     })();
 
-    // console.log('selected project tasks: '+ selectedProject.tasks)
     for (const iterator of selectedProject.tasks) {
         document.body.querySelector('#project-tasks-container').appendChild(todoProjectRows(iterator.title, iterator.priority, iterator.dueDate, iterator.status, iterator.id))
 
-        // console.log('does this element exist? ' + document.body.contains(test));
 
     }
 

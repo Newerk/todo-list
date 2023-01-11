@@ -148,12 +148,9 @@ export const editTaskWindow = () => {
         let rows = JSON.parse(localStorage.getItem('rows'));
         const todoObj = {};
         const targetedRow = document.getElementById(storageManagement.idOfActiveRow);
-        console.log(`targeted row: ${targetedRow.id}`)
-
 
 
         if (titleInput.value === '') {
-            console.log('please enter a title');
             titleInput.setAttribute('style', 'background-color: rgb(246,166,166, .1) ')
             titleInput.addEventListener('input', () => titleInput.setAttribute('style', 'background-color: none;'))
             return;
@@ -181,7 +178,6 @@ export const editTaskWindow = () => {
 
 
                     localStorage.setItem('projects', JSON.stringify(projects));
-                    console.log(JSON.parse(localStorage.getItem('projects')))
 
                     newTaskContainer.remove();
                     storageManagement.editTaskMenuActive.value = false;
@@ -202,7 +198,6 @@ export const editTaskWindow = () => {
 
 
                     localStorage.setItem('rows', JSON.stringify(row));
-                    console.log(JSON.parse(localStorage.getItem('rows')))
 
                     newTaskContainer.remove();
                     storageManagement.editTaskMenuActive.value = false;
@@ -211,7 +206,6 @@ export const editTaskWindow = () => {
                 }
             }
 
-        console.log(`ID of active row: ${storageManagement.idOfActiveRow}`)
     })
 
     bottomContainer.appendChild(editTaskBtn);

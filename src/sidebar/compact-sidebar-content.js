@@ -126,7 +126,6 @@ export const compactSidebarContent = () => {
         account.addEventListener('click', () => {
                 wipeContent(accountPage());
                 activePageTracker(storageManagement.onAccountPage);
-
                 changeBtnBg();
 
         });
