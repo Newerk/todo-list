@@ -36,6 +36,8 @@
 #trash-btn {
     place-self: center;
     cursor: pointer;
+
+    background-image: url(../src/images/icons/trash.svg);
 }
 
 #card-top-container,
