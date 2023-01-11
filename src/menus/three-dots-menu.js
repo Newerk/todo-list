@@ -20,6 +20,10 @@ export const threeDotsMenu = () => {
     const container = document.createElement('div');
     container.className = 'td-container';
 
+    if (storageManagement.onProjectsPage.value === true) {
+        container.setAttribute('style', 'margin-top: -.3rem; margin-right: -.01rem');
+    }
+
     const editBtn = document.createElement('button');
     editBtn.textContent = 'EDIT';
     editBtn.id = 'edit-td-btn';
