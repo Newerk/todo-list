@@ -6,7 +6,7 @@ export const svgCollection = {
     collapse_sidebar:'icons/collapse-sidebar.svg',
     edit:'icons/edit.svg',
     exit:'icons/exit.svg',
-    expand_project:'icons/expand-project.svg',
+    expand_project:'../src/images/icons/expand-project.svg',
     expand_sidebar:'icons/expand-sidebar.svg',
     home:'icons/home.svg',
     logo:'icons/logo.svg',

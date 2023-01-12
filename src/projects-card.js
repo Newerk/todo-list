@@ -65,12 +65,15 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
             // expandArrow.src = '../src/images/icons/collapse-project.svg';
-            expandArrow.setAttribute('style', `background-image: url(${svgCollection.collapse_project})`);
+            // expandArrow.setAttribute('style', `background-image: url(${svgCollection.collapse_project})`);
+            expandArrow.style.backgroundImage = `url(${svgCollection.collapse_project})`;
 
         } else {
             middleContainer.hidden = true;
             // expandArrow.src = '../src/images/icons/expand-project.svg';
-            expandArrow.setAttribute('style', `background-image: url(${svgCollection.expand_project})`);
+            // expandArrow.setAttribute('style', `background-image: url(${svgCollection.expand_project})`);
+            expandArrow.style.backgroundImage = `url(${svgCollection.expand_project})`;
+
 
 
         }
