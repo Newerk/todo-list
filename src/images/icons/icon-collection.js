@@ -2,11 +2,11 @@
 export const svgCollection = {
 
     account:'account/plus.svg',
-    collapse_project:'../src/images/icons/collapse-project.svg',
+    collapse_project:'../dist/images/collapse-project.svg',
     collapse_sidebar:'icons/collapse-sidebar.svg',
     edit:'icons/edit.svg',
     exit:'icons/exit.svg',
-    expand_project:'../src/images/icons/expand-project.svg',
+    expand_project:'../dist/images/expand-project.svg',
     expand_sidebar:'icons/expand-sidebar.svg',
     home:'icons/home.svg',
     logo:'icons/logo.svg',
