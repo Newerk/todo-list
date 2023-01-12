@@ -1,3 +1,4 @@
+import { svgCollection } from './images/icons/icon-collection';
 import { storageManagement } from './local-storage';
 import './projects-card.css'
 import { projectPopOut } from './selected-project-popout';
@@ -64,7 +65,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
             // expandArrow.src = '../src/images/icons/collapse-project.svg';
-            expandArrow.setAttribute('style', 'background-image: url(../src/images/icons/collapse-project.svg)');
+            expandArrow.setAttribute('style', `background-image: url(${svgCollection.collapse_project})`);
 
         } else {
             middleContainer.hidden = true;
