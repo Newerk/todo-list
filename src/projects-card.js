@@ -64,12 +64,12 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         if (middleContainer.hidden === true) {
             middleContainer.hidden = false;
             // expandArrow.src = '../src/images/icons/collapse-project.svg';
-            expandArrow.style.backgroundImage = "url(../src/images/icons/collapse-project.svg)";
+            expandArrow.setAttribute('style', 'background-image: url(../src/images/icons/collapse-project.svg)');
 
         } else {
             middleContainer.hidden = true;
             // expandArrow.src = '../src/images/icons/expand-project.svg';
-            expandArrow.style.backgroundImage = "url(../src/images/icons/expand-project.svg)";
+            expandArrow.setAttribute('style', 'background-image: url(../src/images/icons/expand-project.svg)');
 
 
         }
