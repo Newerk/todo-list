@@ -70,7 +70,7 @@ export const projectsCard = (ls_Title, ls_Description, ls_ID) => {
         } else {
             middleContainer.hidden = true;
             // expandArrow.src = '../src/images/icons/expand-project.svg';
-            expandArrow.setAttribute('style', 'background-image: url(../src/images/icons/expand-project.svg)');
+            expandArrow.setAttribute('style', `background-image: url(${svgCollection.expand_project})`);
 
 
         }
