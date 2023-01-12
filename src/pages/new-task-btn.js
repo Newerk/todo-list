@@ -14,6 +14,7 @@ export const newTaskBtn = (querySelector) => {
     btnContainer.style.cursor = 'pointer';
     const symbol = document.createElement('button');//when adding the assets, perhaps I will remove this and use ::before in CSS. I will keep this variable here for reference
     symbol.id = 'symbol';
+    symbol.style.backgroundImage = 'url(../src/images/icons/plus.svg)';
 
     btnContainer.addEventListener('click', () => {
         

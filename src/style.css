@@ -122,7 +122,7 @@ button:hover {
     height: 1.5rem;
     text-align: center;
     color: black;
-    background-image: url(../src/images/icons/plus.svg);
+    /* background-image: url(../src/images/icons/plus.svg); */
     background-size: 65%;
     background-repeat: no-repeat;
     background-position: center;
